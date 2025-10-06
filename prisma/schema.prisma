@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id                   String      @id
+  name                 String
+  email                String      @unique
+  emailVerified        Boolean
+  image                String?
+  role                 UserRole    @default(USER)
+  createdAt            DateTime
+  updatedAt            DateTime
+  twoFactorEnabled     Boolean?
+  twoFactorSecret      String?
+  twoFactorBackupCodes String?
+  Account              Account[]
+  Customer             Customer[]
+  Passkey              Passkey[]
+  Session              Session[]
+  TwoFactor            TwoFactor[]
+
+  @@map("user")
+}
+
+model Session {
+  id                   String   @id
+  expiresAt            DateTime
+  ipAddress            String?
+  userAgent            String?
+  userId               String
+  activeOrganizationId String?
+  users                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("session")
+}
+
+model Account {
+  id           String    @id
+  accountId    String
+  providerId   String
+  userId       String
+  accessToken  String?
+  refreshToken String?
+  idToken      String?
+  expiresAt    DateTime?
+  password     String?
+  users        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("verification")
+}
+
+model Passkey {
+  id             String    @id
+  name           String?
+  publicKey      String
+  userId         String
+  webauthnUserID String
+  counter        Int
+  deviceType     String
+  backedUp       Boolean
+  transports     String?
+  createdAt      DateTime?
+  users          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("passkey")
+}
+
+model Customer {
+  id               String         @id @default(uuid())
+  stripeCustomerId String         @unique
+  userId           String?
+  organizationId   String?
+  isActive         Boolean        @default(false)
+  user             User?          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Subscription     Subscription[]
+
+  @@map("customer")
+}
+
+model Subscription {
+  id                   String   @id @default(uuid())
+  stripeSubscriptionId String   @unique
+  customerId           String
+  status               String
+  plan                 String
+  currentPeriodStart   DateTime
+  currentPeriodEnd     DateTime
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  customer             Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@map("subscription")
+}
+
+model TwoFactor {
+  id          String @id
+  secret      String
+  backupCodes String
+  userId      String
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("twoFactor")
+}

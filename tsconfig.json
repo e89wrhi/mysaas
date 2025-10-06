@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "target": "ES2015",
+    "lib": ["DOM", "ES2015", "DOM.Iterable", "ScriptHost"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "contentlayer/generated": [".contentlayer/generated"]
+    },
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "tailwind.config.ts",
+    ".contentlayer/generated",
+    "contentlayer.config.ts",
+    "src/content/pages/customization.msx"
+  ],
+  "exclude": ["node_modules"]
+}

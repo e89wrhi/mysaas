@@ -1,0 +1,21 @@
+{
+  "portifolio": {
+    "title1": "بناء المنتجات الرقمية و",
+    "title2": "التجربة",
+    "subtitle": "مارك الباني!",
+    "linkedin": "لينكدإن",
+    "twitter": "تويتر",
+    "notes": "ملاحظات",
+    "projects": "المشاريع",
+    "aboutme": "معلومات عني",
+    "about_title1": "أنا",
+    "about_title2": "مارك",
+    "about_title3": "و",
+    "about_title4": "أنا مطوّر."
+  },
+  "theme": {
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام"
+  }
+}

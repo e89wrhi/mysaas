@@ -1,0 +1,21 @@
+{
+  "portifolio": {
+    "title1": "デジタル製品を作り、",
+    "title2": "体験",
+    "subtitle": "ビルダー・マーク！",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "notes": "ノート",
+    "projects": "プロジェクト",
+    "aboutme": "私について",
+    "about_title1": "私は",
+    "about_title2": "マーク",
+    "about_title3": "そして",
+    "about_title4": "私は開発者です。"
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム"
+  }
+}

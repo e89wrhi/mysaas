@@ -1,0 +1,21 @@
+{
+  "portifolio": {
+    "title1": "打造数字产品并",
+    "title2": "体验",
+    "subtitle": "构建者马克！",
+    "linkedin": "领英",
+    "twitter": "推特",
+    "notes": "笔记",
+    "projects": "项目",
+    "aboutme": "关于我",
+    "about_title1": "我是",
+    "about_title2": "马克",
+    "about_title3": "并且",
+    "about_title4": "我是开发者。"
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "system": "系统"
+  }
+}
