@@ -9,9 +9,9 @@ export default function CountsSection() {
         <div className="flex flex-col md:flex-row text-center py-5 md:py-9 items-center border-t border-b border-gray-200 dark:border-gray-800">
           {/* Customers */}
           <div className="flex-1 py-6">
-            <h3 className="text-5xl font-extrabold">1.2K</h3>
+            <h3 className="text-5xl font-extrabold">2.5M</h3>
             <p className="mt-2 text-gray-500 uppercase tracking-wider">
-              Customers
+              Generate
             </p>
           </div>
 

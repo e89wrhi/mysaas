@@ -9,6 +9,12 @@ import { Metadata } from 'next';
 
 import { constructMetadata, getBlurDataURL } from '@/lib/utils';
 
+interface PagePageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
 export async function generateStaticParams() {
   return allPages.map((page) => ({
     slug: page.slugAsParams,
@@ -17,10 +23,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata | undefined> {
-  const page = allPages.find((page) => page.slugAsParams === params.slug);
+}: PagePageProps): Promise<Metadata | undefined> {
+  const { slug } = await params;
+  const page = allPages.find((page) => page.slugAsParams === slug);
   if (!page) {
     return;
   }
@@ -33,14 +38,9 @@ export async function generateMetadata({
   });
 }
 
-export default async function PagePage({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}) {
-  const page = allPages.find((page) => page.slugAsParams === params.slug);
+export default async function PagePage({ params }: PagePageProps) {
+  const { slug } = await params;
+  const page = allPages.find((page) => page.slugAsParams === slug);
 
   if (!page) {
     notFound();

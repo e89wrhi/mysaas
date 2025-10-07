@@ -13,6 +13,7 @@ import {
   HelpCircle,
   Home,
   Image,
+  Camera,
   Languages,
   Laptop,
   LayoutPanelLeft,
@@ -51,6 +52,7 @@ export type Icon = LucideIcon;
 
 export const Icons = {
   add: Plus,
+  camera: Camera,
   back: ArrowLeft,
   arrowRight: ArrowRight,
   arrowUpRight: ArrowUpRight,
