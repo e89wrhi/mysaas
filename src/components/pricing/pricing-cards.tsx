@@ -1,5 +1,11 @@
 'use client';
 
+export default function PricingCards() {
+  return <div>HI</div>;
+}
+
+/*
+
 import { useContext, useState } from 'react';
 import Link from 'next/link';
 //import { UserSubscriptionPlan } from '@/types';
@@ -13,14 +19,14 @@ import { ModalContext } from '@/components/modals/providers';
 import { HeaderSection } from '@/components/shared/header-section';
 import { Icons } from '@/components/shared/icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
-import { useSubscriptionData } from '@/lib/stripe/useSubscriptionData';
+//import { useSubscriptionData } from '@/lib/stripe/useSubscriptionData';
 
 interface PricingCardsProps {
   userId?: string;
   plans: Stripe.Plan[];
 }
 export function PricingCards({ userId, plans }: PricingCardsProps) {
-  const { subscription } = useSubscriptionData();
+  //const { subscription } = useSubscriptionData();
 
   const isYearlyDefault =
     !subscription?.subscription.customerId ||
@@ -201,3 +207,4 @@ export function PricingCards({ userId, plans }: PricingCardsProps) {
     </MaxWidthWrapper>
   );
 }
+*/

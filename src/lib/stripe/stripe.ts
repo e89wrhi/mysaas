@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+/*import { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 import { PrismaClient, Subscription } from '@prisma/client';
 import Stripe from 'stripe';
@@ -264,3 +264,4 @@ export async function getPlans(): Promise<Stripe.Plan[]> {
   });
   return plans.data;
 }
+*/

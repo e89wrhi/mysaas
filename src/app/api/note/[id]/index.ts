@@ -9,9 +9,8 @@ export default async function handler(
   if (req.method !== 'GET') return res.status(405).end();
 
   try {
-    const post = await prisma.blogPost.findUnique({
+    const post = await prisma.user.findUnique({
       where: { id: id as string },
-      include: { coverImage: true, author: true },
     });
 
     if (!post) return res.status(404).json({ error: 'Blog post not found' });

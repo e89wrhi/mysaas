@@ -1,4 +1,4 @@
-import { useActiveOrganization, useSession } from '@/lib/auth-client';
+/*import { useActiveOrganization, useSession } from '@/lib/auth-client';
 import { ActiveSubscriptionResult } from '@/lib/stripe/stripe';
 import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
@@ -73,4 +73,4 @@ export function useSubscriptionData() {
     activeOrg: activeOrg?.data,
     user: sessionData?.user,
   };
-}
+}*/

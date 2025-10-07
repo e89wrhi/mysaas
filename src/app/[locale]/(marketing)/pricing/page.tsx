@@ -1,12 +1,12 @@
 //import Image from 'next/image';
 //import Link from 'next/link';
 
-import { getCurrentUser } from '@/lib/session';
+//import { getCurrentUser } from '@/lib/session';
 import { constructMetadata } from '@/lib/utils';
 import { ComparePlans } from '@/components/pricing/compare-plans';
-import { PricingCards } from '@/components/pricing/pricing-cards';
+import PricingCards from '@/components/pricing/pricing-cards';
 import { PricingFaq } from '@/components/pricing/pricing-faq';
-import { getPlans } from '@/lib/stripe/stripe';
+//import { getPlans } from '@/lib/stripe/stripe';
 
 export const metadata = constructMetadata({
   title: 'Pricing – SaaS Starter',
@@ -14,8 +14,8 @@ export const metadata = constructMetadata({
 });
 
 export default async function PricingPage() {
-  const user = await getCurrentUser();
-  const plans = await getPlans();
+  //const user = await getCurrentUser();
+  //const plans = await getPlans();
   /*
   if (user?.role === 'ADMIN') {
     return (
@@ -44,7 +44,7 @@ export default async function PricingPage() {
 */
   return (
     <div className="flex w-full flex-col gap-16 py-8 md:py-8">
-      <PricingCards userId={user?.id} plans={plans} />
+      <PricingCards />
       <hr className="container" />
       <ComparePlans />
       <PricingFaq />

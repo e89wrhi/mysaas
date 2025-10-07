@@ -1,4 +1,3 @@
-import prisma from '@/lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -8,33 +7,9 @@ export default async function handler(
   if (req.method !== 'POST') return res.status(405).end();
 
   try {
-    const {
-      title,
-      slug,
-      excerpt,
-      content,
-      coverImageId,
-      authorId,
-      tags,
-      published,
-      createdAt,
-      updatedAt,
-    } = req.body;
+    const {} = req.body;
 
-    const post = await prisma.blogPost.create({
-      data: {
-        title,
-        slug,
-        excerpt,
-        content,
-        coverImageId,
-        authorId,
-        tags,
-        published,
-        createdAt: createdAt ? new Date(createdAt) : undefined,
-        updatedAt: updatedAt ? new Date(updatedAt) : undefined,
-      },
-    });
+    const post = null;
 
     res.status(200).json(post);
   } catch (error) {

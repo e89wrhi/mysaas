@@ -9,7 +9,7 @@ export default async function handler(
   if (req.method !== 'PUT') return res.status(405).end();
 
   try {
-    const updated = await prisma.blogPost.update({
+    const updated = await prisma.user.update({
       where: { id: id as string },
       data: {
         ...req.body,

@@ -38,7 +38,6 @@ export function UserAccountNav() {
         <Drawer.Trigger onClick={() => setOpen(true)}>
           <UserAvatar
             user={{ name: user.name || null, image: user.image || null }}
-            className="size-9 border"
           />
         </Drawer.Trigger>
         <Drawer.Portal>
@@ -124,7 +123,6 @@ export function UserAccountNav() {
       <DropdownMenuTrigger>
         <UserAvatar
           user={{ name: user.name || null, image: user.image || null }}
-          className="size-8 border"
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -10,7 +10,7 @@ export default async function handler(
   try {
     const { id } = req.body;
 
-    const deleted = await prisma.blogPost.delete({
+    const deleted = await prisma.subscription.delete({
       where: { id },
     });
 

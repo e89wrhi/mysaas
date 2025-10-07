@@ -1,8 +1,6 @@
-import type { Config } from 'tailwindcss';
+const fontFamily = require('tailwindcss/defaultTheme');
 
-const { fontFamily } = require('tailwindcss/defaultTheme');
-
-const config = {
+module.exports = {
   darkMode: ['class'],
   content: [
     './src/app/**/*.{ts,tsx}',
@@ -97,22 +95,6 @@ const config = {
           '50%': { opacity: '0.6' },
           '100%': { opacity: '0' },
         },
-
-        // === Custom AI illustration animations ===
-        'move-token': {
-          '0%': { transform: 'translateX(0)', opacity: '1' },
-          '50%': { transform: 'translateX(420px) scale(0.95)' },
-          '80%': { transform: 'translateX(460px) scale(0.8)', opacity: '0.8' },
-          '100%': { opacity: '0' },
-        },
-        'show-info': {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'draw-path': {
-          '0%': { strokeDasharray: '400', strokeDashoffset: '400' },
-          '100%': { strokeDasharray: '400', strokeDashoffset: '0' },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -122,15 +104,11 @@ const config = {
         'fade-down': 'fade-down 0.5s ease-out',
         'fade-in': 'fade-in 0.4s ease-in',
         'fade-out': 'fade-out 0.4s ease-out',
-
-        // === Custom AI illustration animations ===
-        'move-token': 'move-token 2.8s ease-in-out forwards',
-        'show-info': 'show-info 0.8s ease-out forwards 2.3s',
-        'draw-path': 'draw-path 1.5s ease-out forwards',
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
-} satisfies Config;
-
-export default config;
+  plugins: [
+    require('@tailwindcss/animate'),
+    require('@tailwindcss/typography'),
+  ],
+};
