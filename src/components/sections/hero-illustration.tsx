@@ -1,7 +1,7 @@
 'use client';
 
-import { Icons } from '../shared/icons';
-import Image from 'next/image';
+import { motion, AnimatePresence } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 interface AiIllustrationProps {
   width?: string;
@@ -10,47 +10,173 @@ interface AiIllustrationProps {
 }
 
 export default function AiTransformIllustration({}: AiIllustrationProps) {
+  const [stage, setStage] = useState('falling'); // "falling" → "processing" → "info"
+  const images = [
+    '/_products/arc/item2.png',
+    '/_products/arc/item3.png',
+    '/_products/arc/item5.png',
+    '/_products/arc/item8.png',
+  ]; // your image paths
+
+  useEffect(() => {
+    if (stage === 'falling') {
+      const timer = setTimeout(() => setStage('processing'), 3300);
+      return () => clearTimeout(timer);
+    }
+    if (stage === 'processing') {
+      const timer = setTimeout(() => setStage('info'), 2000);
+      return () => clearTimeout(timer);
+    }
+    if (stage === 'info') {
+      const timer = setTimeout(() => setStage('falling'), 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [stage]);
+
   return (
-    <div className="flex justify-center items-center h-[450px] relative w-[400px] mx-auto overflow-hidden">
-      {/* 1. Camera Icon (Built with Divs) */}
-      {/* Position: top-14 is 56px, close to the original 60px. */}
-      <div className="absolute top-14 left-1/2 -translate-x-1/2 z-10">
-        {/* Outer Circle Container (Simulates the lens/main body wrapper) */}
-        <div className="relative w-22 h-22 rounded-2xl flex items-center justify-center overflow-hidden">
-          {/* Background Image - Absolute position to fill the div */}
-          <Image
-            src="/_products/arc/item8.png" // <--- IMPORTANT: Change this to your image path
-            alt="product"
-            layout="fill"
-            className="absolute object-cover inset-0 z-0 opacity-70" // z-0 puts it behind, opacity makes it subtle
-          />
+    <div className="relative w-full flex items-center justify-center">
+      <div className="relative w-80 h-80 rounded-4xl overflow-hidden flex items-center justify-center shadow-xl">
+        <AnimatePresence mode="wait">
+          {/* Falling Image */}
+          {stage === 'falling' && (
+            <motion.div
+              key="falling"
+              className="relative w-full h-full flex items-center justify-center"
+            >
+              {images.map((src, i) => (
+                <motion.img
+                  key={src}
+                  src={src}
+                  alt={`Falling ${i}`}
+                  initial={{ y: -300, opacity: 0, scale: 0.5 }}
+                  animate={{ y: 0, opacity: 1, scale: 1 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 80,
+                    damping: 10,
+                    delay: i * 0.5, // staggered drop
+                  }}
+                  className="absolute w-20 h-20 object-cover rounded-2xl"
+                  style={{
+                    left: `${30 + i * 40}px`, // stagger horizontal positions
+                  }}
+                />
+              ))}
+            </motion.div>
+          )}
 
-          {/* Foreground Icon - z-10 ensures it's above the image */}
-          <div className="relative z-10">
-            <Icons.camera /> {/* Render the actual icon component */}
-          </div>
-        </div>
-      </div>
+          {/* Processing Animation */}
+          {stage === 'processing' && (
+            <motion.div
+              key="processing"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="relative flex flex-col items-center justify-center"
+            >
+              {/* Pulsing concentric circles */}
+              {[...Array(3)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-32 h-32 rounded-full border border-cyan-400/30"
+                  animate={{
+                    scale: [1, 1.4, 1],
+                    opacity: [0.6, 0.2, 0.6],
+                  }}
+                  transition={{
+                    duration: 2 + i * 0.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  style={{ zIndex: 0 }}
+                />
+              ))}
 
-      {/* 2. Dashed Connector Line (Straight Line Approximation) */}
-      {/* top-[100px] is roughly where the icon ends, h-[260px] goes down to the box's top edge. */}
-      <div className="absolute top-[100px] left-1/2 w-[3px] h-[260px] -translate-x-1/2 border-l-[3px] border-dashed border-primary" />
+              {/* Central glowing orb */}
+              <motion.div
+                className="relative w-16 h-16 rounded-full bg-cyan-500/80 blur-md"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  boxShadow: [
+                    '0 0 20px rgba(0,255,255,0.6)',
+                    '0 0 40px rgba(0,255,255,0.9)',
+                    '0 0 20px rgba(0,255,255,0.6)',
+                  ],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
 
-      {/* 3. Bottom Info Box */}
-      {/* Dimensions: w-[250px], h-[290px]. Position: top-[360px] */}
-      <div className="absolute w-[250px] h-[290px] rounded-2xl p-5 top-[360px] left-1/2 -translate-x-1/2 shadow-lg bg-card border-2 border-border flex flex-col space-y-2">
-        {/* Info lines inside the box */}
-        {/* Line 1 (Primary, widest) */}
-        <div className="h-3 rounded-sm w-[100px] bg-primary"></div>
+              {/* Scanning beam */}
+              <motion.div
+                className="absolute w-32 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full"
+                animate={{ y: [-40, 40, -40] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+            </motion.div>
+          )}
 
-        {/* Line 2 (Muted) */}
-        <div className="h-2.5 rounded-sm w-[80px] bg-muted"></div>
+          {/* Info Section */}
+          {stage === 'info' && (
+            <motion.div
+              key="info"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.6 }}
+              className="relative flex flex-col items-center justify-center p-4"
+            >
+              {/* Main central logo */}
+              <motion.img
+                src="/logo.png"
+                alt="Main Logo"
+                className="w-32 h-32"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              />
 
-        {/* Line 3 (Muted) */}
-        <div className="h-2.5 rounded-sm w-[90px] bg-muted"></div>
-
-        {/* Line 4 (Muted, longest) */}
-        <div className="h-2.5 rounded-sm w-[190px] bg-muted"></div>
+              {/* Scattered mini logos */}
+              {[
+                { src: '/_social/netflix.png', x: -120, y: -60 },
+                { src: '/_social/airbnb.png', x: 120, y: -60 },
+                { src: '/_social/wechat.png', x: -100, y: 100 },
+                { src: '/_social/apple.png', x: 100, y: 100 },
+              ].map((logo, i) => (
+                <motion.img
+                  key={i}
+                  src={logo.src}
+                  alt={`Mini Logo ${i + 1}`}
+                  className="absolute w-12 h-12"
+                  initial={{ x: 0, y: 0, opacity: 0, scale: 0.5 }}
+                  animate={{
+                    x: logo.x,
+                    y: logo.y,
+                    opacity: 1,
+                    scale: 1,
+                    rotate: [0, 10, -10, 0],
+                  }}
+                  transition={{
+                    delay: 0.5 + i * 0.1,
+                    duration: 1.2,
+                    ease: 'easeInOut',
+                    type: 'tween',
+                    stiffness: 70,
+                    damping: 10,
+                  }}
+                />
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

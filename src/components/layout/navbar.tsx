@@ -11,7 +11,6 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { useScroll } from '@/hooks/use-scroll';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/lamp_icon.png';
 //import { Skeleton } from '@/components/ui/skeleton';
 //import { DocsSearch } from '@/components/docs/search';
 import { ModalContext } from '@/components/modals/providers';
@@ -52,13 +51,13 @@ export function NavBar({ scroll = false }: NavBarProps) {
         large={documentation}
       >
         <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-0">
+          <Link href="/" className="flex items-center space-x-1">
             <Image
               height={60}
               width={60}
-              src={logo}
+              src="/logo.png"
               alt="logo"
-              className="h-10 w-10"
+              className="h-8 w-8"
             />
             <span className="font-urban text-xl font-bold text-green-400">
               {siteConfig.name}

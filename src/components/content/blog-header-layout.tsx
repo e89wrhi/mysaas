@@ -9,7 +9,7 @@ export function BlogHeaderLayout() {
         <div className="max-w-screen-sm">
           <h1 className="font-heading text-3xl md:text-4xl">Blog</h1>
           <p className="mt-3.5 text-base text-muted-foreground md:text-lg">
-            Latest news and updates from Next SaaS Starter.
+            Latest news and updates from Port.
           </p>
         </div>
       </MaxWidthWrapper>

@@ -9,7 +9,7 @@ import { PricingFaq } from '@/components/pricing/pricing-faq';
 //import { getPlans } from '@/lib/stripe/stripe';
 
 export const metadata = constructMetadata({
-  title: 'Pricing – SaaS Starter',
+  title: 'Pricing – Port',
   description: 'Explore our subscription plans.',
 });
 
