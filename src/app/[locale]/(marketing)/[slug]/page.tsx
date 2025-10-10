@@ -1,13 +1,8 @@
 import { notFound } from 'next/navigation';
 import { allPages } from '.contentlayer/generated';
-
 import { Mdx } from '@/components/content/mdx-components';
-
-//import '@/styles/mdx.css';
-
 import { Metadata } from 'next';
-
-import { constructMetadata, getBlurDataURL } from '@/lib/utils';
+import { constructMetadata } from '@/lib/utils';
 
 interface PagePageProps {
   params: Promise<{
@@ -49,7 +44,7 @@ export default async function PagePage({ params }: PagePageProps) {
   const images = await Promise.all(
     page.images.map(async (src: string) => ({
       src,
-      blurDataURL: await getBlurDataURL(src),
+      //blurDataURL: await getBlurDataURL(src),
     }))
   );
 
