@@ -41,13 +41,6 @@ export default async function PagePage({ params }: PagePageProps) {
     notFound();
   }
 
-  const images = await Promise.all(
-    page.images.map(async (src: string) => ({
-      src,
-      //blurDataURL: await getBlurDataURL(src),
-    }))
-  );
-
   return (
     <article className="container max-w-3xl py-6 lg:py-12">
       <div className="space-y-4">
@@ -59,7 +52,7 @@ export default async function PagePage({ params }: PagePageProps) {
         )}
       </div>
       <hr className="my-4" />
-      <Mdx code={page.body.code} images={images} />
+      <Mdx code={page.body.code} />
     </article>
   );
 }
