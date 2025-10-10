@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import { allPages } from '.contentlayer/generated';
 import { Mdx } from '@/components/content/mdx-components';
-import { Metadata } from 'next';
-import { constructMetadata } from '@/lib/utils';
+//import { Metadata } from 'next';
+//import { constructMetadata, getBlurDataURL } from '@/lib/utils';
 
 interface PagePageProps {
   params: Promise<{
@@ -10,6 +10,7 @@ interface PagePageProps {
   }>;
 }
 
+/*
 export async function generateStaticParams() {
   return allPages.map((page) => ({
     slug: page.slugAsParams,
@@ -24,7 +25,6 @@ export async function generateMetadata({
   if (!page) {
     return;
   }
-
   const { title, description } = page;
 
   return constructMetadata({
@@ -32,7 +32,7 @@ export async function generateMetadata({
     description: description,
   });
 }
-
+*/
 export default async function PagePage({ params }: PagePageProps) {
   const { slug } = await params;
   const page = allPages.find((page) => page.slugAsParams === slug);
@@ -40,6 +40,14 @@ export default async function PagePage({ params }: PagePageProps) {
   if (!page) {
     notFound();
   }
+  /*
+  const images = await Promise.all(
+    page.images.map(async (src: string) => ({
+      src,
+      blurDataURL: await getBlurDataURL(src),
+    }))
+  );
+*/
 
   return (
     <article className="container max-w-3xl py-6 lg:py-12">
@@ -52,7 +60,7 @@ export default async function PagePage({ params }: PagePageProps) {
         )}
       </div>
       <hr className="my-4" />
-      <Mdx code={page.body.code} />
+      <Mdx code={page.body.code} images={[]} />
     </article>
   );
 }
