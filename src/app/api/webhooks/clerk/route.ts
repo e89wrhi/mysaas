@@ -49,7 +49,7 @@ export async function POST(req: Request) {
     }
 
     if (type === 'user.deleted') {
-      await supabaseAdmin.from('user').delete().eq('clerkUser.id', data.id); // dot notation for JSONB
+      await supabaseAdmin.from('user').delete().eq('id', data.id); // dot notation for JSONB
     }
 
     return NextResponse.json({ success: true });
