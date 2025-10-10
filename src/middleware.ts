@@ -14,12 +14,13 @@ export default clerkMiddleware(async (auth, req) => {
 
   // Skip locale redirection for API routes
   if (
-    pathname.startsWith('/app/api') ||
+    pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();
   }
+
   // Locale handling
   const segments = pathname.split('/').filter(Boolean);
   const maybeLocale = segments[0];
