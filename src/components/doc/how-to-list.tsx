@@ -14,7 +14,7 @@ export function HowtoList() {
             more.
           </p>
           <Image
-            src="/_illustration/illu_port_account.png"
+            src="/_illustration/illu_phone_account.png"
             alt="Create account illustration"
             height={300}
             width={300}
@@ -33,7 +33,7 @@ export function HowtoList() {
             category, and description.
           </p>
           <Image
-            src="/_illustration/illu_upload_light.png"
+            src="/_illustration/illu_phone_light.png"
             alt="Upload image"
             height={300}
             width={300}
@@ -52,7 +52,7 @@ export function HowtoList() {
             suggestions included.
           </p>
           <Image
-            src="/_illustration/illu_ai_light.png"
+            src="/_illustration/illu_phone_light.png"
             alt="AI generating product info"
             height={300}
             width={300}
@@ -70,7 +70,7 @@ export function HowtoList() {
             and pricing for better SEO and conversion performance.
           </p>
           <Image
-            src="/_illustration/illu_edit_light.png"
+            src="/_illustration/illu_phone_light.png"
             alt="Editing listing"
             height={300}
             width={300}
@@ -88,7 +88,7 @@ export function HowtoList() {
             other platforms with one click—no manual data entry needed.
           </p>
           <Image
-            src="/_illustration/illu_publish_light.png"
+            src="/_illustration/illu_phone_light.png"
             alt="Publishing listings"
             height={300}
             width={300}
@@ -107,7 +107,7 @@ export function HowtoList() {
             optimization.
           </p>
           <Image
-            src="/_illustration/illu_analytics_light.png"
+            src="/_illustration/illu_phone_light.png"
             alt="Analytics dashboard"
             height={300}
             width={300}
@@ -126,7 +126,7 @@ export function HowtoList() {
             while you grow your business.
           </p>
           <Image
-            src="/_illustration/illu_automation_light.png"
+            src="/_illustration/illu_phone_light.png"
             alt="AI automation"
             height={300}
             width={300}
