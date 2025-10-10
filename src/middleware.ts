@@ -12,15 +12,18 @@ const PROTECTED_PATHS = ['/dashboard', '/settings', '/account'];
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl;
 
-  // Allow webhook to bypass auth
-  if (pathname === '/api/webhooks/clerk') {
-    return NextResponse.next();
-  }
-
   if (pathname.startsWith('/_next') || PUBLIC_FILE.test(pathname)) {
     return NextResponse.next();
   }
 
+  // Skip locale redirection for API routes
+  if (
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/_next') ||
+    PUBLIC_FILE.test(pathname)
+  ) {
+    return NextResponse.next();
+  }
   // Locale handling
   const segments = pathname.split('/').filter(Boolean);
   const maybeLocale = segments[0];

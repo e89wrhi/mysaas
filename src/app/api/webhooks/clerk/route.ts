@@ -5,11 +5,10 @@ import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 export async function POST(req: Request) {
   const payload = await req.text();
-  const headerPayload = await headers();
-
-  const svixId = headerPayload.get('svix-id');
-  const svixTimestamp = headerPayload.get('svix-timestamp');
-  const svixSignature = headerPayload.get('svix-signature');
+  const headerPayload = headers();
+  const svixId = (await headerPayload).get('svix-id');
+  const svixTimestamp = (await headerPayload).get('svix-timestamp');
+  const svixSignature = (await headerPayload).get('svix-signature');
 
   if (!svixId || !svixTimestamp || !svixSignature) {
     return new NextResponse('Missing Svix headers', { status: 400 });
