@@ -12,10 +12,6 @@ const PROTECTED_PATHS = ['/dashboard', '/settings', '/account'];
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl;
 
-  if (pathname.startsWith('/_next') || PUBLIC_FILE.test(pathname)) {
-    return NextResponse.next();
-  }
-
   // Skip locale redirection for API routes
   if (
     pathname.startsWith('/app/api') ||
