@@ -12,6 +12,11 @@ const PROTECTED_PATHS = ['/dashboard', '/settings', '/account'];
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl;
 
+  // Allow webhook to bypass auth
+  if (pathname === '/api/webhooks/clerk') {
+    return NextResponse.next();
+  }
+
   if (pathname.startsWith('/_next') || PUBLIC_FILE.test(pathname)) {
     return NextResponse.next();
   }
