@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { useSearchParams } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { signIn } from '@/lib/auth-client';
+import { SignInButton } from '@clerk/nextjs';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
@@ -15,13 +15,17 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { Icons } from '@/components/shared/icons';
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
-  type?: string;
-}
-
 type FormData = z.infer<typeof userAuthSchema>;
 
-export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
+  type?: 'register' | 'login';
+}
+
+export function UserAuthForm({
+  className,
+  type = 'login',
+  ...props
+}: UserAuthFormProps) {
   const {
     register,
     handleSubmit,
@@ -29,34 +33,22 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
   } = useForm<FormData>({
     resolver: zodResolver(userAuthSchema),
   });
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);
+
+  const [isLoading, setIsLoading] = React.useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isGoogleLoading, setIsGoogleLoading] = React.useState(false);
   const searchParams = useSearchParams();
 
   async function onSubmit(data: FormData) {
     setIsLoading(true);
-
     try {
-      const result = await signIn.email({
-        email: data.email.toLowerCase(),
-        password: '', // For magic link, password is not required
-      });
-
-      if (result.error) {
-        throw new Error(result.error.message);
-      }
-
-      return toast.success('Check your email', {
-        description:
-          'We sent you a login link. Be sure to check your spam too.',
-      });
-    } catch (error) {
-      return toast.error('Something went wrong.', {
-        description:
-          error instanceof Error
-            ? error.message
-            : 'Your sign in request failed. Please try again.',
-      });
+      // Clerk email sign-in (magic link)
+      const emailUrl = `/sign-in?email=${encodeURIComponent(data.email.toLowerCase())}&redirectUrl=${searchParams?.get('from') || '/dashboard'}`;
+      window.location.href = emailUrl;
+      toast.success('Check your email for the login link!');
+    } catch (err) {
+      toast.error('Something went wrong. Please try again.');
+      console.error(err);
     } finally {
       setIsLoading(false);
     }
@@ -64,6 +56,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
+      {/* Email Form */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-2">
           <div className="grid gap-1">
@@ -81,7 +74,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
               disabled={isLoading || isGoogleLoading}
               {...register('email')}
             />
-            {errors?.email && (
+            {errors.email && (
               <p className="px-1 text-xs text-red-600">
                 {errors.email.message}
               </p>
@@ -95,6 +88,8 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
           </Button>
         </div>
       </form>
+
+      {/* Divider */}
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
@@ -105,31 +100,25 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button
-        variant="secondary"
-        className="rounded-full h-12 text-lg"
-        onClick={async () => {
-          setIsGoogleLoading(true);
-          try {
-            await signIn.social({
-              provider: 'google',
-              callbackURL: searchParams?.get('from') || '/dashboard',
-            });
-          } catch {
-            toast.error('Google sign-in failed. Please try again.');
-          } finally {
-            setIsGoogleLoading(false);
-          }
-        }}
-        disabled={isLoading || isGoogleLoading}
+
+      {/* Google Sign-In */}
+      <SignInButton
+        mode="modal"
+        signUpFallbackRedirectUrl={searchParams?.get('from') || '/dashboard'}
       >
-        {isGoogleLoading ? (
-          <Icons.spinner className="mr-2 size-4 animate-spin" />
-        ) : (
-          <Icons.google className="mr-2 size-4" />
-        )}{' '}
-        Google
-      </Button>
+        <Button
+          variant="secondary"
+          className="rounded-full h-12 text-lg flex items-center justify-center"
+          disabled={isLoading || isGoogleLoading}
+        >
+          {isGoogleLoading ? (
+            <Icons.spinner className="mr-2 size-4 animate-spin" />
+          ) : (
+            <Icons.google className="mr-2 size-4" />
+          )}
+          Google
+        </Button>
+      </SignInButton>
     </div>
   );
 }

@@ -1,15 +1,11 @@
 import '@/styles/globals.css';
-
-//import { fontGeist, fontHeading, fontSans, fontUrban } from '@/assets/fonts';
-import { SessionProvider } from '@/lib/auth-client';
 import { ThemeProvider } from 'next-themes';
-
+import { ClerkProvider } from '@clerk/nextjs';
 import { cn, constructMetadata } from '@/lib/utils';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from '@/components/analytics';
 import ModalProvider from '@/components/modals/providers';
 import { NextIntlClientProvider } from 'next-intl';
-//import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -19,10 +15,12 @@ export const metadata = constructMetadata();
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
-        <SessionProvider>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={cn('min-h-screen bg-background font-sans antialiased')}
+        >
           <NextIntlClientProvider>
             <ThemeProvider
               attribute="class"
@@ -36,8 +34,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
               {/*<TailwindIndicator />*/}
             </ThemeProvider>
           </NextIntlClientProvider>
-        </SessionProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

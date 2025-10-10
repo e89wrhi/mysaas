@@ -7,7 +7,6 @@ import { useSignInModal } from '@/components/modals//sign-in-modal';
 export const ModalContext = createContext<{
   setShowSignInModal: Dispatch<SetStateAction<boolean>>;
 }>({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setShowSignInModal: () => {},
 });
 

@@ -7,14 +7,14 @@ const site_url = env.NEXT_PUBLIC_APP_URL;
 export const siteConfig: SiteConfig = {
   name: 'Port',
   description:
-    'Get your project off to an explosive start with SaaS Starter! Harness the power of Next.js 14, Prisma, Neon, Auth.js v5, Resend, React Email, Shadcn/ui and Stripe to build your next big thing.',
+    'Ai tool to convert Image to Product listing for Amazon, ebay, etsy....',
   url: site_url,
   ogImage: og.src,
   links: {
     twitter: 'https://twitter.com/mytwi',
     github: 'https://github.com/mygit',
   },
-  mailSupport: 'support@saas-starter.com',
+  mailSupport: 'support@port.com',
 };
 
 export const footerLinks: SidebarNavItem[] = [

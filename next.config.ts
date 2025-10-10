@@ -21,7 +21,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  serverExternalPackages: ['@prisma/client'],
 };
 
 const withNextIntl = createNextIntlPlugin({

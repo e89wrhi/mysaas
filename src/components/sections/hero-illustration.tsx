@@ -12,15 +12,16 @@ interface AiIllustrationProps {
 export default function AiTransformIllustration({}: AiIllustrationProps) {
   const [stage, setStage] = useState('falling'); // "falling" → "processing" → "info"
   const images = [
-    '/_products/arc/item2.png',
-    '/_products/arc/item3.png',
-    '/_products/arc/item5.png',
-    '/_products/arc/item8.png',
+    '/_products/chair.png',
+    '/_products/lamp.png',
+    '/_products/lamp2.png',
+    '/_products/phone.png',
+    '/_products/pc.png',
   ]; // your image paths
 
   useEffect(() => {
     if (stage === 'falling') {
-      const timer = setTimeout(() => setStage('processing'), 3300);
+      const timer = setTimeout(() => setStage('processing'), 3500);
       return () => clearTimeout(timer);
     }
     if (stage === 'processing') {
@@ -34,8 +35,8 @@ export default function AiTransformIllustration({}: AiIllustrationProps) {
   }, [stage]);
 
   return (
-    <div className="relative w-full flex items-center justify-center">
-      <div className="relative w-80 h-80 rounded-4xl overflow-hidden flex items-center justify-center shadow-xl">
+    <div className="relative flex flex-col w-full flex items-center justify-center">
+      <div className="relative w-80 h-80 rounded-4xl overflow-hidden flex items-center justify-center">
         <AnimatePresence mode="wait">
           {/* Falling Image */}
           {stage === 'falling' && (
@@ -146,10 +147,10 @@ export default function AiTransformIllustration({}: AiIllustrationProps) {
 
               {/* Scattered mini logos */}
               {[
-                { src: '/_social/netflix.png', x: -120, y: -60 },
-                { src: '/_social/airbnb.png', x: 120, y: -60 },
-                { src: '/_social/wechat.png', x: -100, y: 100 },
-                { src: '/_social/apple.png', x: 100, y: 100 },
+                { src: '/_social/amazon.png', x: -120, y: -60 },
+                { src: '/_social/amazon2.png', x: 120, y: -60 },
+                { src: '/_social/shopify.png', x: -100, y: 100 },
+                { src: '/_social/ebay.png', x: 100, y: 100 },
               ].map((logo, i) => (
                 <motion.img
                   key={i}

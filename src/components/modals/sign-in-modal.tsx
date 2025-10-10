@@ -1,12 +1,13 @@
-import { signIn } from '@/lib/auth-client';
+'use client';
+
 import {
-  Dispatch,
-  SetStateAction,
+  useState,
   useCallback,
   useMemo,
-  useState,
+  Dispatch,
+  SetStateAction,
 } from 'react';
-
+import { SignInButton } from '@clerk/nextjs';
 import { Icons } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import { Modal } from '@/components/ui/modal';
@@ -19,8 +20,6 @@ function SignInModal({
   showSignInModal: boolean;
   setShowSignInModal: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [signInClicked, setSignInClicked] = useState(false);
-
   return (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
       <div className="w-full">
@@ -36,31 +35,16 @@ function SignInModal({
         </div>
 
         <div className="flex flex-col space-y-4 bg-secondary/50 px-4 py-8 md:px-16">
-          <Button
-            variant="default"
-            disabled={signInClicked}
-            onClick={async () => {
-              setSignInClicked(true);
-              try {
-                await signIn.social({
-                  provider: 'google',
-                  callbackURL: '/dashboard',
-                });
-                setShowSignInModal(false);
-              } catch (error) {
-                console.error('Sign in failed:', error);
-              } finally {
-                setSignInClicked(false);
-              }
-            }}
-          >
-            {signInClicked ? (
-              <Icons.spinner className="mr-2 size-4 animate-spin" />
-            ) : (
+          {/* Clerk SignInButton */}
+          <SignInButton mode="modal" signUpFallbackRedirectUrl="/dashboard">
+            <Button
+              variant="default"
+              className="flex items-center justify-center"
+            >
               <Icons.google className="mr-2 size-4" />
-            )}{' '}
-            Sign In with Google
-          </Button>
+              Sign In with Google
+            </Button>
+          </SignInButton>
         </div>
       </div>
     </Modal>

@@ -9,8 +9,9 @@ import { PricingFaq } from '@/components/pricing/pricing-faq';
 //import { getPlans } from '@/lib/stripe/stripe';
 
 export const metadata = constructMetadata({
-  title: 'Pricing – Port',
-  description: 'Explore our subscription plans.',
+  title: 'Pricing – AI Product Description Generator',
+  description:
+    'Choose the perfect plan to transform your product images into compelling descriptions. Free starter plan available.',
 });
 
 export default async function PricingPage() {

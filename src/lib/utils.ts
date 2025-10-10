@@ -26,17 +26,7 @@ export function constructMetadata({
   return {
     title,
     description,
-    keywords: [
-      'Next.js',
-      'React',
-      'Prisma',
-      'Neon',
-      'Auth.js',
-      'shadcn ui',
-      'Resend',
-      'React Email',
-      'Stripe',
-    ],
+    keywords: ['Next.js', 'React', 'Clerk', 'shadcn ui'],
     authors: [
       {
         name: 'mark',

@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { UserAuthForm } from '@/components/forms/user-auth-form';
 import { Icons } from '@/components/shared/icons';
-import logo from '@/assets/lamp_icon.png';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
@@ -32,7 +31,7 @@ export default function LoginPage() {
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col items-center space-y-2 text-center">
           <Image
-            src={logo}
+            src="/logo.png"
             alt="logo"
             height={100}
             width={100}

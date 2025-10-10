@@ -13,7 +13,7 @@ export default function BentoGrid() {
               <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                 <div className="space-y-2">
                   <h2 className="text-2xl font-semibold text-foreground">
-                    Intelligent Note
+                    Intelligent Listing
                   </h2>
                 </div>
               </div>
@@ -24,7 +24,7 @@ export default function BentoGrid() {
                   {/* First item */}
                   <div className="relative flex w-[calc(50%+1rem)] items-center justify-end gap-3">
                     <span className="block h-fit rounded-full bg-muted/50 px-3 py-2 text-base">
-                      Writing Note..
+                      Analyzing image..
                     </span>
                     <div className="size-12 ring-6 ring-background">
                       <Image
@@ -49,7 +49,7 @@ export default function BentoGrid() {
                       />
                     </div>
                     <span className="block h-fit rounded-full bg-green-400/40 px-3 py-2 text-base">
-                      Generating...
+                      Generating listing info...
                     </span>
                   </div>
 

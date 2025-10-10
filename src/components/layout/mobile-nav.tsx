@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import { useSession } from '@/lib/auth-client';
 
 //import { docsConfig } from '@/config/';
 import { marketingConfig } from '@/config/marketing';
@@ -14,9 +13,10 @@ import { cn } from '@/lib/utils';
 import { Icons } from '@/components/shared/icons';
 
 import { ModeToggle } from './mode-toggle';
+import { useUser } from '@clerk/nextjs';
 
 export function NavMobile() {
-  const { data: session } = useSession();
+  const { user, isSignedIn } = useUser();
   const [open, setOpen] = useState(false);
   const selectedLayout = useSelectedLayoutSegment();
   const documentation = selectedLayout === 'docs';
@@ -74,9 +74,9 @@ export function NavMobile() {
               </li>
             ))}
 
-          {session ? (
+          {isSignedIn && user ? (
             <>
-              {session.user.role === 'ADMIN' ? (
+              {user.publicMetadata.role === 'ADMIN' ? (
                 <li className="py-3">
                   <Link
                     href="/admin"

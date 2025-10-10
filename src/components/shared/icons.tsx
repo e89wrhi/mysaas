@@ -46,12 +46,18 @@ import {
   FolderOpenDot,
   ArrowLeft,
   ShoppingBag,
+  Sparkle,
+  ChartBar,
+  Users,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
 
 export const Icons = {
   add: Plus,
+  sparkles: Sparkle,
+  chart: ChartBar,
+  users: Users,
   camera: Camera,
   back: ArrowLeft,
   arrowRight: ArrowRight,

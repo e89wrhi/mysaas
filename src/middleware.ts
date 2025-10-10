@@ -1,63 +1,58 @@
-import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { getSessionCookie } from 'better-auth/cookies';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
 const PUBLIC_FILE = /\..*$/;
 const locales = ['en', 'am', 'ja', 'zh', 'ar'];
 const defaultLocale = 'en';
-const PROTECTED_PATHS = ['/dashboard'];
-const AUTH_PAGES = ['/login', '/signup'];
 
-export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+// Routes
+const AUTH_PAGES = ['/sign-in', '/sign-up', '/verify-2fa'];
+const PROTECTED_PATHS = ['/dashboard', '/settings', '/account'];
 
-  // --- Skip static files, _next, and API routes ---
-  if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/api') ||
-    PUBLIC_FILE.test(pathname)
-  ) {
+export default clerkMiddleware(async (auth, req) => {
+  const { pathname } = req.nextUrl;
+
+  if (pathname.startsWith('/_next') || PUBLIC_FILE.test(pathname)) {
     return NextResponse.next();
   }
 
-  // --- Get Better Auth session ---
-  const sessionCookie = getSessionCookie(request);
-
-  // --- Redirect logged-in users away from auth pages ---
-  if (sessionCookie && AUTH_PAGES.includes(pathname)) {
-    return NextResponse.redirect(new URL('/dashboard', request.url));
-  }
-
-  // --- Redirect unauthenticated users from protected routes ---
-  if (
-    !sessionCookie &&
-    PROTECTED_PATHS.some((path) => pathname.startsWith(path))
-  ) {
-    return NextResponse.redirect(new URL('/login', request.url));
-  }
-
-  // --- Locale handling ---
+  // Locale handling
   const segments = pathname.split('/').filter(Boolean);
   const maybeLocale = segments[0];
   const hasLocale = locales.includes(maybeLocale);
 
-  if (hasLocale) {
-    const response = NextResponse.next();
-    response.cookies.set('NEXT_LOCALE', maybeLocale, { path: '/' });
-    return response;
+  if (!hasLocale) {
+    const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value;
+    const targetLocale = locales.includes(cookieLocale ?? '')
+      ? cookieLocale!
+      : defaultLocale;
+
+    const url = req.nextUrl.clone();
+    url.pathname = `/${targetLocale}${pathname}`;
+    return NextResponse.redirect(url);
   }
 
-  // Pick locale from cookie or fallback to default
-  const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
-  const targetLocale = locales.includes(cookieLocale ?? '')
-    ? cookieLocale
-    : defaultLocale;
+  const isAuthPage = AUTH_PAGES.includes(pathname);
+  const isProtected = PROTECTED_PATHS.some((p) => pathname.startsWith(p));
 
-  const url = request.nextUrl.clone();
-  url.pathname = `/${targetLocale}${pathname}`;
-  return NextResponse.redirect(url);
-}
+  if (isProtected) {
+    await auth.protect();
+  }
+
+  const { userId } = await auth();
+
+  if (userId && isAuthPage) {
+    return NextResponse.redirect(new URL('/dashboard', req.url));
+  }
+
+  return NextResponse.next();
+});
 
 export const config = {
-  matcher: ['/((?!_next|api|.*\\..*).*)'], // all routes except API/_next/static
+  matcher: [
+    // Run for all pages except Next.js internals and static files
+    '/((?!_next/|.*\\..*).*)',
+    // Also run for API routes
+    '/api/:path*',
+  ],
 };

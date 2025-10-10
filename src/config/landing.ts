@@ -2,50 +2,53 @@ import { FeatureLdg, InfoLdg, TestimonialType } from '@/types';
 
 export const infos: InfoLdg[] = [
   {
-    title: 'Empower your projects',
+    title: 'Turn Images into Listings Instantly',
     description:
-      'Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.',
-    image: '/_static/illustrations/work-from-home.jpg',
+      'Port uses AI to transform your product images into complete listings for Amazon, eBay, Etsy, and more. Save hours on manual data entry and focus on growing your business.',
+    image: '/_static/illustrations/product-ai.jpg',
     list: [
       {
-        title: 'Collaborative',
-        description: 'Work together with your team members in real-time.',
-        icon: 'laptop',
-      },
-      {
-        title: 'Innovative',
-        description: 'Stay ahead of the curve with access constant updates.',
+        title: 'AI-Powered',
+        description:
+          'Our AI automatically detects product details, generates titles, and writes optimized descriptions.',
         icon: 'settings',
       },
       {
-        title: 'Scalable',
+        title: 'Multi-Platform',
         description:
-          'Our platform offers the scalability needed to adapt to your needs.',
+          'Publish listings directly to top marketplaces in one click—no copy-pasting required.',
+        icon: 'laptop',
+      },
+      {
+        title: 'Accurate & Fast',
+        description:
+          'Get reliable, high-quality listings in seconds, ready for any platform’s requirements.',
         icon: 'search',
       },
     ],
   },
   {
-    title: 'Seamless Integration',
+    title: 'Seamless Seller Workflow',
     description:
-      'Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.',
+      'Integrate Port effortlessly into your eCommerce workflow. Sync with existing stores, manage listings, and track performance from a single dashboard.',
     image: '/_avatars/a9.png',
     list: [
       {
-        title: 'Flexible',
+        title: 'Flexible Integrations',
         description:
-          'Customize your integrations to fit your unique requirements.',
+          'Connect Port with Amazon, eBay, Etsy, Shopify, or any platform you sell on.',
         icon: 'laptop',
       },
       {
-        title: 'Efficient',
-        description: 'Streamline your processes and reducing manual effort.',
+        title: 'Smart Organization',
+        description:
+          'Automatically categorize products and suggest tags to boost visibility and SEO.',
         icon: 'search',
       },
       {
-        title: 'Reliable',
+        title: 'Reliable Infrastructure',
         description:
-          'Rely on our robust infrastructure and comprehensive documentation.',
+          'Built for performance and uptime—your listings and data are safe and always accessible.',
         icon: 'settings',
       },
     ],
@@ -54,97 +57,97 @@ export const infos: InfoLdg[] = [
 
 export const features: FeatureLdg[] = [
   {
-    title: 'Feature 1',
+    title: 'AI Listing Generator',
     description:
-      'Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.',
+      'Upload a product photo and let Port create a complete listing with title, description, category, and pricing suggestions.',
     link: '/',
-    icon: 'nextjs',
+    icon: 'sparkles',
   },
   {
-    title: 'Feature 2',
+    title: 'Marketplace Integration',
     description:
-      'Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.',
+      'Instantly connect and publish to Amazon, eBay, and Etsy with one click—no repetitive data entry.',
     link: '/',
-    icon: 'google',
+    icon: 'cart',
   },
   {
-    title: 'Feature 3',
+    title: 'Smart Tagging & SEO',
     description:
-      'Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.',
+      'AI automatically generates SEO-friendly keywords and tags to maximize your product’s reach.',
     link: '/',
-    icon: 'gitHub',
+    icon: 'search',
   },
   {
-    title: 'Feature 4',
+    title: 'Bulk Upload Support',
     description:
-      'Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.',
-    link: '/',
-    icon: 'laptop',
-  },
-  {
-    title: 'Feature 5',
-    description:
-      'Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.',
-    link: '/',
-    icon: 'user',
-  },
-  {
-    title: 'Feature 6',
-    description:
-      'Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.',
+      'Upload multiple products at once and let Port process, generate, and publish them in batches.',
     link: '/',
     icon: 'copy',
+  },
+  {
+    title: 'Performance Insights',
+    description:
+      'Track how your listings perform across platforms with AI-powered analytics and improvement suggestions.',
+    link: '/',
+    icon: 'chart',
+  },
+  {
+    title: 'Collaborative Workspace',
+    description:
+      'Invite team members to review, edit, and publish listings together, ensuring quality and consistency.',
+    link: '/',
+    icon: 'users',
   },
 ];
 
 export const testimonials: TestimonialType[] = [
   {
-    name: 'John Doe',
-    job: 'Full Stack Developer',
+    name: 'Sarah Miller',
+    job: 'Etsy Shop Owner',
     image: '/_avatars/a1.png',
     review:
-      'This AI Note & To-Do app has completely changed how I organize my projects. The AI suggestions help me prioritize tasks and never miss deadlines. It feels like having a personal assistant built right into my workflow.',
+      "Port saves me hours every week. I just upload a product photo, and it generates the full Etsy listing — title, description, and tags included. It's like having my own AI assistant.",
   },
   {
-    name: 'Alice Smith',
-    job: 'UI/UX Designer',
+    name: 'James Roberts',
+    job: 'Amazon Seller',
     image: '/_avatars/a2.png',
     review:
-      "I love how clean and intuitive the interface is. Taking notes during meetings and instantly converting them into actionable tasks saves me so much time. It's a game-changer for my design sprints.",
+      'I’ve tried other tools, but Port’s AI listings are incredibly accurate. It understands what I’m selling just from an image and creates Amazon-ready listings instantly.',
   },
   {
-    name: 'David Johnson',
-    job: 'DevOps Engineer',
+    name: 'Olivia Chen',
+    job: 'eBay Power Seller',
     image: '/_avatars/a3.png',
     review:
-      'Managing deployments and checklists is way easier now. The AI automatically organizes my notes into tasks, so I can focus on problem-solving instead of tracking details manually.',
+      'Port has completely changed how I manage eBay listings. I can upload dozens of product images at once and publish everything in minutes.',
   },
   {
-    name: 'Michael Wilson',
-    job: 'Project Manager',
+    name: 'David Lopez',
+    job: 'E-commerce Manager',
     image: '/_avatars/a4.png',
     review:
-      'Finally, an app that combines note-taking and task management seamlessly. I can track progress, assign tasks, and keep the team aligned—all from one place. Highly recommended for teams.',
+      'Our team uses Port daily. It cut down our product listing time by 80%. The integration with Shopify and Amazon just works.',
   },
   {
-    name: 'Sophia Garcia',
-    job: 'Data Analyst',
+    name: 'Nina Patel',
+    job: 'Small Business Owner',
     image: '/_avatars/a5.png',
     review:
-      'This app makes it easy to capture insights from meetings and instantly convert them into structured tasks. I save hours every week by not having to reorganize my notes manually.',
+      'I’m not tech-savvy, but Port made listing products so simple. It handles everything from writing to categorizing. My Etsy shop has never looked more professional.',
   },
   {
-    name: 'Emily Brown',
-    job: 'Marketing Manager',
+    name: 'Robert Green',
+    job: 'Dropshipper',
     image: '/_avatars/a6.png',
     review:
-      "I use the AI to summarize campaign ideas and turn them into actionable plans. It's boosted our productivity and helped us launch campaigns faster than ever.",
+      'Bulk upload is a game-changer. Port generates listings faster than any VA I’ve ever hired — and it’s more consistent.',
   },
   {
-    name: 'Jason Stan',
-    job: 'Web Designer',
+    name: 'Elena Cruz',
+    job: 'Creative Seller',
     image: '/_avatars/a7.png',
     review:
-      'The AI Note & To-Do app helps me capture design ideas quickly and manage revisions effortlessly. It keeps me organized so I can focus more on creativity instead of admin tasks.',
+      'The AI-generated product descriptions sound natural and engaging. My products now rank higher and attract more buyers across marketplaces.',
   },
 ];

@@ -1,4 +1,3 @@
-import { User } from '@prisma/client';
 import { Icons } from '@/components/shared/icons';
 
 export interface SiteConfig {
@@ -57,14 +56,6 @@ export interface SubscriptionPlan {
   };
 }
 
-export type UserSubscriptionPlan = SubscriptionPlan &
-  Pick<User, 'stripeCustomerId' | 'stripeSubscriptionId' | 'stripePriceId'> & {
-    stripeCurrentPeriodEnd: number;
-    isPaid: boolean;
-    interval: 'month' | 'year' | null;
-    isCanceled?: boolean;
-  };
-
 // compare plans
 export type ColumnType = string | boolean | null;
 export type PlansRow = { feature: string; tooltip?: string } & Record<
@@ -100,263 +91,19 @@ export interface TestimonialType {
   review: string;
 }
 
-// shop types
-
-export interface CartProduct {
-  id: string;
-  handle: string;
-  title: string;
-  featuredImage: Image;
-}
-
-export interface CartItem {
-  id: string | undefined;
-  quantity: number;
-  cost: {
-    totalAmount: Money;
-  };
-  merchandise: {
-    id: string;
-    title: string;
-    selectedOptions: {
-      name: string;
-      value: string;
-    }[];
-    product: CartProduct;
-  };
-}
-
-export type Collection = ShopCollection & {
-  path: string;
-};
-
-export interface Image {
-  url: string;
-  altText: string;
-  width: number;
-  height: number;
-}
-
-export interface Menu {
-  title: string;
-  path: string;
-}
-
-export interface Money {
-  amount: string;
-  currencyCode: string;
-}
-
-export interface Page {
-  id: string;
-  title: string;
-  handle: string;
-  body: string;
-  bodySummary: string;
-  seo?: SEO;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export type Product = Omit<ShopProduct, 'variants' | 'images'> & {
-  variants: ProductVariant[];
-  images: Image[];
-};
-
-export interface ProductOption {
-  id: string;
-  name: string;
-  values: string[];
-}
-
-export interface ProductVariant {
-  id: string;
-  title: string;
-  availableForSale: boolean;
-  selectedOptions: {
-    name: string;
-    value: string;
-  }[];
-  price: Money;
-}
-
-export interface SEO {
-  title: string;
-  description: string;
-}
-
-export interface ShopCart {
-  id: string | undefined;
-  checkoutUrl: string;
-  cost: {
-    subtotalAmount: Money;
-    totalAmount: Money;
-    totalTaxAmount: Money;
-  };
-  lines: Connection<CartItem>;
-  totalQuantity: number;
-}
-
-export interface ShopCollection {
-  handle: string;
-  title: string;
-  description: string;
-  seo: SEO;
-  updatedAt: string;
-}
-
-export interface ShopProduct {
-  id: string;
-  handle: string;
-  availableForSale: boolean;
-  title: string;
-  description: string;
-  descriptionHtml: string;
-  options: ProductOption[];
-  priceRange: {
-    maxVariantPrice: Money;
-    minVariantPrice: Money;
-  };
-  variants: Connection<ProductVariant>;
-  featuredImage: Image;
-  images: Connection<Image>;
-  seo: SEO;
-  tags: string[];
-  updatedAt: string;
-}
-
-export interface ShopCartOperation {
-  data: {
-    cart: ShopCart;
-  };
-  variables: {
-    cartId: string;
-  };
-}
-
-export interface ShopCreateCartOperation {
-  data: { cartCreate: { cart: ShopCart } };
-}
-
-export interface ShopAddToCartOperation {
-  data: {
-    cartLinesAdd: {
-      cart: ShopCart;
-    };
-  };
-  variables: {
-    cartId: string;
-    lines: {
-      merchandiseId: string;
-      quantity: number;
-    }[];
-  };
-}
-
-export interface ShopRemoveFromCartOperation {
-  data: {
-    cartLinesRemove: {
-      cart: ShopCart;
-    };
-  };
-  variables: {
-    cartId: string;
-    lineIds: string[];
-  };
-}
-
-export interface ShopUpdateCartOperation {
-  data: {
-    cartLinesUpdate: {
-      cart: ShopCart;
-    };
-  };
-  variables: {
-    cartId: string;
-    lines: {
-      id: string;
-      merchandiseId: string;
-      quantity: number;
-    }[];
-  };
-}
-
-export interface ShopCollectionOperation {
-  data: {
-    collection: ShopCollection;
-  };
-  variables: {
-    handle: string;
-  };
-}
-
-export interface ShopCollectionProductsOperation {
-  data: {
-    collection: {
-      products: Connection<ShopProduct>;
-    };
-  };
-  variables: {
-    handle: string;
-    reverse?: boolean;
-    sortKey?: string;
-  };
-}
-
-export interface ShopCollectionsOperation {
-  data: {
-    collections: Connection<ShopCollection>;
-  };
-}
-
-export interface ShopMenuOperation {
-  data: {
-    menu?: {
-      items: {
-        title: string;
-        url: string;
-      }[];
-    };
-  };
-  variables: {
-    handle: string;
-  };
-}
-
-export interface ShopPageOperation {
-  data: { pageByHandle: Page };
-  variables: { handle: string };
-}
-
-export interface ShopPagesOperation {
-  data: {
-    pages: Connection<Page>;
-  };
-}
-
-export interface ShopProductOperation {
-  data: { product: ShopProduct };
-  variables: {
-    handle: string;
-  };
-}
-
-export interface ShopProductRecommendationsOperation {
-  data: {
-    productRecommendations: ShopProduct[];
-  };
-  variables: {
-    productId: string;
-  };
-}
-
-export interface ShopProductsOperation {
-  data: {
-    products: Connection<ShopProduct>;
-  };
-  variables: {
-    query?: string;
-    reverse?: boolean;
-    sortKey?: string;
-  };
+export interface Product {
+  id?: string; // Supabase auto-generated UUID
+  user_id: string; // Clerk user ID
+  image_url: string;
+  platform: string;
+  title?: string;
+  description?: string;
+  tags?: string[];
+  category?: string;
+  price?: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  listing_data?: any; // JSON or any extra data
+  status: string;
+  created_at: number;
+  updated_at: number;
 }

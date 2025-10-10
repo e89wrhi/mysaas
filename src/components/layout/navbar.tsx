@@ -1,24 +1,19 @@
 'use client';
 
-import { useContext } from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { useSession } from '@/lib/auth-client';
-
-//import { docsConfig } from '@/config/docs';
 import { marketingConfig } from '@/config/marketing';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { useScroll } from '@/hooks/use-scroll';
 import { Button } from '@/components/ui/button';
-//import { Skeleton } from '@/components/ui/skeleton';
-//import { DocsSearch } from '@/components/docs/search';
-import { ModalContext } from '@/components/modals/providers';
 import { Icons } from '@/components/shared/icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import Image from 'next/image';
 import { LocaleChange } from './change-locale';
 import { ModeToggle } from './mode-toggle';
+import { SignInButton, useUser } from '@clerk/nextjs';
+import { UserAccountNav } from './user-account-nav';
 
 interface NavBarProps {
   scroll?: boolean;
@@ -27,8 +22,7 @@ interface NavBarProps {
 
 export function NavBar({ scroll = false }: NavBarProps) {
   const scrolled = useScroll(50);
-  const { data: session } = useSession();
-  const { setShowSignInModal } = useContext(ModalContext);
+  const { user, isSignedIn } = useUser();
 
   const selectedLayout = useSelectedLayoutSegment();
   const documentation = selectedLayout === 'docs';
@@ -111,26 +105,19 @@ export function NavBar({ scroll = false }: NavBarProps) {
             </div>
           ) : null}
 
-          {session != null ? (
-            <Link href={'/dashboard'} className="hidden md:block">
+          {isSignedIn && user != null ? (
+            <UserAccountNav />
+          ) : (
+            <SignInButton>
               <Button
-                className="gap-2 px-5 rounded-full bg-green-400"
+                className="hidden gap-2 px-5 rounded-full md:flex bg-green-400"
                 variant="default"
                 size="sm"
               >
-                <span>Dashboard</span>
+                <span>Sign In</span>
+                <Icons.arrowRight className="size-4" />
               </Button>
-            </Link>
-          ) : (
-            <Button
-              className="hidden gap-2 px-5 rounded-full md:flex bg-green-400"
-              variant="default"
-              size="sm"
-              onClick={() => setShowSignInModal(true)}
-            >
-              <span>Sign In</span>
-              <Icons.arrowRight className="size-4" />
-            </Button>
+            </SignInButton>
           )}
         </div>
       </MaxWidthWrapper>
