@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -66,7 +69,7 @@
     "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
-    "sharp": "^0.34.4",
+    "sharp": "^0.32.6",
     "shiki": "^1.29.2",
     "sonner": "^1.7.4",
     "stripe": "^15.12.0",
