@@ -6,7 +6,6 @@ import { useMDXComponent } from 'next-contentlayer2/hooks';
 
 import { cn } from '@/lib/utils';
 import { MdxCard } from '@/components/content/mdx-card';
-import BlurImage from '@/components/shared/blur-image';
 import { Callout } from '@/components/shared/callout';
 import { CopyButton } from '@/components/shared/copy-button';
 
@@ -202,36 +201,17 @@ const components = {
 
 interface MdxProps {
   code: string;
-  images?: { alt: string; src: string; blurDataURL: string }[];
+  //images?: { alt: string; src: string; blurDataURL: string }[];
 }
 
-export function Mdx({ code, images }: MdxProps) {
+export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const MDXImage = (props: any) => {
-    if (!images) return null;
-    const blurDataURL = images.find(
-      (image) => image.src === props.src
-    )?.blurDataURL;
-
-    return (
-      <div className="mt-5 w-full overflow-hidden rounded-lg border">
-        <BlurImage
-          {...props}
-          blurDataURL={blurDataURL}
-          className="size-full object-cover object-center"
-        />
-      </div>
-    );
-  };
 
   return (
     <div className="mdx">
       <Component
         components={{
           ...components,
-          Image: MDXImage,
         }}
       />
     </div>
