@@ -8,8 +8,10 @@ import { UserAvatar } from '@/components/shared/user-avatar';
 import { toast } from 'sonner';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import { supabase } from '@/lib/supabase';
+import LoadingView from '@/components/shared/loading-view';
+import { SignInEmptyView } from '@/components/shared/signin-empty-view';
 
-export default function SettingsPage() {
+export default function UpdatePage() {
   const { user, isSignedIn } = useUser();
   const [isUpdating, setIsUpdating] = useState(false);
 
@@ -45,12 +47,10 @@ export default function SettingsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id, supabase]);
 
-  if (!isSignedIn || !user) {
-    return <p>Please sign in to view your settings.</p>;
-  }
+  if (!isSignedIn || !user) return <SignInEmptyView text="Profile" />;
 
   if (isLoading) {
-    return <p>Loading..</p>;
+    return <LoadingView />;
   }
   const handleUpdateName = async () => {
     if (!user?.id) return;

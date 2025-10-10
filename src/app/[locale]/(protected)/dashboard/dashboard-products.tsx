@@ -13,6 +13,8 @@ import Image from 'next/image';
 import { Product } from '@/types';
 import { generateMockProduct } from '@/lib/mockProduct';
 import { supabase } from '@/lib/supabase';
+import LoadingView from '@/components/shared/loading-view';
+import { SignInEmptyView } from '@/components/shared/signin-empty-view';
 
 interface Props {
   serverProducts: Product[];
@@ -54,11 +56,10 @@ export default function ProductsClient({ serverProducts }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id, supabase]);
 
-  if (!isSignedIn || !user)
-    return <p>Please sign in to view your dashboard.</p>;
+  if (!isSignedIn || !user) return <SignInEmptyView text="Dashboard" />;
 
   if (isLoading) {
-    return <p>Loading..</p>;
+    return <LoadingView />;
   }
 
   const handleConvertNew = () => router.push('/convert');

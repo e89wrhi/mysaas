@@ -20,6 +20,8 @@ import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import { Icons } from '@/components/shared/icons';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import LoadingView from '@/components/shared/loading-view';
+import { SignInEmptyView } from '@/components/shared/signin-empty-view';
 
 export default function SettingsPage() {
   const { user, isSignedIn } = useUser();
@@ -56,12 +58,10 @@ export default function SettingsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id, supabase]);
 
-  if (!isSignedIn || !user) {
-    return <p>Please sign in to view your settings.</p>;
-  }
+  if (!isSignedIn || !user) return <SignInEmptyView text="Settings" />;
 
   if (isLoading) {
-    return <p>Loading..</p>;
+    return <LoadingView />;
   }
 
   const handleDeleteAccount = async () => {

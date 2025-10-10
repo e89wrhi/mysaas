@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { LayoutDashboard, Lock, LogOut, Settings } from 'lucide-react';
 import { Drawer } from 'vaul';
@@ -16,6 +16,9 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { UserAvatar } from '@/components/shared/user-avatar';
 import { Button } from '../ui/button';
+import { supabase } from '@/lib/supabase';
+import { toast } from 'sonner';
+import { Spinner } from '../ui/spinner';
 
 export function UserAccountNav() {
   const { user, isSignedIn } = useUser();
@@ -24,6 +27,36 @@ export function UserAccountNav() {
   const closeDrawer = () => setOpen(false);
 
   const { isMobile } = useMediaQuery();
+  const [isLoading, setIsLoading] = useState(true);
+  const [name, setName] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+
+  // --- Fetch Supabase profile ---
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (!user?.id) return;
+
+      const { data, error } = await supabase
+        .from('user')
+        .select('name, image, email')
+        .eq('clerk_id', user.id)
+        .single();
+
+      if (error) {
+        console.error('Error fetching profile:', error);
+        toast.error('Failed to load user profile.');
+      } else {
+        //setProfile(data);
+        setName(data.name || '');
+        setImageUrl(data.image || '');
+      }
+
+      setIsLoading(false);
+    };
+
+    fetchProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id, supabase]);
 
   if (!isSignedIn || !user) {
     return (
@@ -33,11 +66,31 @@ export function UserAccountNav() {
 
   const role = user.publicMetadata.role as string | undefined;
 
+  if (isLoading) {
+    <Drawer.Root>
+      <Drawer.Root open={open} onClose={closeDrawer}>
+        <Drawer.Trigger onClick={() => setOpen(true)}>
+          <Spinner />
+        </Drawer.Trigger>
+        <Drawer.Portal>
+          <Drawer.Overlay
+            className="fixed inset-0 z-40 h-full bg-background/80 backdrop-blur-sm"
+            onClick={closeDrawer}
+          />
+          <Drawer.Content className="fixed inset-x-0 bottom-0 z-50 mt-24 overflow-hidden rounded-t-[10px] bg-background/60 backdrop-blur-xl px-3 text-sm">
+            <Spinner />
+          </Drawer.Content>
+          <Drawer.Overlay />
+        </Drawer.Portal>
+      </Drawer.Root>
+    </Drawer.Root>;
+  }
+
   if (isMobile) {
     return (
       <Drawer.Root open={open} onClose={closeDrawer}>
         <Drawer.Trigger onClick={() => setOpen(true)}>
-          <UserAvatar name={user.fullName || `-`} image={user.imageUrl || ``} />
+          <UserAvatar name={name || `-`} image={imageUrl || ``} />
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay
@@ -51,9 +104,7 @@ export function UserAccountNav() {
 
             <div className="flex items-center justify-start gap-2 p-2">
               <div className="flex flex-col">
-                {user.fullName && (
-                  <p className="font-medium">{user.fullName}</p>
-                )}
+                {name && <p className="font-medium">{name}</p>}
                 {user.primaryEmailAddress && (
                   <p className="w-[200px] truncate text-muted-foreground">
                     {user.primaryEmailAddress.emailAddress}
@@ -117,12 +168,12 @@ export function UserAccountNav() {
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger>
-        <UserAvatar name={user.fullName || `-`} image={user.imageUrl || ``} />
+        <UserAvatar name={name || `-`} image={imageUrl || ``} />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <div className="flex items-center justify-start gap-2 p-2">
           <div className="flex flex-col space-y-1 leading-none">
-            {user.fullName && <p className="font-medium">{user.fullName}</p>}
+            {name && <p className="font-medium">{name}</p>}
             {user.primaryEmailAddress && (
               <p className="w-[200px] truncate text-sm text-muted-foreground">
                 {user.primaryEmailAddress.emailAddress}

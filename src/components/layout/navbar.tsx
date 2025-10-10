@@ -23,16 +23,7 @@ interface NavBarProps {
 export function NavBar({ scroll = false }: NavBarProps) {
   const scrolled = useScroll(50);
   const { user, isSignedIn } = useUser();
-
   const selectedLayout = useSelectedLayoutSegment();
-  const documentation = selectedLayout === 'docs';
-
-  const configMap = {
-    //docs: docsConfig.mainNav,
-  };
-
-  const links =
-    (selectedLayout && configMap[selectedLayout]) || marketingConfig.mainNav;
 
   return (
     <header
@@ -40,10 +31,7 @@ export function NavBar({ scroll = false }: NavBarProps) {
         scroll ? (scrolled ? 'border-b' : 'bg-transparent') : 'border-b'
       }`}
     >
-      <MaxWidthWrapper
-        className="flex h-14 items-center justify-between py-4"
-        large={documentation}
-      >
+      <MaxWidthWrapper className="flex h-14 items-center justify-between py-4">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-1">
             <Image
@@ -58,9 +46,9 @@ export function NavBar({ scroll = false }: NavBarProps) {
             </span>
           </Link>
 
-          {links && links.length > 0 ? (
+          {marketingConfig && marketingConfig.mainNav.length > 0 ? (
             <nav className="hidden gap-6 md:flex">
-              {links.map((item, index) => (
+              {marketingConfig.mainNav.map((item, index) => (
                 <Link
                   key={index}
                   href={item.disabled ? '#' : item.href}
@@ -83,27 +71,6 @@ export function NavBar({ scroll = false }: NavBarProps) {
         <div className="flex items-center space-x-3">
           <LocaleChange pathname="" />
           <ModeToggle />
-          {/* right header for docs */}
-          {documentation ? (
-            <div className="hidden flex-1 items-center space-x-4 sm:justify-end lg:flex">
-              <div className="hidden lg:flex lg:grow-0">
-                {/*<DocsSearch />*/}
-              </div>
-              <div className="flex lg:hidden">
-                <Icons.search className="size-6 text-muted-foreground" />
-              </div>
-              <div className="flex space-x-4">
-                <Link
-                  href={siteConfig.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Icons.gitHub className="size-7" />
-                  <span className="sr-only">GitHub</span>
-                </Link>
-              </div>
-            </div>
-          ) : null}
 
           {isSignedIn && user != null ? (
             <UserAccountNav />
