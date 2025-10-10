@@ -1,31 +1,35 @@
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function GET(req: Request) {
-  try {
-    // Optional: get userId from query parameters
-    const url = new URL(req.url);
-    const userId = url.searchParams.get('userId');
+  const supabase = createRouteHandlerClient({ cookies });
 
-    let query = supabaseAdmin
-      .from('products')
-      .select('*')
-      .order('created_at', { ascending: false });
+  // Get logged-in user
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
 
-    if (userId) {
-      query = query.eq('user_id', userId);
-    }
+  if (userError || !user) {
+    return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
+  }
 
-    const { data, error } = await query;
+  // Fetch products for this user
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('user_id', user.id)
+    .order('created_at', { ascending: false });
 
-    if (error) throw error;
-
-    return NextResponse.json(data);
-  } catch (err) {
-    console.error('Failed to fetch products:', err);
+  if (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Failed to fetch products' },
       { status: 500 }
     );
   }
+
+  return NextResponse.json(data || []);
 }
