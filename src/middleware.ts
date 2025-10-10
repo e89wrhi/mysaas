@@ -18,7 +18,7 @@ export default clerkMiddleware(async (auth, req) => {
 
   // Skip locale redirection for API routes
   if (
-    pathname.startsWith('/api') ||
+    pathname.startsWith('/app/api') ||
     pathname.startsWith('/_next') ||
     PUBLIC_FILE.test(pathname)
   ) {
