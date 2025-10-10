@@ -33,16 +33,19 @@ export async function POST(req: Request) {
 
   try {
     if (type === 'user.created') {
+      console.info('reached user created');
+
       const user = data;
       await supabaseAdmin.from('user').insert({
         email: user.email_addresses?.[0]?.email_address || '',
-        emailVerified:
+        email_verified:
           user.email_addresses?.[0]?.verification?.status === 'verified',
         name: `${user.first_name || ''} ${user.last_name || ''}`.trim(),
         image: user.image_url,
-        clerkUser: user,
-        createdAt: Date.now(),
-        updatedAt: Date.now(),
+        foo: null,
+        clerk_user: user,
+        created_at: Date.now(),
+        updated_at: Date.now(),
       });
     }
 
