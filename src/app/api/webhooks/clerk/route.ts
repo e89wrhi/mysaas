@@ -43,13 +43,14 @@ export async function POST(req: Request) {
         image: user.image_url,
         foo: null,
         clerk_user: user,
+        clerk_id: user.id,
         created_at: Date.now(),
         updated_at: Date.now(),
       });
     }
 
     if (type === 'user.deleted') {
-      await supabaseAdmin.from('user').delete().eq('clerk_user.id', data.id); // dot notation for JSONB
+      await supabaseAdmin.from('user').delete().eq('clerk_id', data.id); // dot notation for JSONB
     }
 
     return NextResponse.json({ success: true });
