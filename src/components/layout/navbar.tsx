@@ -73,7 +73,12 @@ export function NavBar({ scroll = false }: NavBarProps) {
           <ModeToggle />
 
           {isSignedIn && user != null ? (
-            <UserAccountNav />
+            <div className="flex flex-row items-center justify-center space-x-4">
+              <Link href={'/convert'}>
+                <Icons.add className="text-green-400 size-6" />
+              </Link>
+              <UserAccountNav />
+            </div>
           ) : (
             <SignInButton>
               <Button

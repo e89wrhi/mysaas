@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import OpenAI from 'openai';
 
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
 export async function POST(req: NextRequest) {
   const { imageUrl, platform } = await req.json();
 
@@ -13,8 +15,6 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
     // Example: using GPT to generate product info from image URL
     const prompt = `
       Analyze the product from this image URL: ${imageUrl}.
@@ -27,8 +27,24 @@ export async function POST(req: NextRequest) {
     `;
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4',
-      messages: [{ role: 'user', content: prompt }],
+      model: 'gpt-4.1-mini',
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: prompt,
+            },
+            {
+              type: 'image_url',
+              image_url: imageUrl,
+            },
+          ],
+        },
+      ],
+      response_format: { type: 'json_object' },
+      temperature: 0.7,
     });
 
     const content = response.choices[0].message?.content || '{}';

@@ -8,7 +8,7 @@ interface UserAvatarProps {
 
 export function UserAvatar({ name, image }: UserAvatarProps) {
   return (
-    <Avatar className="size-7">
+    <Avatar className="size-7 rounded-full">
       {image ? (
         <AvatarImage alt="Picture" src={image} referrerPolicy="no-referrer" />
       ) : (

@@ -25,11 +25,7 @@ export default function PricingCards() {
   return (
     <MaxWidthWrapper>
       <section className="flex flex-col items-center text-center">
-        <HeaderSection
-          label="Pricing"
-          title="Choose Your Plan"
-          subtitle="Transform your product images into compelling descriptions with AI-powered precision"
-        />
+        <HeaderSection label="Pricing" title="Choose Your Plan" subtitle="" />
 
         <div className="mb-8 mt-10 flex items-center gap-5">
           <ToggleGroup

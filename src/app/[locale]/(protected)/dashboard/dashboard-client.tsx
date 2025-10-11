@@ -106,13 +106,14 @@ export default function DashboardClient({
 
       {/* Action Buttons */}
       <div className="flex items-center space-x-2">
-        <Button onClick={handleConvertNew} className="bg-primary">
-          Convert New Product
+        <Button onClick={handleConvertNew} className="bg-primary rounded-full">
+          Convert New
         </Button>
         <Button
           onClick={handleAddMockProduct}
           disabled={isCreatingMock}
           variant="secondary"
+          className="rounded-full"
           title="Create a random mock product for testing purposes"
         >
           {isCreatingMock ? (
@@ -123,7 +124,7 @@ export default function DashboardClient({
           ) : (
             <>
               <Plus className="mr-2 h-4 w-4" />
-              Add Mock Product
+              Add Mock
             </>
           )}
         </Button>

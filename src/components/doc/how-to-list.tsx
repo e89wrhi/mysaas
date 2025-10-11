@@ -14,7 +14,7 @@ export function HowtoList() {
             more.
           </p>
           <Image
-            src="/_illustration/illu_phone_account.png"
+            src="/_illustration/illu_phone_light.png"
             alt="Create account illustration"
             height={300}
             width={300}

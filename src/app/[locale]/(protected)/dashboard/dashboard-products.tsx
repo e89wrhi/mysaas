@@ -25,6 +25,7 @@ import {
 import Image from 'next/image';
 import { Product } from '@/types';
 import { Copy, Trash2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface Props {
   products: Product[];
@@ -49,7 +50,7 @@ export default function ProductsGrid({ products, onDelete }: Props) {
 
   const handleCopy = (product: Product) => {
     navigator.clipboard.writeText(JSON.stringify(product));
-    alert('Product copied!');
+    toast('Product copied!');
   };
 
   const handleDeleteClick = (product: Product) => {
@@ -83,7 +84,7 @@ export default function ProductsGrid({ products, onDelete }: Props) {
             </div>
 
             <CardHeader>
-              <CardTitle className="text-sm">
+              <CardTitle className="text-2xl font-bold">
                 Platform: {product.platform}
               </CardTitle>
             </CardHeader>
