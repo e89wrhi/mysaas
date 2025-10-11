@@ -6,8 +6,15 @@ import './env.mjs';
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['picsum.photos'],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
       {
         protocol: 'https',
         hostname: '**.uploadthing.com',

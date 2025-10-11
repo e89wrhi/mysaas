@@ -7,6 +7,7 @@ export const env = createEnv({
     CLERK_SECRET_KEY: z.string().min(1).optional(),
     CLERK_WEBHOOK_SECRET: z.string().min(1).optional(),
 
+    UPLOADTHING_TOKEN: z.string().base64(),
     // OpenAI
     OPENAI_API_KEY: z.string().min(1),
 
@@ -29,7 +30,7 @@ export const env = createEnv({
     CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
     CLERK_WEBHOOK_SECRET: process.env.CLERK_WEBHOOK_SECRET,
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
-
+    UPLOADTHING_TOKEN: process.env.UPLOADTHING_TOKEN,
     // OpenAI
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
 
