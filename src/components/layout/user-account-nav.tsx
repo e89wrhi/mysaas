@@ -89,7 +89,7 @@ export function UserAccountNav() {
   if (isMobile) {
     return (
       <Drawer.Root open={open} onClose={closeDrawer}>
-        <Drawer.Trigger onClick={() => setOpen(true)}>
+        <Drawer.Trigger className="rounded-full" onClick={() => setOpen(true)}>
           <UserAvatar name={name || `-`} image={imageUrl || ``} />
         </Drawer.Trigger>
         <Drawer.Portal>
@@ -167,7 +167,7 @@ export function UserAccountNav() {
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger className="rounded-full">
         <UserAvatar name={name || `-`} image={imageUrl || ``} />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
