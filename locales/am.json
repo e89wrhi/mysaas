@@ -3,5 +3,246 @@
     "light": "ብርሃን",
     "dark": "ጨለማ",
     "system": "ስርዓት"
+  },
+  "landing": {
+      "headline": "ስናፕ፣ ፈጣን፣ ሽያጭ።",
+      "subheadline": "ማንኛውም የምርት ፎቶ ወደ ሙሉ ፣ ለሱቅ ዝግጅት ዝርዝር በሰከንዶች ውስጥ ይቀየራል — ርዕሶች፣ መግለጫዎች፣ እና ሁሉም።",
+      "button": "መጀመር",
+      "convert": "ቀይር",
+      "ourStats": "የእኛ ስታትስ",
+      "generate": "ፍጠር",
+      "generateValue": "2.5ሚሊዮን",
+      "sales": "ሽያጭ",
+      "salesValue": "8.5ሺ",
+      "revenue": "ገቢ",
+      "revenueValue": "$120ሺ",
+      "growth": "እድገት",
+      "growthValue": "35%"
+    },
+  "pricing": {
+    "starterTitle": "መነሻ",
+    "starterDescription": "ለመጀመር ተስማሚ",
+    "starterBenefit1": "በወር እስከ 10 የእቃ መግለጫዎች",
+    "starterBenefit2": "መሰረታዊ በአርቲፊሻል ኢንተለጀንስ የተፈጠሩ መግለጫዎች",
+    "starterBenefit3": "መደበኛ የኢ-ኮሜርስ መድረኮች (Amazon, Shopify)",
+    "starterBenefit4": "የኢሜይል ድጋፍ",
+    "starterLimitation1": "በመሰረታዊ መግለጫዎች ውስጥ ብቻ ይገደባል",
+    "starterLimitation2": "የብራንድ ማስተካከያ አይኖርም",
+    "starterLimitation3": "ቅድሚያ ሂደት አይኖርም",
+    "starterLimitation4": "የላቀ ትንታኔ አይገኝም",
+
+    "proTitle": "ፕሮ",
+    "proDescription": "ለእየተደገፈ ንግድ",
+    "proBenefit1": "በወር እስከ 100 የእቃ መግለጫዎች",
+    "proBenefit2": "ዝርዝር መግለጫዎች የሚያቀርብ የላቀ AI",
+    "proBenefit3": "ሁሉንም ዋና መድረኮች (Amazon, Shopify, Etsy, eBay)",
+    "proBenefit4": "ቅድሚያ ሂደት",
+    "proBenefit5": "የብራንድ ማስተካከያ አማራጮች",
+    "proBenefit6": "የላቀ ትንታኔ እና ግንዛቤ",
+    "proBenefit7": "ቅድሚያ ያለው የኢሜይል ድጋፍ",
+    "proLimitation1": "ወርሃዊ ገደብ ይፈጽማል",
+    "proLimitation2": "የተመደበ መንቀሳቀስ አስተዳዳሪ የለም",
+
+    "businessTitle": "ቢዝነስ",
+    "businessDescription": "ለከፍተኛ አንቀሳቃሾች",
+    "businessBenefit1": "ያለ ገደብ የእቃ መግለጫዎች",
+    "businessBenefit2": "በSEO የተሻሻለ የፕሪሚየም AI",
+    "businessBenefit3": "ሁሉንም መድረኮች + የተለያዩ ኢንቴግሬሽኖች",
+    "businessBenefit4": "ወዲያውኑ ሂደት",
+    "businessBenefit5": "የነጭ መለያ ብራንድ አማራጭ",
+    "businessBenefit6": "ዝርዝር ትንታኔና ሪፖርት",
+    "businessBenefit7": "የተመደበ አካውንት አስተዳዳሪ",
+    "businessBenefit8": "24/7 ቅድሚያ ድጋፍ",
+    "businessBenefit9": "ብጁ API መዳረሻ",
+    "businessBenefit10": "የብዛት መጫን ችሎታ",
+
+    "starter": "መነሻ",
+    "pro": "ፕሮ",
+    "business": "ቢዝነስ",
+    "enterprise": "ኢንተርፕራይዝ",
+
+    "featureMonthlyProductDescriptions": "ወርሃዊ የእቃ መግለጫዎች",
+    "starterValueMonthlyProductDescriptions": "10",
+    "proValueMonthlyProductDescriptions": "100",
+    "businessValueMonthlyProductDescriptions": "ያለ ገደብ",
+    "enterpriseValueMonthlyProductDescriptions": "ያለ ገደብ",
+    "tooltipMonthlyProductDescriptions": "በወር የሚመነጨው የAI የእቃ መግለጫ ብዛት.",
+
+    "featureEcommercePlatforms": "የኢ-ኮሜርስ መድረኮች",
+    "starterValueEcommercePlatforms": "Amazon, Shopify",
+    "proValueEcommercePlatforms": "ሁሉም ዋና መድረኮች",
+    "businessValueEcommercePlatforms": "ሁሉም + ብጁ",
+    "enterpriseValueEcommercePlatforms": "ሁሉም + ብጁ",
+    "tooltipEcommercePlatforms": "የእቃ መዝገቦች የሚደገፉበት መድረኮች.",
+
+    "featureAiQuality": "የAI ጥራት",
+    "starterValueAiQuality": "መሰረታዊ",
+    "proValueAiQuality": "የላቀ",
+    "businessValueAiQuality": "ፕሪሚየም",
+    "enterpriseValueAiQuality": "ፕሪሚየም",
+    "tooltipAiQuality": "AI በመግለጫዎች ውስጥ የሚያሳየው የጥራት ደረጃ.",
+
+    "featureProcessingSpeed": "የሂደት ፍጥነት",
+    "starterValueProcessingSpeed": "መደበኛ",
+    "proValueProcessingSpeed": "ቅድሚያ",
+    "businessValueProcessingSpeed": "ወዲያውኑ",
+    "enterpriseValueProcessingSpeed": "ወዲያውኑ",
+    "tooltipProcessingSpeed": "AI የማመንጨት ፍጥነት.",
+
+    "featureCustomBranding": "ብራንድ ማስተካከያ",
+    "proValueCustomBranding": "መሰረታዊ",
+    "businessValueCustomBranding": "የነጭ መለያ",
+    "enterpriseValueCustomBranding": "የነጭ መለያ",
+    "tooltipCustomBranding": "የብራንድ እና የቅርጸ ተንቀሳቃሽ አማራጮች.",
+
+    "featureAnalyticsInsights": "ትንታኔና ግንዛቤ",
+    "starterValueAnalyticsInsights": "መሰረታዊ",
+    "proValueAnalyticsInsights": "የላቀ",
+    "businessValueAnalyticsInsights": "ዝርዝር",
+    "enterpriseValueAnalyticsInsights": "ብጁ",
+    "tooltipAnalyticsInsights": "የትንታኔና የእንቅስቃሴ ግንዛቤ ደረጃ.",
+
+    "featureApiAccess": "API መዳረሻ",
+    "businessValueApiAccess": "መደበኛ",
+    "enterpriseValueApiAccess": "ሙሉ",
+    "tooltipApiAccess": "ከሌሎች መሳሪያዎች ጋር ለመዋሃድ የAPI መዳረሻ.",
+
+    "featureBulkUpload": "የብዛት መጫን",
+    "tooltipBulkUpload": "በአንድ ጊዜ ብዙ እቃዎችን ለመጫን የሚያስችል ችሎታ.",
+
+    "featureCustomerSupport": "የደንበኛ ድጋፍ",
+    "starterValueCustomerSupport": "ኢሜይል",
+    "proValueCustomerSupport": "ቅድሚያ ኢሜይል",
+    "businessValueCustomerSupport": "24/7 ቅድሚያ",
+    "enterpriseValueCustomerSupport": "የተመደበ አስተዳዳሪ",
+    "tooltipCustomerSupport": "የደንበኛ ድጋፍና የምላሽ ጊዜ ደረጃ.",
+
+    "featureSeoOptimization": "SEO ማሻሻያ",
+    "proValueSeoOptimization": "መሰረታዊ",
+    "tooltipSeoOptimization": "ለእቃ መግለጫዎች የላቀ SEO ማሻሻያ."
+  },
+
+  "footer": {
+    "companyTitle": "ኩባንያ",
+    "about": "ስለ እኛ",
+    "enterprise": "ኢንተርፕራይዝ",
+    "terms": "ውሎች",
+    "privacy": "ግላዊነት",
+
+    "productTitle": "ምርት",
+    "security": "ደህንነት",
+    "customization": "ማስተካከያ",
+    "customers": "ደንበኞች",
+    "changelog": "የቀየረው ታሪክ",
+
+    "docsTitle": "ሰነዶች",
+    "introduction": "መግቢያ",
+    "installation": "መጫን",
+    "components": "ክፍሎች",
+    "codeBlocks": "የኮድ ክፍሎች"
+  },
+
+  "marketing": {
+    "pricing": "ዋጋ",
+    "howTo": "እንዴት እንደሚሰራ"
+  },
+
+  "infos": {
+    "section1": {
+      "title": "ምስሎችን በአፋጣኝ ወደ ዝርዝሮች ይቀይሩ",
+      "description": "Port በAI የተደገፈ መንገድ የእቃ ምስሎችን ወደ ፈጣን ሙሉ የእቃ መዝገብ ይቀይራል። ለእቃ መግለጫ ሰዓቶችን ያስቆጥቡ፣ ንግድዎን ለመዳበር ትኩረት ይስጡ።",
+      "list1": {
+        "title": "በAI የሚመነጨ",
+        "description": "AI በራሱ የእቃ ዝርዝሮችን ያገናዘብ፣ አርእስቶችን ይፈጥራል፣ የተሻለ መግለጫዎችንም ይጻፋል።"
+      },
+      "list2": {
+        "title": "በብዙ መድረኮች",
+        "description": "አንድ ጠቅታ ብቻ በመጠቀም ወደ ታላላቅ መድረኮች በቀጥታ ይለጥፉ።"
+      },
+      "list3": {
+        "title": "ትክክለኛ እና ፈጣን",
+        "description": "በሰከንዶች ውስጥ ዝርዝር የተዘጋጀ የእቃ መዝገብ ያግኙ።"
+      }
+    },
+    "section2": {
+      "title": "ቀላል የሻጭ ሥራ እንቅስቃሴ",
+      "description": "Port በቀላሉ ከያዙት የኢ-ኮሜርስ መድረኮች ጋር ይዋሃዱ፣ እቃዎችን ያቀናብሩና እንቅስቃሴውን ከአንድ ዳሽቦርድ ይከታተሉ።",
+      "list1": {
+        "title": "ተለዋዋጭ ኢንቴግሬሽኖች",
+        "description": "Portን ከAmazon, eBay, Etsy, Shopify ወይም ከማንኛውም መድረክ ጋር ያገናኙ።"
+      },
+      "list2": {
+        "title": "የብልህ ድርድር",
+        "description": "AI እቃዎችን በራሱ ይደርዳል እና የSEO ቁልፍ ቃላትን ይጠቆማል።"
+      },
+      "list3": {
+        "title": "የሚታመን መዋቅር",
+        "description": "በአፋጣኝነትና በተሟላ ደህንነት የተገነባ፤ መረጃዎች ሁልጊዜ የተገኙ ናቸው።"
+      }
+    }
+  },
+  "features": {
+    "aiListingGenerator": {
+      "title": "የAI የእቃ መዝገብ ፈጣሪ",
+      "description": "የእቃ ፎቶ ያስገቡ እና Port ከአርእስት፣ መግለጫ፣ ምድብና ዋጋ አማራጮች ጋር ሙሉ የእቃ መዝገብ ይፈጥራል።"
+    },
+    "marketplaceIntegration": {
+      "title": "የገበያ መድረክ ኢንቴግሬሽን",
+      "description": "በአንድ ጠቅ ብቻ ወደ Amazon, eBay እና Etsy በቀጥታ ይለጥፉ፤ የተደጋጋሚ የውሂብ መጻፍ አይደለም።"
+    },
+    "smartTaggingSeo": {
+      "title": "የብልህ መለያዎች & SEO",
+      "description": "AI ለእቃዎ ምርት የSEO-መስሪያ ቁልፍ ቃላትን እና መለያዎችን በራሱ ይፈጥራል።"
+    },
+    "bulkUploadSupport": {
+      "title": "የብዛት መጫን ድጋፍ",
+      "description": "በአንድ ጊዜ ብዙ እቃዎችን ያስገቡ እና Port እነነዚህን በቅድሚያ ይፈጥራል እና ይለጥፋል።"
+    },
+    "performanceInsights": {
+      "title": "የእቃ እንቅስቃሴ ግንዛቤ",
+      "description": "ከሁሉም መድረኮች ላይ እቃዎች እንዴት እንደሚነቃቁ በAI የተደገፈ ትንታኔ እና ማሻሻያ ምክሮች ይከታተሉ።"
+    },
+    "collaborativeWorkspace": {
+      "title": "የተባበሩ ስራ ቦታ",
+      "description": "ቡድን አባላትን ለእቃ መዝገቦች ማረጋገጫ፣ ማስተካከያ እና ማስታወቂያ እንዲሰሩ ይጋብዙ፣ ጥራትና ትክክለኛነት ይጠብቃል።"
+    }
+  },
+
+  "testimonials": {
+    "sarahMiller": {
+      "name": "ሳራ ሚለር",
+      "job": "የEtsy የሱቅ ባለቤት",
+      "review": "Port ሳምንታት በስር ሰዓቶችን ይቆርጣል። እባክዎን የእቃ ፎቶ ያስገቡ እና ሙሉ የEtsy መዝገብን ይፈጥራል — አርእስት፣ መግለጫ እና መለያዎች ጨምሮ። እንደ የራሴ AI አስተዳደር ነው።"
+    },
+    "jamesRoberts": {
+      "name": "ጄምስ ሮበርትስ",
+      "job": "የAmazon ሻጭ",
+      "review": "ሌሎች መሳሪያዎችን ሞክረዋል፣ ነገር ግን Port የAI የእቃ መዝገቦች በጣም ትክክለኛ ናቸው። ከፎቶ ብቻ የምሸጥን ነገር ይረዳልና በአንድ ጊዜ Amazon-ን የሚያስመዝግብ መዝገብ ይፈጥራል።"
+    },
+    "oliviaChen": {
+      "name": "ኦሊቪያ ቼን",
+      "job": "የeBay ኃይል ሻጭ",
+      "review": "Port እንዴት የeBay መዝገቦቼን እንደሚያስተዳድር በፍጹም ቀየረ። ብዙ የእቃ ፎቶዎችን በአንድ ጊዜ ማስገባት እና ሁሉንም በደቂቃዎች ውስጥ መለጥፍ እችላለሁ።"
+    },
+    "davidLopez": {
+      "name": "ዴቪድ ሎፐዝ",
+      "job": "የኢ-ኮሜርስ አስተዳዳሪ",
+      "review": "ቡድናችን ቀን በቀን Port ይጠቀማል። የእቃ መዝገብ ጊዜ 80% ቀነሰ። ከShopify እና Amazon ጋር ያለው ኢንቴግሬሽን ቀላል ነው።"
+    },
+    "ninaPatel": {
+      "name": "ኒና ፓቴል",
+      "job": "የትንሽ ንግድ ባለቤት",
+      "review": "ቴክኖሎጂ አልታወቀም፣ ነገር ግን Port የእቃ መዝገብ ማድረግን ቀላል አደረገ። ከመጻፍ እስከ ምድብ ማሰተካከያ ሁሉንም ይሠራል። የEtsy ሱቅ በፊት በዚህ ደረጃ አልነበረም።"
+    },
+    "robertGreen": {
+      "name": "ሮበርት ግሪን",
+      "job": "የDropshipper",
+      "review": "የብዛት መጫን ተለዋዋጭ ነገር ነው። Port ከእኔ የተቀጠሩትን ማንኛውንም VA ይልቅ ፈጣን እና ትክክለኛ መዝገቦችን ይፈጥራል።"
+    },
+    "elenaCruz": {
+      "name": "ኤሌና ክሩዝ",
+      "job": "ፈጣሪ ሻጭ",
+      "review": "በAI የተፈጠሩ የእቃ መግለጫዎች ተፈጥሮ መጠቀም ቀላልና ማስደሰት የሚያስችል ናቸው። እቃዎቼ ከፍ በማድረግ ተገዢ ገበያ ሰዎችን ይማራሉ።"
+    }
   }
 }

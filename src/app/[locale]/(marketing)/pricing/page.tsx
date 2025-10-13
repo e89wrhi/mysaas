@@ -3,7 +3,7 @@
 
 //import { getCurrentUser } from '@/lib/session';
 import { constructMetadata } from '@/lib/utils';
-import { ComparePlans } from '@/components/pricing/compare-plans';
+import { ComparePlan } from '@/components/pricing/compare-plans';
 import PricingCards from '@/components/pricing/pricing-cards';
 import { PricingFaq } from '@/components/pricing/pricing-faq';
 //import { getPlans } from '@/lib/stripe/stripe';
@@ -47,7 +47,7 @@ export default async function PricingPage() {
     <div className="flex w-full flex-col gap-16 py-8 md:py-8">
       <PricingCards />
       <hr className="container" />
-      <ComparePlans />
+      <ComparePlan />
       <PricingFaq />
     </div>
   );

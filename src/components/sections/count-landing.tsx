@@ -1,31 +1,72 @@
+'use client';
+
 import { Separator } from '@/components/ui/separator';
+import { motion, Variants } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+import React, { useEffect } from 'react';
 
 export default function CountsSection() {
+  const t = useTranslations();
+  const [animate, setAnimate] = React.useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
+  // Define animation variants
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.6, ease: 'easeOut' },
+    }),
+  };
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Stats</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          {t('landing.ourStats')}
+        </h2>
 
         <div className="flex flex-col md:flex-row text-center py-5 md:py-9 items-center border-t border-b border-gray-200 dark:border-gray-800">
-          {/* Customers */}
-          <div className="flex-1 py-6">
-            <h3 className="text-5xl font-extrabold">2.5M</h3>
+          {/* Generate */}
+          <motion.div
+            className="flex-1 py-6"
+            variants={itemVariants}
+            initial="hidden"
+            animate={animate ? 'visible' : 'hidden'}
+            custom={0}
+          >
+            <h3 className="text-5xl font-extrabold">
+              {t('landing.generateValue')}
+            </h3>
             <p className="mt-2 text-gray-500 uppercase tracking-wider">
-              Generate
+              {t('landing.generate')}
             </p>
-          </div>
+          </motion.div>
 
-          {/* Separator */}
           <Separator
             orientation="vertical"
             className="hidden md:block h-15 w-0.5 bg-gray-200 dark:bg-gray-800"
           />
 
           {/* Sales */}
-          <div className="flex-1 py-6">
-            <h3 className="text-5xl font-extrabold">8.5K</h3>
-            <p className="mt-2 text-gray-500 uppercase tracking-wider">Sales</p>
-          </div>
+          <motion.div
+            className="flex-1 py-6"
+            variants={itemVariants}
+            initial="hidden"
+            animate={animate ? 'visible' : 'hidden'}
+            custom={1}
+          >
+            <h3 className="text-5xl font-extrabold">
+              {t('landing.salesValue')}
+            </h3>
+            <p className="mt-2 text-gray-500 uppercase tracking-wider">
+              {t('landing.sales')}
+            </p>
+          </motion.div>
 
           <Separator
             orientation="vertical"
@@ -33,12 +74,20 @@ export default function CountsSection() {
           />
 
           {/* Revenue */}
-          <div className="flex-1 py-6">
-            <h3 className="text-5xl font-extrabold">$120K</h3>
+          <motion.div
+            className="flex-1 py-6"
+            variants={itemVariants}
+            initial="hidden"
+            animate={animate ? 'visible' : 'hidden'}
+            custom={2}
+          >
+            <h3 className="text-5xl font-extrabold">
+              {t('landing.revenueValue')}
+            </h3>
             <p className="mt-2 text-gray-500 uppercase tracking-wider">
-              Revenue
+              {t('landing.revenue')}
             </p>
-          </div>
+          </motion.div>
 
           <Separator
             orientation="vertical"
@@ -46,12 +95,20 @@ export default function CountsSection() {
           />
 
           {/* Growth */}
-          <div className="flex-1 py-6">
-            <h3 className="text-5xl font-extrabold">35%</h3>
+          <motion.div
+            className="flex-1 py-6"
+            variants={itemVariants}
+            initial="hidden"
+            animate={animate ? 'visible' : 'hidden'}
+            custom={3}
+          >
+            <h3 className="text-5xl font-extrabold">
+              {t('landing.growthValue')}
+            </h3>
             <p className="mt-2 text-gray-500 uppercase tracking-wider">
-              Growth
+              {t('landing.growth')}
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

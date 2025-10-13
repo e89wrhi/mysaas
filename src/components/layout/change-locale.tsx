@@ -47,12 +47,37 @@ export function LocaleChange({ pathname }: { pathname: string }) {
           >
             <span>English</span>
           </DropdownMenuItem>
+
           <DropdownMenuItem
             onClick={() => {
               switchTo('am');
             }}
           >
             <span>አማርኛ</span>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem
+            onClick={() => {
+              switchTo('ar');
+            }}
+          >
+            <span>العربية</span>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem
+            onClick={() => {
+              switchTo('ja');
+            }}
+          >
+            <span>日本語</span>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem
+            onClick={() => {
+              switchTo('zh');
+            }}
+          >
+            <span>中文</span>
           </DropdownMenuItem>
         </div>
       </DropdownMenuContent>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { marketingConfig } from '@/config/marketing';
+import { MarketingConfigs } from '@/config/marketing';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { useScroll } from '@/hooks/use-scroll';
@@ -46,9 +46,9 @@ export function NavBar({ scroll = false }: NavBarProps) {
             </span>
           </Link>
 
-          {marketingConfig && marketingConfig.mainNav.length > 0 ? (
+          {MarketingConfigs() && MarketingConfigs().mainNav.length > 0 ? (
             <nav className="hidden gap-6 md:flex">
-              {marketingConfig.mainNav.map((item, index) => (
+              {MarketingConfigs().mainNav.map((item, index) => (
                 <Link
                   key={index}
                   href={item.disabled ? '#' : item.href}

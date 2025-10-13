@@ -13,7 +13,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { HeaderSection } from '@/components/shared/header-section';
 import { Icons } from '@/components/shared/icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
-import { pricingData } from '@/config/subscription';
+import { PricingData } from '@/config/subscription';
 
 export default function PricingCards() {
   const [isYearly, setIsYearly] = useState(false);
@@ -54,7 +54,7 @@ export default function PricingCards() {
         </div>
 
         <div className="grid gap-6 bg-inherit py-5 lg:grid-cols-3">
-          {pricingData.map((plan) => {
+          {PricingData().map((plan) => {
             const price = isYearly ? plan.prices.yearly : plan.prices.monthly;
             const displayPrice = isYearly ? price / 12 : price;
             const isPopular = plan.title === 'Pro';

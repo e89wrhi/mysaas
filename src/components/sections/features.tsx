@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-import { features } from '@/config/landing';
+import { Features } from '@/config/landing';
 import { Button } from '@/components/ui/button';
 import { HeaderSection } from '@/components/shared/header-section';
 import { Icons } from '@/components/shared/icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 
-export default function Features() {
+export default function Featuress() {
   return (
     <section>
       <div className="pb-6 pt-28">
@@ -19,7 +19,7 @@ export default function Features() {
           />
 
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => {
+            {Features().map((feature) => {
               const Icon = Icons[feature.icon || 'nextjs'];
               return (
                 <div

@@ -1,7 +1,7 @@
 import { PlansRow } from '@/types';
 import { CircleCheck, Info } from 'lucide-react';
 
-import { comparePlans, plansColumns } from '@/config/subscription';
+import { ComparePlans, PlanColumns } from '@/config/subscription';
 import {
   Popover,
   PopoverContent,
@@ -10,7 +10,7 @@ import {
 import { HeaderSection } from '@/components/shared/header-section';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 
-export function ComparePlans() {
+export function ComparePlan() {
   const renderCell = (value: string | boolean | null) => {
     if (value === null) return '—';
     if (typeof value === 'boolean')
@@ -31,7 +31,7 @@ export function ComparePlans() {
           <thead>
             <tr className="divide-x divide-border border">
               <th className="sticky left-0 z-20 w-40 bg-accent p-5 md:w-1/4 lg:top-14"></th>
-              {plansColumns.map((col) => (
+              {PlanColumns().map((col) => (
                 <th
                   key={col}
                   className="sticky z-10 w-40 bg-accent p-5 font-heading text-xl capitalize tracking-wide md:w-auto lg:top-14 lg:text-2xl"
@@ -42,7 +42,7 @@ export function ComparePlans() {
             </tr>
           </thead>
           <tbody className="divide-x divide-border border">
-            {comparePlans.map((row: PlansRow, index: number) => (
+            {ComparePlans().map((row: PlansRow, index: number) => (
               <tr key={index} className="divide-x divide-border border">
                 <td
                   data-tip={row.tooltip ? row.tooltip : ''}
@@ -67,7 +67,7 @@ export function ComparePlans() {
                     )}
                   </div>
                 </td>
-                {plansColumns.map((col) => (
+                {PlanColumns().map((col) => (
                   <td
                     key={col}
                     className="p-4 text-center text-[15px] text-muted-foreground lg:text-base"

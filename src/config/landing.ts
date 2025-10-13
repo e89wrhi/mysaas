@@ -1,153 +1,142 @@
 import { FeatureLdg, InfoLdg, TestimonialType } from '@/types';
+import { useTranslations } from 'next-intl';
 
-export const infos: InfoLdg[] = [
-  {
-    title: 'Turn Images into Listings Instantly',
-    description:
-      'Port uses AI to transform your product images into complete listings for Amazon, eBay, Etsy, and more. Save hours on manual data entry and focus on growing your business.',
-    image: '/_static/illustrations/product-ai.jpg',
-    list: [
-      {
-        title: 'AI-Powered',
-        description:
-          'Our AI automatically detects product details, generates titles, and writes optimized descriptions.',
-        icon: 'settings',
-      },
-      {
-        title: 'Multi-Platform',
-        description:
-          'Publish listings directly to top marketplaces in one click—no copy-pasting required.',
-        icon: 'laptop',
-      },
-      {
-        title: 'Accurate & Fast',
-        description:
-          'Get reliable, high-quality listings in seconds, ready for any platform’s requirements.',
-        icon: 'search',
-      },
-    ],
-  },
-  {
-    title: 'Seamless Seller Workflow',
-    description:
-      'Integrate Port effortlessly into your eCommerce workflow. Sync with existing stores, manage listings, and track performance from a single dashboard.',
-    image: '/_avatars/a9.png',
-    list: [
-      {
-        title: 'Flexible Integrations',
-        description:
-          'Connect Port with Amazon, eBay, Etsy, Shopify, or any platform you sell on.',
-        icon: 'laptop',
-      },
-      {
-        title: 'Smart Organization',
-        description:
-          'Automatically categorize products and suggest tags to boost visibility and SEO.',
-        icon: 'search',
-      },
-      {
-        title: 'Reliable Infrastructure',
-        description:
-          'Built for performance and uptime—your listings and data are safe and always accessible.',
-        icon: 'settings',
-      },
-    ],
-  },
-];
+export function Infos(): InfoLdg[] {
+  const t = useTranslations();
+  return [
+    {
+      title: t('infos.section1.title'),
+      description: t('infos.section1.description'),
+      image: '/_static/illustrations/product-ai.jpg',
+      list: [
+        {
+          title: t('infos.section1.list1.title'),
+          description: t('infos.section1.list1.description'),
+          icon: 'settings',
+        },
+        {
+          title: t('infos.section1.list2.title'),
+          description: t('infos.section1.list2.description'),
+          icon: 'laptop',
+        },
+        {
+          title: t('infos.section1.list3.title'),
+          description: t('infos.section1.list3.description'),
+          icon: 'search',
+        },
+      ],
+    },
+    {
+      title: t('infos.section2.title'),
+      description: t('infos.section2.description'),
+      image: '/_avatars/a9.png',
+      list: [
+        {
+          title: t('infos.section2.list1.title'),
+          description: t('infos.section2.list1.description'),
+          icon: 'laptop',
+        },
+        {
+          title: t('infos.section2.list2.title'),
+          description: t('infos.section2.list2.description'),
+          icon: 'search',
+        },
+        {
+          title: t('infos.section2.list3.title'),
+          description: t('infos.section2.list3.description'),
+          icon: 'settings',
+        },
+      ],
+    },
+  ];
+}
 
-export const features: FeatureLdg[] = [
-  {
-    title: 'AI Listing Generator',
-    description:
-      'Upload a product photo and let Port create a complete listing with title, description, category, and pricing suggestions.',
-    link: '/',
-    icon: 'sparkles',
-  },
-  {
-    title: 'Marketplace Integration',
-    description:
-      'Instantly connect and publish to Amazon, eBay, and Etsy with one click—no repetitive data entry.',
-    link: '/',
-    icon: 'cart',
-  },
-  {
-    title: 'Smart Tagging & SEO',
-    description:
-      'AI automatically generates SEO-friendly keywords and tags to maximize your product’s reach.',
-    link: '/',
-    icon: 'search',
-  },
-  {
-    title: 'Bulk Upload Support',
-    description:
-      'Upload multiple products at once and let Port process, generate, and publish them in batches.',
-    link: '/',
-    icon: 'copy',
-  },
-  {
-    title: 'Performance Insights',
-    description:
-      'Track how your listings perform across platforms with AI-powered analytics and improvement suggestions.',
-    link: '/',
-    icon: 'chart',
-  },
-  {
-    title: 'Collaborative Workspace',
-    description:
-      'Invite team members to review, edit, and publish listings together, ensuring quality and consistency.',
-    link: '/',
-    icon: 'users',
-  },
-];
+export function Features(): FeatureLdg[] {
+  const t = useTranslations();
+  return [
+    {
+      title: t('features.aiListingGenerator.title'),
+      description: t('features.aiListingGenerator.description'),
+      link: '/',
+      icon: 'sparkles',
+    },
+    {
+      title: t('features.marketplaceIntegration.title'),
+      description: t('features.marketplaceIntegration.description'),
+      link: '/',
+      icon: 'cart',
+    },
+    {
+      title: t('features.smartTaggingSeo.title'),
+      description: t('features.smartTaggingSeo.description'),
+      link: '/',
+      icon: 'search',
+    },
+    {
+      title: t('features.bulkUploadSupport.title'),
+      description: t('features.bulkUploadSupport.description'),
+      link: '/',
+      icon: 'copy',
+    },
+    {
+      title: t('features.performanceInsights.title'),
+      description: t('features.performanceInsights.description'),
+      link: '/',
+      icon: 'chart',
+    },
+    {
+      title: t('features.collaborativeWorkspace.title'),
+      description: t('features.collaborativeWorkspace.description'),
+      link: '/',
+      icon: 'users',
+    },
+  ];
+}
 
-export const testimonials: TestimonialType[] = [
-  {
-    name: 'Sarah Miller',
-    job: 'Etsy Shop Owner',
-    image: '/_avatars/a1.png',
-    review:
-      "Port saves me hours every week. I just upload a product photo, and it generates the full Etsy listing — title, description, and tags included. It's like having my own AI assistant.",
-  },
-  {
-    name: 'James Roberts',
-    job: 'Amazon Seller',
-    image: '/_avatars/a2.png',
-    review:
-      'I’ve tried other tools, but Port’s AI listings are incredibly accurate. It understands what I’m selling just from an image and creates Amazon-ready listings instantly.',
-  },
-  {
-    name: 'Olivia Chen',
-    job: 'eBay Power Seller',
-    image: '/_avatars/a3.png',
-    review:
-      'Port has completely changed how I manage eBay listings. I can upload dozens of product images at once and publish everything in minutes.',
-  },
-  {
-    name: 'David Lopez',
-    job: 'E-commerce Manager',
-    image: '/_avatars/a4.png',
-    review:
-      'Our team uses Port daily. It cut down our product listing time by 80%. The integration with Shopify and Amazon just works.',
-  },
-  {
-    name: 'Nina Patel',
-    job: 'Small Business Owner',
-    image: '/_avatars/a5.png',
-    review:
-      'I’m not tech-savvy, but Port made listing products so simple. It handles everything from writing to categorizing. My Etsy shop has never looked more professional.',
-  },
-  {
-    name: 'Robert Green',
-    job: 'Dropshipper',
-    image: '/_avatars/a6.png',
-    review:
-      'Bulk upload is a game-changer. Port generates listings faster than any VA I’ve ever hired — and it’s more consistent.',
-  },
-  {
-    name: 'Elena Cruz',
-    job: 'Creative Seller',
-    image: '/_avatars/a7.png',
-    review:
-      'The AI-generated product descriptions sound natural and engaging. My products now rank higher and attract more buyers across marketplaces.',
-  },
-];
+export function Testimonials(): TestimonialType[] {
+  const t = useTranslations();
+  return [
+    {
+      name: t('testimonials.sarahMiller.name'),
+      job: t('testimonials.sarahMiller.job'),
+      image: '/_avatars/a1.png',
+      review: t('testimonials.sarahMiller.review'),
+    },
+    {
+      name: t('testimonials.jamesRoberts.name'),
+      job: t('testimonials.jamesRoberts.job'),
+      image: '/_avatars/a2.png',
+      review: t('testimonials.jamesRoberts.review'),
+    },
+    {
+      name: t('testimonials.oliviaChen.name'),
+      job: t('testimonials.oliviaChen.job'),
+      image: '/_avatars/a3.png',
+      review: t('testimonials.oliviaChen.review'),
+    },
+    {
+      name: t('testimonials.davidLopez.name'),
+      job: t('testimonials.davidLopez.job'),
+      image: '/_avatars/a4.png',
+      review: t('testimonials.davidLopez.review'),
+    },
+    {
+      name: t('testimonials.ninaPatel.name'),
+      job: t('testimonials.ninaPatel.job'),
+      image: '/_avatars/a5.png',
+      review: t('testimonials.ninaPatel.review'),
+    },
+    {
+      name: t('testimonials.robertGreen.name'),
+      job: t('testimonials.robertGreen.job'),
+      image: '/_avatars/a6.png',
+      review: t('testimonials.robertGreen.review'),
+    },
+    {
+      name: t('testimonials.elenaCruz.name'),
+      job: t('testimonials.elenaCruz.job'),
+      image: '/_avatars/a7.png',
+      review: t('testimonials.elenaCruz.review'),
+    },
+  ];
+}

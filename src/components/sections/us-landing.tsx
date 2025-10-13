@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { testimonials } from '@/config/landing';
+import { Testimonials } from '@/config/landing';
 import { HeaderSection } from '@/components/shared/header-section';
 
 export default function UsSection() {
@@ -15,7 +15,7 @@ export default function UsSection() {
         />
 
         <div className="column-1 gap-5 mx-5 md:mx-10 space-y-4 space-y-5 md:columns-2 lg:columns-3 ">
-          {testimonials.map((item) => (
+          {Testimonials().map((item) => (
             <div className="break-inside-avoid" key={item.name}>
               <div className="mb-4 flex flex-col items-start text-start gap-3">
                 <Image

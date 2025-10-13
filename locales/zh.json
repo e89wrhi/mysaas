@@ -3,5 +3,241 @@
     "light": "浅色",
     "dark": "深色",
     "system": "系统"
+  },"landing": {
+      "headline": "拍照。生成。销售。",
+      "subheadline": "将任何产品照片在几秒钟内转换为完整、可上架的商品清单——标题、描述，应有尽有。",
+      "button": "立即开始",
+      "convert": "转换",
+      "ourStats": "我们的统计",
+      "generate": "生成",
+      "generateValue": "250万",
+      "sales": "销售",
+      "salesValue": "8.5千",
+      "revenue": "收入",
+      "revenueValue": "$12万",
+      "growth": "增长",
+      "growthValue": "35%"
+    },
+  "pricing": {
+    "starterTitle": "入门版",
+    "starterDescription": "完美的入门选择",
+    "starterBenefit1": "每月最多 10 个产品描述",
+    "starterBenefit2": "基础 AI 生成描述",
+    "starterBenefit3": "标准电商平台（Amazon, Shopify）",
+    "starterBenefit4": "邮件支持",
+    "starterLimitation1": "仅限基础描述",
+    "starterLimitation2": "无自定义品牌选项",
+    "starterLimitation3": "无优先处理",
+    "starterLimitation4": "无高级分析",
+
+    "proTitle": "专业版",
+    "proDescription": "适合成长型企业",
+    "proBenefit1": "每月最多 100 个产品描述",
+    "proBenefit2": "高级 AI，提供详细规格",
+    "proBenefit3": "支持所有主要平台（Amazon, Shopify, Etsy, eBay）",
+    "proBenefit4": "优先处理",
+    "proBenefit5": "自定义品牌选项",
+    "proBenefit6": "高级分析和洞察",
+    "proBenefit7": "优先邮件支持",
+    "proLimitation1": "适用月度限制",
+    "proLimitation2": "无专属客户经理",
+
+    "businessTitle": "企业版",
+    "businessDescription": "适合高销量卖家",
+    "businessBenefit1": "无限产品描述",
+    "businessBenefit2": "高级 AI，支持 SEO 优化",
+    "businessBenefit3": "所有平台 + 自定义集成",
+    "businessBenefit4": "即时处理",
+    "businessBenefit5": "白标品牌",
+    "businessBenefit6": "详细分析与报告",
+    "businessBenefit7": "专属客户经理",
+    "businessBenefit8": "24/7 优先支持",
+    "businessBenefit9": "自定义 API 访问",
+    "businessBenefit10": "批量上传功能",
+
+    "starter": "入门版",
+    "pro": "专业版",
+    "business": "企业版",
+    "enterprise": "企业方案",
+
+    "featureMonthlyProductDescriptions": "每月产品描述",
+    "starterValueMonthlyProductDescriptions": "10",
+    "proValueMonthlyProductDescriptions": "100",
+    "businessValueMonthlyProductDescriptions": "无限",
+    "enterpriseValueMonthlyProductDescriptions": "无限",
+    "tooltipMonthlyProductDescriptions": "每月 AI 生成的产品描述数量。",
+
+    "featureEcommercePlatforms": "电商平台",
+    "starterValueEcommercePlatforms": "Amazon, Shopify",
+    "proValueEcommercePlatforms": "所有主要平台",
+    "businessValueEcommercePlatforms": "所有平台 + 自定义",
+    "enterpriseValueEcommercePlatforms": "所有平台 + 自定义",
+    "tooltipEcommercePlatforms": "支持的产品列表电商平台。",
+
+    "featureAiQuality": "AI 质量",
+    "starterValueAiQuality": "基础",
+    "proValueAiQuality": "高级",
+    "businessValueAiQuality": "顶级",
+    "enterpriseValueAiQuality": "顶级",
+    "tooltipAiQuality": "描述中 AI 的智能程度和细节水平。",
+
+    "featureProcessingSpeed": "处理速度",
+    "starterValueProcessingSpeed": "标准",
+    "proValueProcessingSpeed": "优先",
+    "businessValueProcessingSpeed": "即时",
+    "enterpriseValueProcessingSpeed": "即时",
+    "tooltipProcessingSpeed": "AI 处理和生成的速度。",
+
+    "featureCustomBranding": "自定义品牌",
+    "proValueCustomBranding": "基础",
+    "businessValueCustomBranding": "白标",
+    "enterpriseValueCustomBranding": "白标",
+    "tooltipCustomBranding": "品牌和样式的自定义选项。",
+
+    "featureAnalyticsInsights": "分析与洞察",
+    "starterValueAnalyticsInsights": "基础",
+    "proValueAnalyticsInsights": "高级",
+    "businessValueAnalyticsInsights": "详细",
+    "enterpriseValueAnalyticsInsights": "自定义",
+    "tooltipAnalyticsInsights": "可用的分析和性能洞察级别。",
+
+    "featureApiAccess": "API 访问",
+    "businessValueApiAccess": "标准",
+    "enterpriseValueApiAccess": "完整",
+    "tooltipApiAccess": "用于与其他工具集成的 API 访问权限。",
+
+    "featureBulkUpload": "批量上传",
+    "tooltipBulkUpload": "一次上传和处理多个产品的能力。",
+
+    "featureCustomerSupport": "客户支持",
+    "starterValueCustomerSupport": "邮件",
+    "proValueCustomerSupport": "优先邮件",
+    "businessValueCustomerSupport": "24/7 优先",
+    "enterpriseValueCustomerSupport": "专属经理",
+    "tooltipCustomerSupport": "客户支持级别和响应时间。",
+
+    "featureSeoOptimization": "SEO 优化",
+    "proValueSeoOptimization": "基础",
+    "tooltipSeoOptimization": "产品描述的高级 SEO 优化。"
+  },
+  "footer": {
+    "companyTitle": "公司",
+    "about": "关于我们",
+    "enterprise": "企业方案",
+    "terms": "条款",
+    "privacy": "隐私",
+
+    "productTitle": "产品",
+    "security": "安全",
+    "customization": "定制",
+    "customers": "客户",
+    "changelog": "更新日志",
+
+    "docsTitle": "文档",
+    "introduction": "简介",
+    "installation": "安装",
+    "components": "组件",
+    "codeBlocks": "代码块"
+  },
+  "marketing": {
+    "pricing": "价格",
+    "howTo": "使用方法"
+  },
+  "infos": {
+    "section1": {
+      "title": "将图片瞬间转换为商品列表",
+      "description": "Port 使用 AI 将您的产品图片转换为 Amazon、eBay、Etsy 等平台的完整列表。节省手动录入的时间，专注于业务增长。",
+      "list1": {
+        "title": "AI 驱动",
+        "description": "我们的 AI 会自动检测产品信息，生成标题，并撰写优化的描述。"
+      },
+      "list2": {
+        "title": "多平台支持",
+        "description": "一键将列表直接发布到主要市场，无需复制粘贴。"
+      },
+      "list3": {
+        "title": "精准且快速",
+        "description": "几秒钟即可获得可靠、高质量的列表，满足任何平台的要求。"
+      }
+    },
+    "section2": {
+      "title": "无缝的卖家工作流程",
+      "description": "轻松将 Port 集成到您的电子商务工作流程。与现有商店同步，管理列表，并通过单一仪表板跟踪绩效。",
+      "list1": {
+        "title": "灵活集成",
+        "description": "将 Port 连接到 Amazon、eBay、Etsy、Shopify 或任何您销售的平台。"
+      },
+      "list2": {
+        "title": "智能分类",
+        "description": "自动对产品进行分类，并建议标签以提升可见性和 SEO。"
+      },
+      "list3": {
+        "title": "可靠基础设施",
+        "description": "为性能和正常运行时间而构建，您的列表和数据始终安全可访问。"
+      }
+    }
+  },
+  "features": {
+    "aiListingGenerator": {
+      "title": "AI 列表生成器",
+      "description": "上传产品照片，让 Port 创建完整的列表，包括标题、描述、类别和价格建议。"
+    },
+    "marketplaceIntegration": {
+      "title": "市场整合",
+      "description": "一键即可连接并发布到 Amazon、eBay 和 Etsy，无需重复录入数据。"
+    },
+    "smartTaggingSeo": {
+      "title": "智能标签 & SEO",
+      "description": "AI 自动生成 SEO 友好的关键词和标签，以最大化产品覆盖范围。"
+    },
+    "bulkUploadSupport": {
+      "title": "批量上传支持",
+      "description": "一次上传多个产品，让 Port 批量处理、生成并发布它们。"
+    },
+    "performanceInsights": {
+      "title": "性能洞察",
+      "description": "使用 AI 驱动的分析和改进建议，跟踪您的列表在各平台的表现。"
+    },
+    "collaborativeWorkspace": {
+      "title": "协作工作空间",
+      "description": "邀请团队成员一起审核、编辑和发布列表，确保质量和一致性。"
+    }
+  },
+  "testimonials": {
+    "sarahMiller": {
+      "name": "Sarah Miller",
+      "job": "Etsy 店主",
+      "review": "Port 每周为我节省了数小时。我只需上传产品照片，它就会生成完整的 Etsy 列表——包括标题、描述和标签。就像拥有自己的 AI 助手。"
+    },
+    "jamesRoberts": {
+      "name": "James Roberts",
+      "job": "Amazon 卖家",
+      "review": "我尝试过其他工具，但 Port 的 AI 列表非常准确。它仅凭图片就能理解我在销售的商品，并立即生成可上架 Amazon 的列表。"
+    },
+    "oliviaChen": {
+      "name": "Olivia Chen",
+      "job": "eBay 高级卖家",
+      "review": "Port 完全改变了我管理 eBay 列表的方式。我可以一次上传几十张产品图片，并在几分钟内发布全部。"
+    },
+    "davidLopez": {
+      "name": "David Lopez",
+      "job": "电子商务经理",
+      "review": "我们的团队每天都使用 Port。它将产品列表时间减少了 80%，Shopify 和 Amazon 的集成也很顺畅。"
+    },
+    "ninaPatel": {
+      "name": "Nina Patel",
+      "job": "小型企业主",
+      "review": "我不擅长技术，但 Port 让产品上架变得非常简单。它处理从写作到分类的所有工作。我的 Etsy 店铺从未如此专业。"
+    },
+    "robertGreen": {
+      "name": "Robert Green",
+      "job": "代发卖家",
+      "review": "批量上传是游戏规则改变者。Port 生成列表比我雇佣的任何助理都快，而且更一致。"
+    },
+    "elenaCruz": {
+      "name": "Elena Cruz",
+      "job": "创意卖家",
+      "review": "AI 生成的产品描述自然且引人入胜。我的产品现在排名更高，在各大市场吸引更多买家。"
+    }
   }
 }

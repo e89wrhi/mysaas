@@ -1,14 +1,18 @@
 import { MarketingConfig } from '@/types';
+import { useTranslations } from 'next-intl';
 
-export const marketingConfig: MarketingConfig = {
-  mainNav: [
-    {
-      title: 'Pricing',
-      href: '/pricing',
-    },
-    {
-      title: 'How to',
-      href: '/doc',
-    },
-  ],
-};
+export function MarketingConfigs(): MarketingConfig {
+  const t = useTranslations();
+  return {
+    mainNav: [
+      {
+        title: t('marketing.pricing'),
+        href: '/pricing',
+      },
+      {
+        title: t('marketing.howTo'),
+        href: '/doc',
+      },
+    ],
+  };
+}

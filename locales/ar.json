@@ -3,5 +3,242 @@
     "light": "فاتح",
     "dark": "داكن",
     "system": "النظام"
-  }
+  },
+  "landing": {
+      "headline": "التقط. أنشئ. بيع.",
+      "subheadline": "حوّل أي صورة منتج إلى قائمة كاملة وجاهزة للمتجر في ثوانٍ — العناوين، الوصف، وكل شيء.",
+      "button": "ابدأ الآن",
+  "convert": "تحويل",
+  "ourStats": "إحصاءاتنا",
+      "generate": "توليد",
+      "generateValue": "2.5مليون",
+      "sales": "المبيعات",
+      "salesValue": "8.5ألف",
+      "revenue": "الإيرادات",
+      "revenueValue": "$120ألف",
+      "growth": "النمو",
+      "growthValue": "35%"
+    },
+  "pricing": {
+    "starterTitle": "البدء",
+    "starterDescription": "مثالي للبدء",
+    "starterBenefit1": "حتى 10 أوصاف للمنتجات شهريًا",
+    "starterBenefit2": "أوصاف أساسية مولدة بواسطة الذكاء الاصطناعي",
+    "starterBenefit3": "منصات التجارة الإلكترونية القياسية (Amazon, Shopify)",
+    "starterBenefit4": "دعم عبر البريد الإلكتروني",
+    "starterLimitation1": "محدود بالأوصاف الأساسية",
+    "starterLimitation2": "لا توجد خيارات للعلامة التجارية المخصصة",
+    "starterLimitation3": "لا توجد معالجة أولوية",
+    "starterLimitation4": "لا تحليلات متقدمة",
+
+    "proTitle": "محترف",
+    "proDescription": "للأعمال المتنامية",
+    "proBenefit1": "حتى 100 وصف للمنتجات شهريًا",
+    "proBenefit2": "ذكاء اصطناعي متقدم مع مواصفات مفصلة",
+    "proBenefit3": "جميع المنصات الرئيسية (Amazon, Shopify, Etsy, eBay)",
+    "proBenefit4": "معالجة ذات أولوية",
+    "proBenefit5": "خيارات علامة تجارية مخصصة",
+    "proBenefit6": "تحليلات ورؤى متقدمة",
+    "proBenefit7": "دعم البريد الإلكتروني ذو أولوية",
+    "proLimitation1": "يتم تطبيق حد شهري",
+    "proLimitation2": "لا يوجد مدير حساب مخصص",
+
+    "businessTitle": "الأعمال",
+    "businessDescription": "للبائعين المحترفين",
+    "businessBenefit1": "أوصاف غير محدودة للمنتجات",
+    "businessBenefit2": "ذكاء اصطناعي مميز مع تحسين SEO",
+    "businessBenefit3": "جميع المنصات + تكاملات مخصصة",
+    "businessBenefit4": "معالجة فورية",
+    "businessBenefit5": "علامة تجارية بيضاء",
+    "businessBenefit6": "تحليلات وتقارير مفصلة",
+    "businessBenefit7": "مدير حساب مخصص",
+    "businessBenefit8": "دعم أولوية 24/7",
+    "businessBenefit9": "الوصول إلى API مخصص",
+    "businessBenefit10": "قدرات التحميل بالجملة",
+
+    "starter": "البدء",
+    "pro": "محترف",
+    "business": "الأعمال",
+    "enterprise": "المؤسسة",
+
+    "featureMonthlyProductDescriptions": "أوصاف المنتجات الشهرية",
+    "starterValueMonthlyProductDescriptions": "10",
+    "proValueMonthlyProductDescriptions": "100",
+    "businessValueMonthlyProductDescriptions": "غير محدود",
+    "enterpriseValueMonthlyProductDescriptions": "غير محدود",
+    "tooltipMonthlyProductDescriptions": "عدد الأوصاف التي تم إنشاؤها بواسطة الذكاء الاصطناعي شهريًا.",
+
+    "featureEcommercePlatforms": "منصات التجارة الإلكترونية",
+    "starterValueEcommercePlatforms": "Amazon, Shopify",
+    "proValueEcommercePlatforms": "جميع المنصات الرئيسية",
+    "businessValueEcommercePlatforms": "جميع + مخصص",
+    "enterpriseValueEcommercePlatforms": "جميع + مخصص",
+    "tooltipEcommercePlatforms": "المنصات المدعومة لإدراج المنتجات.",
+
+    "featureAiQuality": "جودة الذكاء الاصطناعي",
+    "starterValueAiQuality": "أساسي",
+    "proValueAiQuality": "متقدم",
+    "businessValueAiQuality": "متميز",
+    "enterpriseValueAiQuality": "متميز",
+    "tooltipAiQuality": "مستوى تعقيد الذكاء الاصطناعي والتفاصيل في الأوصاف.",
+
+    "featureProcessingSpeed": "سرعة المعالجة",
+    "starterValueProcessingSpeed": "قياسي",
+    "proValueProcessingSpeed": "أولوية",
+    "businessValueProcessingSpeed": "فوري",
+    "enterpriseValueProcessingSpeed": "فوري",
+    "tooltipProcessingSpeed": "سرعة معالجة الذكاء الاصطناعي وإنشاء المحتوى.",
+
+    "featureCustomBranding": "العلامة التجارية المخصصة",
+    "proValueCustomBranding": "أساسي",
+    "businessValueCustomBranding": "علامة تجارية بيضاء",
+    "enterpriseValueCustomBranding": "علامة تجارية بيضاء",
+    "tooltipCustomBranding": "خيارات التخصيص للعلامة التجارية والتصميم.",
+
+    "featureAnalyticsInsights": "التحليلات والرؤى",
+    "starterValueAnalyticsInsights": "أساسي",
+    "proValueAnalyticsInsights": "متقدم",
+    "businessValueAnalyticsInsights": "مفصل",
+    "enterpriseValueAnalyticsInsights": "مخصص",
+    "tooltipAnalyticsInsights": "مستوى التحليلات والرؤى المتاحة.",
+
+    "featureApiAccess": "الوصول إلى API",
+    "businessValueApiAccess": "قياسي",
+    "enterpriseValueApiAccess": "كامل",
+    "tooltipApiAccess": "الوصول إلى API للتكامل مع أدوات أخرى.",
+
+    "featureBulkUpload": "التحميل بالجملة",
+    "tooltipBulkUpload": "القدرة على تحميل ومعالجة منتجات متعددة مرة واحدة.",
+
+    "featureCustomerSupport": "دعم العملاء",
+    "starterValueCustomerSupport": "البريد الإلكتروني",
+    "proValueCustomerSupport": "البريد الإلكتروني ذو أولوية",
+    "businessValueCustomerSupport": "أولوية 24/7",
+    "enterpriseValueCustomerSupport": "مدير مخصص",
+    "tooltipCustomerSupport": "مستوى دعم العملاء ووقت الاستجابة.",
+
+    "featureSeoOptimization": "تحسين SEO",
+    "proValueSeoOptimization": "أساسي",
+    "tooltipSeoOptimization": "تحسين SEO متقدم لأوصاف المنتجات."
+  },
+  "infos": {
+    "section1": {
+      "title": "حوّل الصور إلى قوائم على الفور",
+      "description": "يستخدم Port الذكاء الاصطناعي لتحويل صور منتجاتك إلى قوائم كاملة على Amazon وeBay وEtsy والمزيد. وفر ساعات من إدخال البيانات يدويًا وركز على تنمية أعمالك.",
+      "list1": {
+        "title": "مدعوم بالذكاء الاصطناعي",
+        "description": "يقوم الذكاء الاصطناعي لدينا بالكشف تلقائيًا عن تفاصيل المنتج، وإنشاء العناوين، وكتابة أوصاف محسّنة."
+      },
+      "list2": {
+        "title": "متعدد المنصات",
+        "description": "انشر القوائم مباشرة إلى أكبر الأسواق بنقرة واحدة—لا حاجة للنسخ واللصق."
+      },
+      "list3": {
+        "title": "دقيق وسريع",
+        "description": "احصل على قوائم عالية الجودة وموثوقة في ثوانٍ، جاهزة لأي منصة."
+      }
+    },
+    "section2": {
+      "title": "سير عمل سلس للبائعين",
+      "description": "ادمج Port بسهولة في سير عمل التجارة الإلكترونية الخاص بك. قم بالمزامنة مع المتاجر الحالية، إدارة القوائم، وتتبع الأداء من لوحة تحكم واحدة.",
+      "list1": {
+        "title": "تكاملات مرنة",
+        "description": "قم بربط Port مع Amazon وeBay وEtsy وShopify أو أي منصة تبيع عليها."
+      },
+      "list2": {
+        "title": "تنظيم ذكي",
+        "description": "يصنّف المنتجات تلقائيًا ويقترح العلامات لتعزيز الرؤية وتحسين محركات البحث."
+      },
+      "list3": {
+        "title": "بنية تحتية موثوقة",
+        "description": "مصمم للأداء والاستمرارية—قوائمك وبياناتك آمنة ومتاحة دائمًا."
+      }
+    }
+  },
+  "features": {
+    "aiListingGenerator": {
+      "title": "مولد قوائم الذكاء الاصطناعي",
+      "description": "قم بتحميل صورة للمنتج ودع Port ينشئ قائمة كاملة تحتوي على العنوان والوصف والفئة واقتراحات الأسعار."
+    },
+    "marketplaceIntegration": {
+      "title": "تكامل السوق",
+      "description": "اتصل وانشر على Amazon وeBay وEtsy بنقرة واحدة—بدون إدخال بيانات متكرر."
+    },
+    "smartTaggingSeo": {
+      "title": "الوسم الذكي وتحسين محركات البحث",
+      "description": "يقوم الذكاء الاصطناعي تلقائيًا بإنشاء كلمات مفتاحية وعلامات صديقة لمحركات البحث لزيادة وصول منتجاتك."
+    },
+    "bulkUploadSupport": {
+      "title": "دعم التحميل بالجملة",
+      "description": "قم بتحميل منتجات متعددة مرة واحدة ودع Port يعالجها وينشئها وينشرها دفعة واحدة."
+    },
+    "performanceInsights": {
+      "title": "رؤى الأداء",
+      "description": "تتبع أداء قوائمك عبر المنصات باستخدام تحليلات الذكاء الاصطناعي واقتراحات التحسين."
+    },
+    "collaborativeWorkspace": {
+      "title": "مساحة عمل تعاونية",
+      "description": "قم بدعوة أعضاء الفريق لمراجعة وتحرير ونشر القوائم معًا، لضمان الجودة والاتساق."
+    }
+  },
+  "testimonials": {
+    "sarahMiller": {
+      "name": "سارة ميلر",
+      "job": "مالكة متجر Etsy",
+      "review": "Port يوفر لي ساعات من العمل كل أسبوع. أقوم فقط بتحميل صورة للمنتج، ويولد القائمة الكاملة على Etsy — العنوان، الوصف، والعلامات مشمولة. إنه أشبه بالحصول على مساعد ذكاء اصطناعي خاص بي."
+    },
+    "jamesRoberts": {
+      "name": "جيمس روبرتس",
+      "job": "بائع على Amazon",
+      "review": "لقد جربت أدوات أخرى، لكن قوائم Port الذكية دقيقة للغاية. يفهم ما أبيعه فقط من صورة واحدة ويُنشئ قوائم جاهزة على Amazon على الفور."
+    },
+    "oliviaChen": {
+      "name": "أوليفيا تشين",
+      "job": "بائع محترف على eBay",
+      "review": "Port غيّر تمامًا طريقة إدارتي لقوائم eBay. يمكنني تحميل عشرات الصور مرة واحدة ونشر كل شيء في دقائق."
+    },
+    "davidLopez": {
+      "name": "ديفيد لوبيز",
+      "job": "مدير التجارة الإلكترونية",
+      "review": "فريقنا يستخدم Port يوميًا. قلّل وقت إدراج المنتجات بنسبة 80٪. التكامل مع Shopify وAmazon يعمل بسلاسة."
+    },
+    "ninaPatel": {
+      "name": "نينا باتيل",
+      "job": "صاحبة مشروع صغير",
+      "review": "لست خبيرة تقنيًا، لكن Port جعل إدراج المنتجات سهلًا جدًا. يتولى كل شيء من الكتابة إلى التصنيف. متجر Etsy الخاص بي لم يبدُ يومًا أكثر احترافية."
+    },
+    "robertGreen": {
+      "name": "روبرت غرين",
+      "job": "موزع دروبشيبينغ",
+      "review": "التحميل بالجملة ميزة مذهلة. Port يولّد القوائم أسرع من أي مساعد افتراضي استخدمته — والأهم أنها أكثر اتساقًا."
+    },
+    "elenaCruz": {
+      "name": "إلينا كروز",
+      "job": "بائعة إبداعية",
+      "review": "أوصاف المنتجات المولدة بالذكاء الاصطناعي تبدو طبيعية وجذابة. ترتفع منتجاتي الآن في الترتيب وتجذب المزيد من المشترين عبر الأسواق."
+    }
+  },
+  "footer": {
+  "companyTitle": "الشركة",
+  "about": "حول",
+  "enterprise": "المؤسسات",
+  "terms": "الشروط",
+  "privacy": "الخصوصية",
+
+  "productTitle": "المنتج",
+  "security": "الأمان",
+  "customization": "التخصيص",
+  "customers": "العملاء",
+  "changelog": "سجل التغييرات",
+
+  "docsTitle": "المستندات",
+  "introduction": "مقدمة",
+  "installation": "التثبيت",
+  "components": "المكونات",
+  "codeBlocks": "كتل الأكواد"
+},
+"marketing": {
+  "pricing": "الأسعار",
+  "howTo": "كيفية الاستخدام"
+}
 }

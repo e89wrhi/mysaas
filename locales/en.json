@@ -3,5 +3,242 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "landing": {
+      "headline": "Snap. Generate. Sell.",
+      "subheadline": "Turn any product photo into a complete, shop-ready listing in seconds — titles, descriptions, and all.",
+      "button": "Get Started",
+      "convert": "Convert",
+      "ourStats": "Our Stats",
+      "generate": "Generate",
+      "generateValue": "2.5M",
+      "sales": "Sales",
+      "salesValue": "8.5K",
+      "revenue": "Revenue",
+      "revenueValue": "$120K",
+      "growth": "Growth",
+      "growthValue": "35%"
+    },
+  "pricing": {
+    "starterTitle": "Starter",
+    "starterDescription": "Perfect for getting started",
+    "starterBenefit1": "Up to 10 product descriptions per month",
+    "starterBenefit2": "Basic AI-generated descriptions",
+    "starterBenefit3": "Standard e-commerce platforms (Amazon, Shopify)",
+    "starterBenefit4": "Email support",
+    "starterLimitation1": "Limited to basic descriptions",
+    "starterLimitation2": "No custom branding options",
+    "starterLimitation3": "No priority processing",
+    "starterLimitation4": "No advanced analytics",
+
+    "proTitle": "Pro",
+    "proDescription": "For growing businesses",
+    "proBenefit1": "Up to 100 product descriptions per month",
+    "proBenefit2": "Advanced AI with detailed specifications",
+    "proBenefit3": "All major platforms (Amazon, Shopify, Etsy, eBay)",
+    "proBenefit4": "Priority processing",
+    "proBenefit5": "Custom branding options",
+    "proBenefit6": "Advanced analytics and insights",
+    "proBenefit7": "Priority email support",
+    "proLimitation1": "Monthly limit applies",
+    "proLimitation2": "No dedicated account manager",
+
+    "businessTitle": "Business",
+    "businessDescription": "For power sellers",
+    "businessBenefit1": "Unlimited product descriptions",
+    "businessBenefit2": "Premium AI with SEO optimization",
+    "businessBenefit3": "All platforms + custom integrations",
+    "businessBenefit4": "Instant processing",
+    "businessBenefit5": "White-label branding",
+    "businessBenefit6": "Detailed analytics and reporting",
+    "businessBenefit7": "Dedicated account manager",
+    "businessBenefit8": "24/7 priority support",
+    "businessBenefit9": "Custom API access",
+    "businessBenefit10": "Bulk upload capabilities",
+
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business",
+    "enterprise": "Enterprise",
+
+    "featureMonthlyProductDescriptions": "Monthly Product Descriptions",
+    "starterValueMonthlyProductDescriptions": "10",
+    "proValueMonthlyProductDescriptions": "100",
+    "businessValueMonthlyProductDescriptions": "Unlimited",
+    "enterpriseValueMonthlyProductDescriptions": "Unlimited",
+    "tooltipMonthlyProductDescriptions": "Number of AI-generated product descriptions per month.",
+
+    "featureEcommercePlatforms": "E-commerce Platforms",
+    "starterValueEcommercePlatforms": "Amazon, Shopify",
+    "proValueEcommercePlatforms": "All Major Platforms",
+    "businessValueEcommercePlatforms": "All + Custom",
+    "enterpriseValueEcommercePlatforms": "All + Custom",
+    "tooltipEcommercePlatforms": "Supported e-commerce platforms for product listings.",
+
+    "featureAiQuality": "AI Quality",
+    "starterValueAiQuality": "Basic",
+    "proValueAiQuality": "Advanced",
+    "businessValueAiQuality": "Premium",
+    "enterpriseValueAiQuality": "Premium",
+    "tooltipAiQuality": "Level of AI sophistication and detail in descriptions.",
+
+    "featureProcessingSpeed": "Processing Speed",
+    "starterValueProcessingSpeed": "Standard",
+    "proValueProcessingSpeed": "Priority",
+    "businessValueProcessingSpeed": "Instant",
+    "enterpriseValueProcessingSpeed": "Instant",
+    "tooltipProcessingSpeed": "Speed of AI processing and generation.",
+
+    "featureCustomBranding": "Custom Branding",
+    "proValueCustomBranding": "Basic",
+    "businessValueCustomBranding": "White-label",
+    "enterpriseValueCustomBranding": "White-label",
+    "tooltipCustomBranding": "Customization options for branding and styling.",
+
+    "featureAnalyticsInsights": "Analytics & Insights",
+    "starterValueAnalyticsInsights": "Basic",
+    "proValueAnalyticsInsights": "Advanced",
+    "businessValueAnalyticsInsights": "Detailed",
+    "enterpriseValueAnalyticsInsights": "Custom",
+    "tooltipAnalyticsInsights": "Level of analytics and performance insights available.",
+
+    "featureApiAccess": "API Access",
+    "businessValueApiAccess": "Standard",
+    "enterpriseValueApiAccess": "Full",
+    "tooltipApiAccess": "API access for integration with other tools.",
+
+    "featureBulkUpload": "Bulk Upload",
+    "tooltipBulkUpload": "Ability to upload and process multiple products at once.",
+
+    "featureCustomerSupport": "Customer Support",
+    "starterValueCustomerSupport": "Email",
+    "proValueCustomerSupport": "Priority Email",
+    "businessValueCustomerSupport": "24/7 Priority",
+    "enterpriseValueCustomerSupport": "Dedicated Manager",
+    "tooltipCustomerSupport": "Level of customer support and response time.",
+
+    "featureSeoOptimization": "SEO Optimization",
+    "proValueSeoOptimization": "Basic",
+    "tooltipSeoOptimization": "Advanced SEO optimization for product descriptions."
+  },
+  "footer": {
+    "companyTitle": "Company",
+    "about": "About",
+    "enterprise": "Enterprise",
+    "terms": "Terms",
+    "privacy": "Privacy",
+
+    "productTitle": "Product",
+    "security": "Security",
+    "customization": "Customization",
+    "customers": "Customers",
+    "changelog": "Changelog",
+
+    "docsTitle": "Docs",
+    "introduction": "Introduction",
+    "installation": "Installation",
+    "components": "Components",
+    "codeBlocks": "Code Blocks"
+  },
+  "marketing": {
+    "pricing": "Pricing",
+    "howTo": "How to"
+  },
+  "infos": {
+    "section1": {
+      "title": "Turn Images into Listings Instantly",
+      "description": "Port uses AI to transform your product images into complete listings for Amazon, eBay, Etsy, and more. Save hours on manual data entry and focus on growing your business.",
+      "list1": {
+        "title": "AI-Powered",
+        "description": "Our AI automatically detects product details, generates titles, and writes optimized descriptions."
+      },
+      "list2": {
+        "title": "Multi-Platform",
+        "description": "Publish listings directly to top marketplaces in one click—no copy-pasting required."
+      },
+      "list3": {
+        "title": "Accurate & Fast",
+        "description": "Get reliable, high-quality listings in seconds, ready for any platform’s requirements."
+      }
+    },
+    "section2": {
+      "title": "Seamless Seller Workflow",
+      "description": "Integrate Port effortlessly into your eCommerce workflow. Sync with existing stores, manage listings, and track performance from a single dashboard.",
+      "list1": {
+        "title": "Flexible Integrations",
+        "description": "Connect Port with Amazon, eBay, Etsy, Shopify, or any platform you sell on."
+      },
+      "list2": {
+        "title": "Smart Organization",
+        "description": "Automatically categorize products and suggest tags to boost visibility and SEO."
+      },
+      "list3": {
+        "title": "Reliable Infrastructure",
+        "description": "Built for performance and uptime—your listings and data are safe and always accessible."
+      }
+    }
+  },
+  "features": {
+    "aiListingGenerator": {
+      "title": "AI Listing Generator",
+      "description": "Upload a product photo and let Port create a complete listing with title, description, category, and pricing suggestions."
+    },
+    "marketplaceIntegration": {
+      "title": "Marketplace Integration",
+      "description": "Instantly connect and publish to Amazon, eBay, and Etsy with one click—no repetitive data entry."
+    },
+    "smartTaggingSeo": {
+      "title": "Smart Tagging & SEO",
+      "description": "AI automatically generates SEO-friendly keywords and tags to maximize your product’s reach."
+    },
+    "bulkUploadSupport": {
+      "title": "Bulk Upload Support",
+      "description": "Upload multiple products at once and let Port process, generate, and publish them in batches."
+    },
+    "performanceInsights": {
+      "title": "Performance Insights",
+      "description": "Track how your listings perform across platforms with AI-powered analytics and improvement suggestions."
+    },
+    "collaborativeWorkspace": {
+      "title": "Collaborative Workspace",
+      "description": "Invite team members to review, edit, and publish listings together, ensuring quality and consistency."
+    }
+  },
+  "testimonials": {
+    "sarahMiller": {
+      "name": "Sarah Miller",
+      "job": "Etsy Shop Owner",
+      "review": "Port saves me hours every week. I just upload a product photo, and it generates the full Etsy listing — title, description, and tags included. It's like having my own AI assistant."
+    },
+    "jamesRoberts": {
+      "name": "James Roberts",
+      "job": "Amazon Seller",
+      "review": "I’ve tried other tools, but Port’s AI listings are incredibly accurate. It understands what I’m selling just from an image and creates Amazon-ready listings instantly."
+    },
+    "oliviaChen": {
+      "name": "Olivia Chen",
+      "job": "eBay Power Seller",
+      "review": "Port has completely changed how I manage eBay listings. I can upload dozens of product images at once and publish everything in minutes."
+    },
+    "davidLopez": {
+      "name": "David Lopez",
+      "job": "E-commerce Manager",
+      "review": "Our team uses Port daily. It cut down our product listing time by 80%. The integration with Shopify and Amazon just works."
+    },
+    "ninaPatel": {
+      "name": "Nina Patel",
+      "job": "Small Business Owner",
+      "review": "I’m not tech-savvy, but Port made listing products so simple. It handles everything from writing to categorizing. My Etsy shop has never looked more professional."
+    },
+    "robertGreen": {
+      "name": "Robert Green",
+      "job": "Dropshipper",
+      "review": "Bulk upload is a game-changer. Port generates listings faster than any VA I’ve ever hired — and it’s more consistent."
+    },
+    "elenaCruz": {
+      "name": "Elena Cruz",
+      "job": "Creative Seller",
+      "review": "The AI-generated product descriptions sound natural and engaging. My products now rank higher and attract more buyers across marketplaces."
+    }
   }
 }

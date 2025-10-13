@@ -8,9 +8,11 @@ import SplitText from '@/components/SplitText';
 import Image from 'next/image';
 import Orb from '../../Orb';
 import { FloatingComponents } from './floating-features';
+import { useTranslations } from 'next-intl';
 
 export default function HeroLanding() {
   const { user, isSignedIn } = useUser();
+  const t = useTranslations();
   return (
     <section className="relative w-full h-[600px] overflow-hidden">
       {/* 🔹 Background layer */}
@@ -39,7 +41,7 @@ export default function HeroLanding() {
         </div>
 
         <SplitText
-          text="Snap. Generate. Sell."
+          text={t('landing.headline')}
           className="text-4xl md:text-6xl font-extrabold text-center"
           delay={100}
           duration={0.6}
@@ -53,7 +55,7 @@ export default function HeroLanding() {
         />
 
         <SplitText
-          text="Turn any product photo into a complete, shop-ready listing in seconds — titles, descriptions, and all."
+          text={t('landing.subheadline')}
           className="text-sm md:text-2xl font-normal text-center w-2/4 mt-4"
           delay={100}
           duration={0.6}
@@ -74,7 +76,7 @@ export default function HeroLanding() {
                 variant="default"
                 size="lg"
               >
-                Get Started
+                {t('landing.button')}
               </Button>
             </Link>
           ) : null}

@@ -3,5 +3,242 @@
     "light": "ライト",
     "dark": "ダーク",
     "system": "システム"
+  },
+  "landing": {
+      "headline": "スナップ。生成。販売。",
+      "subheadline": "任意の製品写真を数秒で完全なショップ向けリストに変換 — タイトル、説明などすべて。",
+      "button": "始める",
+      "convert": "変換",
+      "ourStats": "私たちの統計",
+      "generate": "生成",
+      "generateValue": "250万",
+      "sales": "販売",
+      "salesValue": "8.5千",
+      "revenue": "収益",
+      "revenueValue": "$12万",
+      "growth": "成長",
+      "growthValue": "35%"
+    },
+  "pricing": {
+    "starterTitle": "スターター",
+    "starterDescription": "始めるのに最適",
+    "starterBenefit1": "月に最大10件の製品説明",
+    "starterBenefit2": "基本的なAI生成の説明",
+    "starterBenefit3": "標準的なECプラットフォーム（Amazon、Shopify）",
+    "starterBenefit4": "メールサポート",
+    "starterLimitation1": "基本的な説明に制限",
+    "starterLimitation2": "カスタムブランディングオプションなし",
+    "starterLimitation3": "優先処理なし",
+    "starterLimitation4": "高度な分析なし",
+
+    "proTitle": "プロ",
+    "proDescription": "成長中のビジネス向け",
+    "proBenefit1": "月に最大100件の製品説明",
+    "proBenefit2": "詳細仕様付きの高度なAI",
+    "proBenefit3": "すべての主要プラットフォーム（Amazon、Shopify、Etsy、eBay）",
+    "proBenefit4": "優先処理",
+    "proBenefit5": "カスタムブランディングオプション",
+    "proBenefit6": "高度な分析とインサイト",
+    "proBenefit7": "優先メールサポート",
+    "proLimitation1": "月間制限あり",
+    "proLimitation2": "専任アカウントマネージャーなし",
+
+    "businessTitle": "ビジネス",
+    "businessDescription": "パワーセラー向け",
+    "businessBenefit1": "無制限の製品説明",
+    "businessBenefit2": "SEO最適化付きプレミアムAI",
+    "businessBenefit3": "すべてのプラットフォーム + カスタム統合",
+    "businessBenefit4": "即時処理",
+    "businessBenefit5": "ホワイトラベルブランディング",
+    "businessBenefit6": "詳細な分析とレポート",
+    "businessBenefit7": "専任アカウントマネージャー",
+    "businessBenefit8": "24時間365日優先サポート",
+    "businessBenefit9": "カスタムAPIアクセス",
+    "businessBenefit10": "一括アップロード機能",
+
+    "starter": "スターター",
+    "pro": "プロ",
+    "business": "ビジネス",
+    "enterprise": "エンタープライズ",
+
+    "featureMonthlyProductDescriptions": "月間製品説明数",
+    "starterValueMonthlyProductDescriptions": "10",
+    "proValueMonthlyProductDescriptions": "100",
+    "businessValueMonthlyProductDescriptions": "無制限",
+    "enterpriseValueMonthlyProductDescriptions": "無制限",
+    "tooltipMonthlyProductDescriptions": "月ごとのAI生成製品説明の数。",
+
+    "featureEcommercePlatforms": "ECプラットフォーム",
+    "starterValueEcommercePlatforms": "Amazon、Shopify",
+    "proValueEcommercePlatforms": "すべての主要プラットフォーム",
+    "businessValueEcommercePlatforms": "すべて + カスタム",
+    "enterpriseValueEcommercePlatforms": "すべて + カスタム",
+    "tooltipEcommercePlatforms": "製品リスティングに対応するECプラットフォーム。",
+
+    "featureAiQuality": "AIの品質",
+    "starterValueAiQuality": "基本",
+    "proValueAiQuality": "高度",
+    "businessValueAiQuality": "プレミアム",
+    "enterpriseValueAiQuality": "プレミアム",
+    "tooltipAiQuality": "説明文のAIの精度と詳細レベル。",
+
+    "featureProcessingSpeed": "処理速度",
+    "starterValueProcessingSpeed": "標準",
+    "proValueProcessingSpeed": "優先",
+    "businessValueProcessingSpeed": "即時",
+    "enterpriseValueProcessingSpeed": "即時",
+    "tooltipProcessingSpeed": "AI処理と生成の速度。",
+
+    "featureCustomBranding": "カスタムブランディング",
+    "proValueCustomBranding": "基本",
+    "businessValueCustomBranding": "ホワイトラベル",
+    "enterpriseValueCustomBranding": "ホワイトラベル",
+    "tooltipCustomBranding": "ブランドやスタイルのカスタマイズオプション。",
+
+    "featureAnalyticsInsights": "分析とインサイト",
+    "starterValueAnalyticsInsights": "基本",
+    "proValueAnalyticsInsights": "高度",
+    "businessValueAnalyticsInsights": "詳細",
+    "enterpriseValueAnalyticsInsights": "カスタム",
+    "tooltipAnalyticsInsights": "利用可能な分析およびパフォーマンスインサイトのレベル。",
+
+    "featureApiAccess": "APIアクセス",
+    "businessValueApiAccess": "標準",
+    "enterpriseValueApiAccess": "フル",
+    "tooltipApiAccess": "他のツールとの統合のためのAPIアクセス。",
+
+    "featureBulkUpload": "一括アップロード",
+    "tooltipBulkUpload": "複数の製品を一度にアップロードおよび処理可能。",
+
+    "featureCustomerSupport": "カスタマーサポート",
+    "starterValueCustomerSupport": "メール",
+    "proValueCustomerSupport": "優先メール",
+    "businessValueCustomerSupport": "24時間365日優先",
+    "enterpriseValueCustomerSupport": "専任マネージャー",
+    "tooltipCustomerSupport": "カスタマーサポートのレベルと応答時間。",
+
+    "featureSeoOptimization": "SEO最適化",
+    "proValueSeoOptimization": "基本",
+    "tooltipSeoOptimization": "製品説明の高度なSEO最適化。"
+  },
+  "footer": {
+    "companyTitle": "会社",
+    "about": "会社概要",
+    "enterprise": "エンタープライズ",
+    "terms": "利用規約",
+    "privacy": "プライバシー",
+
+    "productTitle": "製品",
+    "security": "セキュリティ",
+    "customization": "カスタマイズ",
+    "customers": "顧客",
+    "changelog": "変更履歴",
+
+    "docsTitle": "ドキュメント",
+    "introduction": "イントロダクション",
+    "installation": "インストール",
+    "components": "コンポーネント",
+    "codeBlocks": "コードブロック"
+  },
+  "marketing": {
+    "pricing": "料金",
+    "howTo": "使い方"
+  },
+  "infos": {
+    "section1": {
+      "title": "画像を瞬時に商品リスティングに変換",
+      "description": "PortはAIを使って、商品画像をAmazon、eBay、Etsyなどの完全なリスティングに変換します。手動でのデータ入力の時間を節約し、ビジネスの成長に集中できます。",
+      "list1": {
+        "title": "AI搭載",
+        "description": "AIが自動的に商品情報を検出し、タイトルを生成し、最適化された説明文を作成します。"
+      },
+      "list2": {
+        "title": "マルチプラットフォーム",
+        "description": "一度のクリックで主要マーケットプレイスに直接リスティングを公開できます。コピー＆ペーストは不要です。"
+      },
+      "list3": {
+        "title": "正確かつ迅速",
+        "description": "数秒で高品質で信頼性のあるリスティングを作成し、どのプラットフォームの要件にも対応可能です。"
+      }
+    },
+    "section2": {
+      "title": "シームレスな販売者ワークフロー",
+      "description": "Portを簡単にeコマースワークフローに統合できます。既存ストアと同期し、リスティングを管理し、単一のダッシュボードでパフォーマンスを追跡可能です。",
+      "list1": {
+        "title": "柔軟な統合",
+        "description": "Amazon、eBay、Etsy、Shopify、または任意のプラットフォームにPortを接続可能です。"
+      },
+      "list2": {
+        "title": "スマートな整理",
+        "description": "商品を自動的に分類し、視認性とSEOを向上させるタグを提案します。"
+      },
+      "list3": {
+        "title": "信頼性の高いインフラ",
+        "description": "パフォーマンスと稼働時間を重視して構築されており、リスティングやデータは常に安全でアクセス可能です。"
+      }
+    }
+  },
+  "features": {
+    "aiListingGenerator": {
+      "title": "AIリスティング生成",
+      "description": "商品写真をアップロードすると、Portがタイトル、説明、カテゴリー、価格提案を含む完全なリスティングを生成します。"
+    },
+    "marketplaceIntegration": {
+      "title": "マーケットプレイス統合",
+      "description": "Amazon、eBay、Etsyに瞬時に接続して公開。繰り返しのデータ入力は不要です。"
+    },
+    "smartTaggingSeo": {
+      "title": "スマートタグ付け & SEO",
+      "description": "AIが自動的にSEOフレンドリーなキーワードとタグを生成し、商品のリーチを最大化します。"
+    },
+    "bulkUploadSupport": {
+      "title": "一括アップロード対応",
+      "description": "複数の商品を一度にアップロードして、Portがまとめて処理・生成・公開します。"
+    },
+    "performanceInsights": {
+      "title": "パフォーマンスインサイト",
+      "description": "プラットフォーム全体でリスティングのパフォーマンスをAI分析で追跡し、改善提案を提供します。"
+    },
+    "collaborativeWorkspace": {
+      "title": "共同作業スペース",
+      "description": "チームメンバーを招待してリスティングをレビュー、編集、公開し、品質と一貫性を確保できます。"
+    }
+  },
+  "testimonials": {
+    "sarahMiller": {
+      "name": "サラ・ミラー",
+      "job": "Etsyショップオーナー",
+      "review": "Portは毎週の作業時間を大幅に節約してくれます。商品写真をアップロードするだけで、Etsyリスティング全体（タイトル、説明、タグ）が生成されます。まるで自分専用のAIアシスタントがいるようです。"
+    },
+    "jamesRoberts": {
+      "name": "ジェームズ・ロバーツ",
+      "job": "Amazonセラー",
+      "review": "他のツールも試しましたが、PortのAIリスティングは非常に正確です。画像だけで販売商品を理解し、即座にAmazon対応のリスティングを作成します。"
+    },
+    "oliviaChen": {
+      "name": "オリビア・チェン",
+      "job": "eBayパワーセラー",
+      "review": "Portにより、eBayリスティングの管理方法が完全に変わりました。何十枚もの商品画像を一度にアップロードし、数分で公開できます。"
+    },
+    "davidLopez": {
+      "name": "デイビッド・ロペス",
+      "job": "Eコマースマネージャー",
+      "review": "チームは日々Portを使用しています。商品リスティング時間が80％短縮され、ShopifyやAmazonとの統合もスムーズです。"
+    },
+    "ninaPatel": {
+      "name": "ニナ・パテル",
+      "job": "小規模ビジネスオーナー",
+      "review": "技術に詳しくなくても、Portでのリスティングは簡単です。作成から分類まで全てを処理してくれます。Etsyショップが以前よりもプロフェッショナルになりました。"
+    },
+    "robertGreen": {
+      "name": "ロバート・グリーン",
+      "job": "ドロップシッパー",
+      "review": "一括アップロードは画期的です。Portはこれまで雇ったVAよりも早く、より一貫性のあるリスティングを生成します。"
+    },
+    "elenaCruz": {
+      "name": "エレナ・クルーズ",
+      "job": "クリエイティブセラー",
+      "review": "AI生成の製品説明は自然で魅力的です。商品がより高ランクになり、マーケットプレイスでより多くの購入者を引き付けています。"
+    }
   }
 }

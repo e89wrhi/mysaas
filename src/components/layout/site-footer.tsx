@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 
-import { footerLinks, siteConfig } from '@/config/site';
+import { FooterLinks, siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { NewsletterForm } from '@/components/forms/newsletter-form';
@@ -11,7 +11,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
     <footer className={cn('border-t', className)}>
       <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-5">
-        {footerLinks.map((section) => (
+        {FooterLinks().map((section) => (
           <div key={section.title}>
             <span className="text-sm font-medium text-foreground">
               {section.title}

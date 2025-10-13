@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-import { testimonials } from '@/config/landing';
+import { Testimonials } from '@/config/landing';
 import { HeaderSection } from '@/components/shared/header-section';
 
-export default function Testimonials() {
+export default function Testimonialss() {
   return (
     <section>
       <div className="container flex max-w-6xl flex-col gap-10 py-32 sm:gap-y-16">
@@ -15,7 +15,7 @@ export default function Testimonials() {
         />
 
         <div className="column-1 gap-5 space-y-5 md:columns-2 lg:columns-3 ">
-          {testimonials.map((item) => (
+          {Testimonials().map((item) => (
             <div className="break-inside-avoid" key={item.name}>
               <div className="relative rounded-3xl bg-muted/45">
                 <div className="flex flex-col px-4 py-5 sm:p-6">
