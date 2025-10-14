@@ -18,7 +18,6 @@ export function ProductImageUploader({
   const [previewUrl, setPreviewUrl] = useState('');
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
-
   const handleImageUpload = (res?: { url: string }[]) => {
     if (!res || res.length === 0) {
       toast.error('Upload failed');

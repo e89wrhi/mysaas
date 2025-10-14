@@ -26,6 +26,7 @@ import Image from 'next/image';
 import { Product } from '@/types';
 import { Copy, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   products: Product[];
@@ -33,6 +34,7 @@ interface Props {
 }
 
 export default function ProductsGrid({ products, onDelete }: Props) {
+  const t = useTranslations();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [productToDelete, setProductToDelete] = useState<Product | null>(null);
@@ -85,7 +87,7 @@ export default function ProductsGrid({ products, onDelete }: Props) {
 
             <CardHeader>
               <CardTitle className="text-2xl font-bold">
-                Platform: {product.platform}
+                {t('dashboard.platform')}: {product.platform}
               </CardTitle>
             </CardHeader>
 
@@ -106,18 +108,19 @@ export default function ProductsGrid({ products, onDelete }: Props) {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button size="sm" variant="outline">
-                      Options
+                      {t('dashboard.options')}
                     </Button>
                   </DropdownMenuTrigger>
 
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem onClick={() => handleCopy(product)}>
-                      <Copy className="mr-2 h-4 w-4" /> Copy
+                      <Copy className="mr-2 h-4 w-4" /> {t('dashboard.copy')}
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => handleDeleteClick(product)}
                     >
-                      <Trash2 className="mr-2 h-4 w-4" /> Delete
+                      <Trash2 className="mr-2 h-4 w-4" />{' '}
+                      {t('dashboard.delete')}
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>

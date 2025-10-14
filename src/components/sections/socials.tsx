@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const logos = [
   {
@@ -46,9 +49,12 @@ const logos = [
 ];
 
 export default function SocialsSection() {
+  const t = useTranslations();
   return (
     <section className="flex flex-col py-14 text-muted-foreground">
-      <h2 className="text-center text-sm font-semibold uppercase">Socials</h2>
+      <h2 className="text-center text-sm font-semibold uppercase">
+        {t('landing.socials')}
+      </h2>
       <div className="overflow-hidden relative w-full my-10 md:my-15">
         <div className="flex animate-marquee whitespace-nowrap">
           {/* Original items */}

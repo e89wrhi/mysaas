@@ -11,11 +11,12 @@ import Image from 'next/image';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import LoadingView from '@/components/shared/loading-view';
+import { useTranslations } from 'next-intl';
 
 export default function LoginClient() {
   const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
-
+  const t = useTranslations();
   useEffect(() => {
     // Check if Clerk has loaded and the user is signed in
     if (isLoaded && isSignedIn) {
@@ -41,7 +42,7 @@ export default function LoginClient() {
       >
         <>
           <Icons.chevronLeft className="mr-2 size-4" />
-          Back
+          {t('back')}
         </>
       </Link>
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
@@ -54,10 +55,10 @@ export default function LoginClient() {
             className="h-22 w-22"
           />
           <h1 className="text-2xl font-semibold tracking-tight">
-            Welcome back
+            {t('login.wellcome')}
           </h1>
           <p className="text-sm text-muted-foreground">
-            Enter your email to sign in to your account
+            {t('login.wellcomeSub')}
           </p>
         </div>
         <Suspense>
@@ -68,7 +69,7 @@ export default function LoginClient() {
             href="/register"
             className="hover:text-brand underline underline-offset-4"
           >
-            Don&apos;t have an account? Sign Up
+            {t('login.signup')}
           </Link>
         </p>
       </div>

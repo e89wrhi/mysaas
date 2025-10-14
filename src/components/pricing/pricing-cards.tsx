@@ -14,10 +14,11 @@ import { HeaderSection } from '@/components/shared/header-section';
 import { Icons } from '@/components/shared/icons';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import { PricingData } from '@/config/subscription';
+import { useTranslations } from 'next-intl';
 
 export default function PricingCards() {
   const [isYearly, setIsYearly] = useState(false);
-
+  const t = useTranslations();
   const toggleBilling = (value: string) => {
     setIsYearly(value === 'yearly');
   };
@@ -25,7 +26,11 @@ export default function PricingCards() {
   return (
     <MaxWidthWrapper>
       <section className="flex flex-col items-center text-center">
-        <HeaderSection label="Pricing" title="Choose Your Plan" subtitle="" />
+        <HeaderSection
+          label={t('pricing.pricing')}
+          title={t('pricing.pricingSub')}
+          subtitle=""
+        />
 
         <div className="mb-8 mt-10 flex items-center gap-5">
           <ToggleGroup
@@ -41,14 +46,14 @@ export default function PricingCards() {
               className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle yearly billing"
             >
-              Yearly (-20%)
+              {t('pricing.yearly')} (-20%)
             </ToggleGroupItem>
             <ToggleGroupItem
               value="monthly"
               className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle monthly billing"
             >
-              Monthly
+              {t('pricing.monthly')}
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
@@ -114,7 +119,7 @@ export default function PricingCards() {
 
                 <div className="p-6 pt-0">
                   <Button
-                    className="w-full"
+                    className="w-full rounded-full"
                     variant={isPopular ? 'default' : 'outline'}
                   >
                     {plan.prices.monthly === 0
@@ -128,16 +133,7 @@ export default function PricingCards() {
         </div>
 
         <p className="mt-6 text-balance text-center text-base text-muted-foreground">
-          Need a custom plan? Email{' '}
-          <a
-            className="font-medium text-primary hover:underline"
-            href="mailto:support@port.com"
-          >
-            support@port.com
-          </a>{' '}
-          to contact our support team.
-          <br />
-          <strong>Start with our free plan - no credit card required.</strong>
+          {t('pricing.pricingFooter')}
         </p>
       </section>
     </MaxWidthWrapper>

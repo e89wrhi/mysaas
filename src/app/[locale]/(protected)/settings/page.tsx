@@ -22,8 +22,10 @@ import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import LoadingView from '@/components/shared/loading-view';
 import { SignInEmptyView } from '@/components/shared/signin-empty-view';
+import { useTranslations } from 'next-intl';
 
 export default function SettingsPage() {
+  const t = useTranslations();
   const { user, isSignedIn } = useUser();
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -107,7 +109,7 @@ export default function SettingsPage() {
           />
           <div>
             <h1 className="text-2xl font-bold">
-              Welcome back,{' '}
+              {t('settings.welcome')}{' '}
               {name ||
                 user.emailAddresses[0]?.emailAddress?.split('@')[0] ||
                 'User'}
@@ -122,14 +124,14 @@ export default function SettingsPage() {
         {/* Delete Account Card */}
         <Card>
           <CardHeader>
-            <CardTitle>Account Management</CardTitle>
+            <CardTitle>{t('settings.account')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-between">
               <div>
-                <h4 className="font-medium">Delete Account</h4>
+                <h4 className="font-medium">{t('settings.deleteTitle')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Permanently delete your account and all associated data
+                  {t('settings.deleteSub')}
                 </p>
               </div>
               <Dialog
@@ -139,16 +141,14 @@ export default function SettingsPage() {
                 <DialogTrigger asChild>
                   <Button variant="destructive" size="sm">
                     <Trash2 className="h-4 w-4 mr-2" />
-                    Delete Account
+                    {t('settings.delete')}
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Delete Account</DialogTitle>
+                    <DialogTitle>{t('settings.deleteTitle')}</DialogTitle>
                     <DialogDescription>
-                      Are you sure you want to delete your account? This action
-                      cannot be undone. This will permanently delete all your
-                      products and profile.
+                      {t('settings.deleteSub')}
                     </DialogDescription>
                   </DialogHeader>
                   <DialogFooter>
@@ -157,14 +157,14 @@ export default function SettingsPage() {
                       onClick={() => setIsDeleteDialogOpen(false)}
                       disabled={isDeleting}
                     >
-                      Cancel
+                      {t('settings.cancel')}
                     </Button>
                     <Button
                       variant="destructive"
                       onClick={handleDeleteAccount}
                       disabled={isDeleting}
                     >
-                      {isDeleting ? 'Deleting...' : 'Delete Account'}
+                      {isDeleting ? 'Deleting...' : 'Delete'}
                     </Button>
                   </DialogFooter>
                 </DialogContent>
@@ -175,7 +175,7 @@ export default function SettingsPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Update</CardTitle>
+            <CardTitle>{t('settings.update')}</CardTitle>
           </CardHeader>
           <CardContent>
             <Link
@@ -183,20 +183,20 @@ export default function SettingsPage() {
               className="flex flex-row items-center"
             >
               <Icons.add className="h-4 w-4 mr-2" />
-              Update Profile
+              {t('settings.updateSub')}
             </Link>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Sign Out</CardTitle>
+            <CardTitle>{t('settings.signout')}</CardTitle>
           </CardHeader>
           <CardContent>
             <SignOutButton>
               <Button variant="outline">
                 <Icons.arrowRight className="h-4 w-4 mr-2" />
-                Sign Out
+                {t('settings.signout')}
               </Button>
             </SignOutButton>
           </CardContent>

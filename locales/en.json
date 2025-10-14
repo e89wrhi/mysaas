@@ -4,6 +4,7 @@
     "dark": "Dark",
     "system": "System"
   },
+  "back": "Back",
   "landing": {
       "headline": "Snap. Generate. Sell.",
       "subheadline": "Turn any product photo into a complete, shop-ready listing in seconds — titles, descriptions, and all.",
@@ -17,9 +18,163 @@
       "revenue": "Revenue",
       "revenueValue": "$120K",
       "growth": "Growth",
-      "growthValue": "35%"
+      "growthValue": "35%",
+
+      "dashboard": "Dashboard",
+      "settings": "Settings",
+      "signout": "Sign Out",
+      "socials": "Socials",
+      "poweredBy": "Powered by",
+      "intelligentListing": "Intelligent Listing",
+      "fasterLight": "Faster than light",
+      "fasterLightValue": "Provident fugit vero voluptate. magnam magni doloribus dolores voluptates inventore nisi.",
+      "analyzing": "Analyzing image...",
+      "generating": "Generating listing...",
+      "done": "Done!",
+      "features": "Features",
+      "featuresDiscover": "Discover Features",
+      "testimonials": "Testimonials",
+      "testimonialsSee": "See What Our Users Say",
+      "subscribeTitle": "Subscribe to our newsletter",
+      "subscribeButton": "Subscribe"
     },
+    "login": {
+      "wellcome": "Welcome back!",
+      "wellcomeSub": "Log in to your account to continue",
+      "placeholderEmail": "Enter your @email",
+      "emailButton": "SignIn with Email",
+      "or": "Or continue with",
+      "google": "SignIn with Google",
+      "signup": "Don't have an account? Sign Up"
+    },
+    "register": {
+       "login": "LogIn",
+       "create": "Create your account",
+      "createSub": "Start your free trial today",
+      "emailButton": "Sign Up with Email",
+      "or": "Or continue with",
+      "google": "Sign Up with Google",
+      "footer": "By signing up, you agree to our Terms of Service and Privacy Policy."
+    },
+    "dashboard": {
+      "welcome": "Welcome, ",
+      "convertNew": "Convert New",
+      "addMock": "Add Mock",
+      "history": "History",
+      "products": "Products",
+      "options": "Options",
+      "emptyTitle": "No products yet",
+      "emptySub": "Upload a product image to generate your first listing.",
+      "emptyButton": "Convert New",
+      "platform": "Platform",
+      "copy": "Copy",
+      "delete": "Delete"
+    },
+    "settings": {
+       "welcome": "Welcome, ",
+       "account": "Account Settings",
+       "deleteTitle": "Delete Account",
+      "deleteSub": "Once you delete your account, there is no going back. Please",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "update": "Update",
+      "updateSub": "Update your account details below.",
+      "signout":"Sign Out"
+    },
+    "new": {
+       "title": "Convert Product",
+       "sub": "Upload a product image to generate a complete listing.",
+       "chooseFile": "Choose File",
+       "typeTitle": "Platform & Generation",
+       "typeSub": "Select your e-commerce platform and generation type.",
+       "select": "Select",
+        "amazon": "Amazon",
+        "amazonSub": "Generate listings optimized for Amazon.",
+        "shopify": "Shopify",
+        "shopifySub": "Create listings tailored for Shopify.",
+        "etsy": "Etsy",
+        "etsySub": "Craft listings perfect for Etsy.",
+        "ebay": "eBay",
+        "ebaySub": "Design listings suited for eBay.",
+        "createMock": "Create Mock Product",
+        "create": "Generate Listing"
+    },
+    "pricingFaq": {
+    "item1": {
+      "question": "What is included in the free Starter plan?",
+      "answer": "The Starter plan is completely free and includes up to 10 AI-generated product descriptions per month. You get access to basic AI features and support for Amazon and Shopify platforms. It's perfect for testing our service and small-scale operations."
+    },
+    "item2": {
+      "question": "How much does the Pro plan cost?",
+      "answer": "The Pro plan costs $29 per month (or $288 per year with 20% savings). It includes up to 100 product descriptions per month, advanced AI features, all major e-commerce platforms, priority processing, and enhanced analytics."
+    },
+    "item3": {
+      "question": "What does the Business plan offer?",
+      "answer": "The Business plan costs $79 per month (or $768 per year) and provides unlimited product descriptions, premium AI with SEO optimization, white-label branding, bulk upload capabilities, API access, and 24/7 priority support with a dedicated account manager."
+    },
+    "item4": {
+      "question": "Do you offer annual billing discounts?",
+      "answer": "Yes! Annual plans come with a 20% discount. The Pro plan is $288/year (vs $348 monthly), and the Business plan is $768/year (vs $948 monthly). You save significantly by paying annually."
+    },
+    "item5": {
+      "question": "Can I change my plan anytime?",
+      "answer": "Yes, you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades take effect at your next billing cycle. You'll only pay the prorated difference for upgrades."
+    },
+    "item6": {
+      "question": "What e-commerce platforms do you support?",
+      "answer": "We support all major e-commerce platforms including Amazon, Shopify, Etsy, eBay, and many others. Higher-tier plans include custom platform integrations for specialized needs."
+    },
+    "item7": {
+      "question": "How accurate are the AI-generated descriptions?",
+      "answer": "Our AI provides highly accurate and detailed product descriptions by analyzing product images and generating comprehensive content including titles, descriptions, features, benefits, and specifications. The quality improves with higher-tier plans."
+    },
+    "item8": {
+      "question": "Is there a free trial for paid plans?",
+      "answer": "While we don't offer a traditional free trial, you can start with our free Starter plan to test the service. If you need more capacity, you can upgrade anytime and cancel within 30 days for a full refund."
+    }
+  },
+    "how": {
+      "title": "How to use Port",
+    "step1": {
+      "title": "Step 1: Create Your Port Account",
+      "content": "Sign up to get access to your Port dashboard where you can upload product images and manage listings across Amazon, eBay, Etsy, and more."
+    },
+    "step2": {
+      "title": "Step 2: Upload Your Product Image",
+      "content": "Simply drag and drop your product photo. Port’s AI instantly analyzes the image and prepares product details such as title, category, and description."
+    },
+    "step3": {
+      "title": "Step 3: Generate Listing Information",
+      "content": "Port’s AI converts your image into structured product data optimized for multiple marketplaces—title, description, tags, and pricing suggestions included."
+    },
+    "step4": {
+      "title": "Step 4: Edit & Customize Your Listings",
+      "content": "Review and adjust AI-generated content. Edit keywords, descriptions, and pricing for better SEO and conversion performance."
+    },
+    "step5": {
+      "title": "Step 5: Publish to Marketplaces",
+      "content": "Instantly push your finalized listings to Amazon, eBay, Etsy, and other platforms with one click—no manual data entry needed."
+    },
+    "step6": {
+      "title": "Step 6: Track Performance with AI Insights",
+      "content": "Monitor your product performance across platforms. Port’s AI provides insights on listing quality, engagement, and conversion optimization."
+    },
+    "step7": {
+      "title": "Step 7: Automate & Scale with AI Tools",
+      "content": "Use Port’s automation tools to bulk upload, sync listings, and optimize pricing automatically—letting AI handle repetitive work while you grow your business."
+    }
+  },
   "pricing": {
+    "pricing": "Pricing",
+    "pricingSub": "Choose your plan",
+    "yearly": "Yearly",
+    "monthly": "Monthly",
+    "pricingFooter": "Need a custom plan? Contact us for enterprise solutions.",
+    "plans": "Plans",
+    "plansSub": "Compare Our Plans",
+    "faq": "Faq",
+    "faqSub": "Frequently Asked Questions",
+
     "starterTitle": "Starter",
     "starterDescription": "Perfect for getting started",
     "starterBenefit1": "Up to 10 product descriptions per month",

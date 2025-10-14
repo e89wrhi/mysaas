@@ -22,26 +22,41 @@ import {
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import { generateMockProduct } from '@/lib/mockProduct';
 import { ProductImageUploader } from './upload-img';
+import { useTranslations } from 'next-intl';
 
-const PLATFORMS = [
-  {
-    id: 'amazon',
-    name: 'Amazon',
-    description: 'Generate Amazon product listings',
-  },
-  {
-    id: 'shopify',
-    name: 'Shopify',
-    description: 'Create Shopify product descriptions',
-  },
-  { id: 'etsy', name: 'Etsy', description: 'Craft Etsy marketplace listings' },
-  { id: 'ebay', name: 'eBay', description: 'Build eBay auction descriptions' },
-];
+interface Platform {
+  id: string;
+  name: string;
+  description: string;
+}
 
 export default function ConvertPage() {
+  const t = useTranslations();
   const { user, isSignedIn } = useUser();
   const router = useRouter();
 
+  const PLATFORMS = [
+    {
+      id: 'amazon',
+      name: `${t('new.amazon')}`,
+      description: `${t('new.amazonSub')}`,
+    },
+    {
+      id: 'shopify',
+      name: `${t('new.shopify')}`,
+      description: `${t('new.shopifySub')}`,
+    },
+    {
+      id: 'etsy',
+      name: `${t('new.etsy')}`,
+      description: `${t('new.etsySub')}`,
+    },
+    {
+      id: 'ebay',
+      name: `${t('new.ebay')}`,
+      description: `${t('new.ebaySub')}`,
+    },
+  ];
   const [selectedPlatform, setSelectedPlatform] = useState<string>('');
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string>('');
   const [isImageUploaded, setImageUploaded] = useState<boolean>(false);
@@ -126,7 +141,7 @@ export default function ConvertPage() {
   const isBusy = isGenerating || isCreatingMock;
 
   // --- Reusable Components ---
-  const PlatformButton = ({ id, name, description }: (typeof PLATFORMS)[0]) => (
+  const PlatformButton = ({ id, name, description }: Platform) => (
     <Button
       key={id}
       variant={selectedPlatform === id ? 'default' : 'outline'}
@@ -158,12 +173,12 @@ export default function ConvertPage() {
           {isGenerating ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Generating Description...
+              ...
             </>
           ) : (
             <>
               <Wand2 className="mr-2 h-4 w-4" />
-              Generate Product Description
+              {t('new.create')}
             </>
           )}
         </Button>
@@ -181,12 +196,12 @@ export default function ConvertPage() {
         {isCreatingMock ? (
           <>
             <Sparkles className="mr-2 h-4 w-4 animate-spin" />
-            Creating Mock Product...
+            ...
           </>
         ) : (
           <>
             <Sparkles className="mr-2 h-4 w-4" />
-            Create Mock Product (Testing)
+            {t('new.createMock')}
           </>
         )}
       </Button>
@@ -198,11 +213,10 @@ export default function ConvertPage() {
       <div className="container mx-auto p-6 max-w-4xl space-y-8">
         {/* Header */}
         <header className="mb-4">
-          <h1 className="text-3xl font-bold tracking-tight">Convert Product</h1>
-          <p className="text-muted-foreground">
-            Upload a product image and generate AI-powered, platform-specific
-            content.
-          </p>
+          <h1 className="text-3xl font-bold tracking-tight">
+            {t('new.title')}
+          </h1>
+          <p className="text-muted-foreground">{t('new.sub')}</p>
         </header>
         <ProductImageUploader onUploadSuccess={handleFinalUploadSuccess} />
 
@@ -211,17 +225,14 @@ export default function ConvertPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Wand2 className="h-5 w-5" />
-              Platform & Generation
+              {t('new.typeTitle')}
             </CardTitle>
-            <CardDescription>
-              Select your target platform and let AI generate optimized
-              descriptions.
-            </CardDescription>
+            <CardDescription>{t('new.typeSub')}.</CardDescription>
           </CardHeader>
 
           <CardContent className="space-y-6">
             <div className="space-y-3">
-              <label className="text-sm font-medium">Select Platform</label>
+              <label className="text-sm font-medium">{t('new.select')}</label>
               <div className="grid grid-cols-2 gap-3">
                 {PLATFORMS.map((p) => (
                   <PlatformButton key={p.id} {...p} />
@@ -242,17 +253,6 @@ export default function ConvertPage() {
                 </p>
               </div>
             )}
-
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-medium">What happens next:</p>
-              <ul className="list-disc list-inside text-xs space-y-1">
-                <li>AI analyzes your product image</li>
-                <li>Generates optimized title and description</li>
-                <li>Creates platform-specific content</li>
-                <li>Adds tags and categories</li>
-                <li>Saves results to your dashboard</li>
-              </ul>
-            </div>
           </CardContent>
         </Card>
       </div>

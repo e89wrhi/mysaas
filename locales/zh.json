@@ -3,7 +3,9 @@
     "light": "浅色",
     "dark": "深色",
     "system": "系统"
-  },"landing": {
+  },
+  "back": "返回",
+  "landing": {
       "headline": "拍照。生成。销售。",
       "subheadline": "将任何产品照片在几秒钟内转换为完整、可上架的商品清单——标题、描述，应有尽有。",
       "button": "立即开始",
@@ -16,9 +18,165 @@
       "revenue": "收入",
       "revenueValue": "$12万",
       "growth": "增长",
-      "growthValue": "35%"
+      "growthValue": "35%",
+    "dashboard": "仪表盘",
+  "settings": "设置",
+  "signout": "登出",
+  "socials": "社交",
+  "poweredBy": "提供者",
+  "intelligentListing": "智能列表",
+  "fasterLight": "比光速更快",
+  "fasterLightValue": "快速高效地提供服务，实现最佳效果。",
+  "analyzing": "正在分析图片...",
+  "generating": "正在生成列表...",
+  "done": "完成！",
+  "features": "功能",
+  "featuresDiscover": "发现功能",
+  "testimonials": "用户评价",
+  "testimonialsSee": "看看用户怎么说",
+  "subscribeTitle": "订阅我们的新闻通讯",
+"subscribeButton": "订阅"
+  },
+  "login": {
+    "wellcome": "欢迎回来！",
+    "wellcomeSub": "登录账户以继续",
+    "placeholderEmail": "输入你的邮箱",
+    "emailButton": "使用邮箱登录",
+    "or": "或继续使用",
+    "google": "使用Google登录",
+    "signup": "还没有账户？注册"
+  },
+
+  "register": {
+    "login": "登录",
+    "create": "创建你的账户",
+    "createSub": "今天开始免费试用",
+    "emailButton": "使用邮箱注册",
+    "or": "或继续使用",
+    "google": "使用Google注册",
+    "footer": "注册即表示您同意我们的服务条款和隐私政策。"
+  },
+
+  "dashboard": {
+    "welcome": "欢迎, ",
+    "convertNew": "新建转换",
+    "addMock": "添加示例",
+    "history": "历史记录",
+    "products": "产品",
+    "options": "选项",
+    "emptyTitle": "还没有产品",
+    "emptySub": "上传产品图片以生成第一个列表。",
+    "emptyButton": "新建转换",
+    "platform": "平台",
+  "copy": "复制",
+  "delete": "删除"
+  },
+
+  "settings": {
+    "welcome": "欢迎, ",
+    "account": "账户设置",
+    "deleteTitle": "删除账户",
+    "deleteSub": "删除账户后无法恢复，请谨慎操作。",
+    "delete": "删除",
+    "cancel": "取消",
+    "update": "更新",
+    "updateSub": "在下方更新您的账户信息。",
+    "signout": "登出"
+  },
+
+  "new": {
+    "title": "转换产品",
+    "sub": "上传产品图片以生成完整列表。",
+    "chooseFile": "选择文件",
+    "typeTitle": "平台与生成类型",
+    "typeSub": "选择您的电商平台和生成类型。",
+    "select": "选择",
+    "amazon": "亚马逊",
+    "amazonSub": "生成适合亚马逊的优化列表。",
+    "shopify": "Shopify",
+    "shopifySub": "创建适合Shopify的定制列表。",
+    "etsy": "Etsy",
+    "etsySub": "制作适合Etsy的列表。",
+    "ebay": "eBay",
+    "ebaySub": "设计适合eBay的列表。",
+    "createMock": "创建示例产品",
+    "create": "生成列表"
+  },
+"how": {
+    "title": "如何使用Port",
+    "step1": {
+      "title": "步骤1：创建Port账户",
+      "content": "注册以访问您的Port仪表板，在这里您可以上传产品图片并管理Amazon、eBay、Etsy等平台的商品列表。"
     },
+    "step2": {
+      "title": "步骤2：上传产品图片",
+      "content": "只需拖放您的产品照片。Port的AI会立即分析图片，并准备产品详细信息，如标题、分类和描述。"
+    },
+    "step3": {
+      "title": "步骤3：生成商品信息",
+      "content": "Port的AI将您的图片转换为适用于多个市场的结构化产品数据，包括标题、描述、标签和定价建议。"
+    },
+    "step4": {
+      "title": "步骤4：编辑并自定义列表",
+      "content": "查看并调整AI生成的内容。编辑关键字、描述和价格，以提高SEO和转化率。"
+    },
+    "step5": {
+      "title": "步骤5：发布到市场",
+      "content": "一键即可将最终列表发布到Amazon、eBay、Etsy等平台，无需手动输入数据。"
+    },
+    "step6": {
+      "title": "步骤6：通过AI洞察跟踪表现",
+      "content": "监控产品在各平台上的表现。Port的AI提供有关列表质量、互动和转化优化的洞察。"
+    },
+    "step7": {
+      "title": "步骤7：使用AI工具实现自动化和扩展",
+      "content": "使用Port的自动化工具批量上传、同步列表并自动优化价格，让AI处理重复工作，同时发展您的业务。"
+    }
+  },
+  "pricingFaq": {
+    "item1": {
+      "question": "免费的 Starter 计划包含什么？",
+      "answer": "Starter 计划完全免费，每月最多包含 10 条 AI 生成的产品描述。您可以访问基本的 AI 功能，并支持 Amazon 和 Shopify 平台。非常适合测试我们的服务和小规模运营。"
+    },
+    "item2": {
+      "question": "Pro 计划的费用是多少？",
+      "answer": "Pro 计划费用为每月 $29（或每年 $288，节省 20%）。它包含每月最多 100 条产品描述、高级 AI 功能、所有主要电商平台、优先处理和增强分析功能。"
+    },
+    "item3": {
+      "question": "Business 计划提供哪些内容？",
+      "answer": "Business 计划费用为每月 $79（或每年 $768），提供无限制的产品描述、带 SEO 优化的高级 AI、白标品牌、批量上传功能、API 访问，以及专属客户经理提供的 24/7 优先支持。"
+    },
+    "item4": {
+      "question": "是否提供年度付款折扣？",
+      "answer": "是的！年度计划可享受 20% 折扣。Pro 计划为 $288/年（对比月付 $348），Business 计划为 $768/年（对比月付 $948）。按年付款可节省大量费用。"
+    },
+    "item5": {
+      "question": "我可以随时更改计划吗？",
+      "answer": "可以，您可以随时升级或降级计划。升级会立即生效，降级将在下一个计费周期生效。升级时只需支付按比例计算的差额。"
+    },
+    "item6": {
+      "question": "支持哪些电商平台？",
+      "answer": "我们支持所有主要电商平台，包括 Amazon、Shopify、Etsy、eBay 等。高等级计划还包括针对特定需求的自定义平台集成。"
+    },
+    "item7": {
+      "question": "AI 生成的产品描述准确吗？",
+      "answer": "我们的 AI 通过分析产品图片生成高精度、详细的产品描述，包括标题、描述、特点、优势和规格。高等级计划的质量会更好。"
+    },
+    "item8": {
+      "question": "付费计划有免费试用吗？",
+      "answer": "虽然我们没有传统的免费试用，但您可以先使用免费的 Starter 计划来测试服务。如果需要更多容量，可以随时升级，并在 30 天内取消以获得全额退款。"
+    }
+  },
   "pricing": {
+    "pricing": "价格",
+    "pricingSub": "选择你的计划",
+    "yearly": "年度",
+    "monthly": "月度",
+    "pricingFooter": "需要定制计划？联系我们获取企业解决方案。",
+    "plans": "计划",
+    "plansSub": "比较我们的计划",
+    "faq": "常见问题",
+    "faqSub": "常见问答",
     "starterTitle": "入门版",
     "starterDescription": "完美的入门选择",
     "starterBenefit1": "每月最多 10 个产品描述",

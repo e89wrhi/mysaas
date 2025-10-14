@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { Product } from '@/types';
 import { generateMockProduct } from '@/lib/mockProduct';
 import ProductsGrid from './dashboard-products';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   serverProducts: Product[];
@@ -43,6 +44,7 @@ export default function DashboardClient({
   _userId,
 }: Props) {
   const router = useRouter();
+  const t = useTranslations();
   const [products, setProducts] = useState<Product[]>(serverProducts);
   const [isCreatingMock, setIsCreatingMock] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -95,7 +97,8 @@ export default function DashboardClient({
           <UserAvatar name={name || 'User'} image={imageUrl || ''} />
           <div>
             <h1 className="text-2xl font-bold">
-              Welcome back, {name || 'User'}!
+              {t('dashboard.welcome')}
+              {name || 'User'}!
             </h1>
           </div>
         </div>
@@ -107,7 +110,7 @@ export default function DashboardClient({
       {/* Action Buttons */}
       <div className="flex items-center space-x-2">
         <Button onClick={handleConvertNew} className="bg-primary rounded-full">
-          Convert New
+          {t('dashboard.convertNew')}
         </Button>
         <Button
           onClick={handleAddMockProduct}
@@ -119,12 +122,12 @@ export default function DashboardClient({
           {isCreatingMock ? (
             <>
               <Sparkles className="mr-2 h-4 w-4 animate-spin" />
-              Creating...
+              ...
             </>
           ) : (
             <>
               <Plus className="mr-2 h-4 w-4" />
-              Add Mock
+              {t('dashboard.addMock')}
             </>
           )}
         </Button>
@@ -133,10 +136,11 @@ export default function DashboardClient({
       {/* Products Section */}
       <div>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold">History</h2>
+          <h2 className="text-xl font-bold">{t('dashboard.history')}</h2>
           {products && products.length > 0 && (
             <span className="text-sm text-muted-foreground">
-              {products.length} product{products.length !== 1 ? 's' : ''}
+              {products.length} {t('dashboard.products')}
+              {products.length !== 1 ? 's' : ''}
             </span>
           )}
         </div>
@@ -161,16 +165,16 @@ export default function DashboardClient({
               </svg>
             </div>
             <div>
-              <h3 className="text-lg font-semibold">No products yet</h3>
-              <p className="text-muted-foreground">
-                Get started by converting your first product
-              </p>
+              <h3 className="text-lg font-semibold">
+                {t('dashboard.emptyTitle')}
+              </h3>
+              <p className="text-muted-foreground">{t('dashboard.emptySub')}</p>
             </div>
             <Button
               onClick={handleConvertNew}
               className="mt-4 rounded-full mb-10"
             >
-              Convert
+              {t('dashboard.emptyButton')}
             </Button>
           </div>
         )}

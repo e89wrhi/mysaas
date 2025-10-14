@@ -1,8 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import { useTranslations } from 'next-intl';
 
 export default function BentoGrid() {
+  const t = useTranslations();
   return (
     <section className="py-32">
       <MaxWidthWrapper>
@@ -13,7 +17,7 @@ export default function BentoGrid() {
               <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                 <div className="space-y-2">
                   <h2 className="text-2xl font-semibold text-foreground">
-                    Intelligent Listing
+                    {t('landing.intelligentListing')}
                   </h2>
                 </div>
               </div>
@@ -24,7 +28,7 @@ export default function BentoGrid() {
                   {/* First item */}
                   <div className="relative flex w-[calc(50%+1rem)] items-center justify-end gap-3">
                     <span className="block h-fit rounded-full bg-muted/50 px-3 py-2 text-base">
-                      Analyzing image..
+                      {t('landing.analyzing')}
                     </span>
                     <div className="size-12 ring-6 ring-background">
                       <Image
@@ -49,14 +53,14 @@ export default function BentoGrid() {
                       />
                     </div>
                     <span className="block h-fit rounded-full bg-green-400/40 px-3 py-2 text-base">
-                      Generating listing info...
+                      {t('landing.generating')}
                     </span>
                   </div>
 
                   {/* Third item */}
                   <div className="relative flex w-[calc(50%+1rem)] items-center justify-end gap-3">
                     <span className="block h-fit rounded-full bg-muted/50 px-3 py-2 text-base">
-                      Done
+                      {t('landing.done')}
                     </span>
                     <div className="size-12 ring-6 ring-background">
                       <Image
@@ -162,11 +166,10 @@ export default function BentoGrid() {
                 </div>
                 <div className="relative z-10 mt-8 space-y-1.5 text-center">
                   <h2 className="text-lg font-medium text-foreground">
-                    Faster than light
+                    {t('landing.fasterLight')}
                   </h2>
                   <p className="text-muted-foreground">
-                    Provident fugit vero voluptate. magnam magni doloribus
-                    dolores voluptates inventore nisi.
+                    {t('landing.fasterLightValue')}
                   </p>
                 </div>
               </div>

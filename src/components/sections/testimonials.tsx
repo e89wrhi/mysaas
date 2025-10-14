@@ -1,17 +1,20 @@
+'use client';
+
 import Image from 'next/image';
 
 import { Testimonials } from '@/config/landing';
 import { HeaderSection } from '@/components/shared/header-section';
+import { useTranslations } from 'next-intl';
 
 export default function Testimonialss() {
+  const t = useTranslations();
   return (
     <section>
       <div className="container flex max-w-6xl flex-col gap-10 py-32 sm:gap-y-16">
         <HeaderSection
-          label="Testimonials"
-          title="What our clients are sharing."
-          subtitle="Discover the glowing feedback from our delighted customers
-            worldwide."
+          label={t('landing.testimonials')}
+          title={t('landing.testimonialsSee')}
+          subtitle=""
         />
 
         <div className="column-1 gap-5 space-y-5 md:columns-2 lg:columns-3 ">

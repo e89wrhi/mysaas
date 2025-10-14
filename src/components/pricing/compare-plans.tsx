@@ -9,8 +9,10 @@ import {
 } from '@/components/ui/popover';
 import { HeaderSection } from '@/components/shared/header-section';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+import { useTranslations } from 'next-intl';
 
 export function ComparePlan() {
+  const t = useTranslations();
   const renderCell = (value: string | boolean | null) => {
     if (value === null) return '—';
     if (typeof value === 'boolean')
@@ -21,9 +23,9 @@ export function ComparePlan() {
   return (
     <MaxWidthWrapper>
       <HeaderSection
-        label="Plans"
-        title="Compare Our Plans"
-        subtitle="Find the perfect plan tailored for your business needs!"
+        label={t('pricing.plans')}
+        title={t('pricing.plansSub')}
+        subtitle=""
       />
 
       <div className="my-10 overflow-x-scroll max-lg:mx-[-0.8rem] md:overflow-x-visible">

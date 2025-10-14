@@ -19,8 +19,10 @@ import { Button } from '../ui/button';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 import { Spinner } from '../ui/spinner';
+import { useTranslations } from 'next-intl';
 
 export function UserAccountNav() {
+  const t = useTranslations();
   const { user, isSignedIn } = useUser();
 
   const [open, setOpen] = useState(false);
@@ -195,14 +197,14 @@ export function UserAccountNav() {
         <DropdownMenuItem asChild>
           <Link href="/dashboard" className="flex items-center space-x-2.5">
             <LayoutDashboard className="size-4" />
-            <p className="text-sm">Dashboard</p>
+            <p className="text-sm">{t('landing.dashboard')}</p>
           </Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
           <Link href="/settings" className="flex items-center space-x-2.5">
             <Settings className="size-4" />
-            <p className="text-sm">Settings</p>
+            <p className="text-sm">{t('landing.settings')}</p>
           </Link>
         </DropdownMenuItem>
 
@@ -212,7 +214,7 @@ export function UserAccountNav() {
           <SignOutButton redirectUrl="/">
             <Button variant="ghost" className="sign-out-button">
               <LogOut className="icon" />
-              Sign out
+              {t('landing.signout')}
             </Button>
           </SignOutButton>
         </DropdownMenuItem>

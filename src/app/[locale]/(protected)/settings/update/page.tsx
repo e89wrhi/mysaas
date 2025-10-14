@@ -10,8 +10,10 @@ import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import { supabase } from '@/lib/supabase';
 import LoadingView from '@/components/shared/loading-view';
 import { SignInEmptyView } from '@/components/shared/signin-empty-view';
+//import { useTranslations } from 'next-intl';
 
 export default function UpdatePage() {
+  //const t = useTranslations();
   const { user, isSignedIn } = useUser();
   const [isUpdating, setIsUpdating] = useState(false);
 

@@ -65,7 +65,7 @@ export function UserAuthForm({
             </Label>
             <Input
               id="email"
-              placeholder="name@example.com"
+              placeholder="login.placeholderEmail"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
