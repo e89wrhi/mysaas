@@ -1,19 +1,20 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-// Supabase admin client
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
+import { auth } from '@clerk/nextjs/server';
 
 export async function POST(req: Request) {
   try {
-    const data = await req.json();
-    const { id, name } = data;
+    const { userId } = await auth();
 
-    if (!id) {
-      return NextResponse.json({ error: 'Missing user id' }, { status: 400 });
+    if (!userId) {
+      return new NextResponse('Unauthorized', { status: 401 });
+    }
+
+    const data = await req.json();
+    const { name } = data;
+
+    if (!name) {
+      return NextResponse.json({ error: 'Missing name' }, { status: 400 });
     }
 
     // Combine first and last name
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
         name: fullName,
         updated_at: new Date().getTime(),
       })
-      .eq('clerk_id', id);
+      .eq('clerk_id', userId);
 
     if (error) throw error;
 
