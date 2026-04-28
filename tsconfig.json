@@ -4,11 +4,20 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "target": "ES2015",
-    "lib": ["DOM", "ES2015", "DOM.Iterable", "ScriptHost"],
+    "lib": [
+      "DOM",
+      "ES2015",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "contentlayer/generated": [".contentlayer/generated"]
+      "@/*": [
+        "src/*"
+      ],
+      "contentlayer/generated": [
+        ".contentlayer/generated"
+      ]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,7 +25,7 @@
     "noEmit": true,
     "incremental": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "plugins": [
@@ -36,5 +45,7 @@
     "contentlayer.config.ts",
     "src/content/pages/customization.msx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
