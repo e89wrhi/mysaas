@@ -1,14 +1,12 @@
 // lib/getCurrentProfile.ts
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
 import { currentUser } from '@clerk/nextjs/server';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 export async function getCurrentProfile() {
   const user = await currentUser(); // server-side Clerk user
   if (!user) return null;
 
-  const supabase = createRouteHandlerClient({ cookies });
-  const { data: profile } = await supabase
+  const { data: profile } = await supabaseAdmin
     .from('user')
     .select('id, name, image, email, clerk_id')
     .eq('clerk_id', user.id)

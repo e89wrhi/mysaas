@@ -49,8 +49,24 @@ export async function POST(req: Request) {
       });
     }
 
+    if (type === 'user.updated') {
+      const user = data;
+      await supabaseAdmin
+        .from('user')
+        .update({
+          email: user.email_addresses?.[0]?.email_address || '',
+          email_verified:
+            user.email_addresses?.[0]?.verification?.status === 'verified',
+          name: `${user.first_name || ''} ${user.last_name || ''}`.trim(),
+          image: user.image_url,
+          clerk_user: user,
+          updated_at: Date.now(),
+        })
+        .eq('clerk_id', user.id);
+    }
+
     if (type === 'user.deleted') {
-      await supabaseAdmin.from('user').delete().eq('clerk_id', data.id); // dot notation for JSONB
+      await supabaseAdmin.from('user').delete().eq('clerk_id', data.id);
     }
 
     return NextResponse.json({ success: true });

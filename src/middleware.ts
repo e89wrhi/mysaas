@@ -5,18 +5,19 @@ const PUBLIC_FILE = /\..*$/;
 const locales = ['en', 'am', 'ja', 'zh', 'ar'];
 const defaultLocale = 'en';
 
-// Routes
-const AUTH_PAGES = ['/sign-in', '/sign-up', '/verify-2fa'];
+// Routes (without locale prefix)
+const AUTH_PAGES = ['/login', '/register', '/verify-2fa'];
 const PROTECTED_PATHS = ['/dashboard', '/settings', '/account'];
 
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl;
 
-  // Skip locale redirection for API routes
+  // Skip locale redirection for API routes and static files
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
-    PUBLIC_FILE.test(pathname)
+    PUBLIC_FILE.test(pathname) ||
+    pathname.includes('favicon.ico')
   ) {
     return NextResponse.next();
   }
@@ -37,8 +38,13 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(url);
   }
 
-  const isAuthPage = AUTH_PAGES.includes(pathname);
-  const isProtected = PROTECTED_PATHS.some((p) => pathname.startsWith(p));
+  // Path without locale for route matching
+  const pathWithoutLocale = `/${segments.slice(1).join('/')}`;
+
+  const isAuthPage = AUTH_PAGES.includes(pathWithoutLocale);
+  const isProtected = PROTECTED_PATHS.some((p) =>
+    pathWithoutLocale.startsWith(p)
+  );
 
   if (isProtected) {
     await auth.protect();
@@ -47,7 +53,8 @@ export default clerkMiddleware(async (auth, req) => {
   const { userId } = await auth();
 
   if (userId && isAuthPage) {
-    return NextResponse.redirect(new URL('/dashboard', req.url));
+    const dashboardUrl = new URL(`/${maybeLocale}/dashboard`, req.url);
+    return NextResponse.redirect(dashboardUrl);
   }
 
   return NextResponse.next();
