@@ -4,13 +4,7 @@ import { useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import {
-  Loader2,
-  Wand2,
-  Sparkles,
-  ImageIcon,
-  CheckCircle2,
-} from 'lucide-react';
+import { Loader2, Wand2, ImageIcon, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -20,9 +14,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
-import { generateMockProduct } from '@/lib/mockProduct';
 import { ProductImageUploader } from './upload-img';
 import { useTranslations } from 'next-intl';
+import { experimental_useObject as useObject } from '@ai-sdk/react';
+import { z } from 'zod';
 
 interface Platform {
   id: string;
@@ -60,8 +55,43 @@ export default function ConvertPage() {
   const [selectedPlatform, setSelectedPlatform] = useState<string>('');
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string>('');
   const [isImageUploaded, setImageUploaded] = useState<boolean>(false);
-  const [isGenerating, setIsGenerating] = useState(false);
-  const [isCreatingMock, setIsCreatingMock] = useState(false);
+
+  const {
+    submit: submitObject,
+    isLoading: isGenerating,
+    object: generatedProduct,
+  } = useObject({
+    api: '/api/products/generate',
+    schema: z.object({
+      title: z
+        .string()
+        .describe('Catchy and SEO-friendly product title.')
+        .optional(),
+      description: z
+        .string()
+        .describe(
+          'Detailed and realistic product description suitable for the target platform.'
+        )
+        .optional(),
+      tags: z
+        .array(z.string())
+        .describe('Array of relevant SEO tags or keywords for the product.')
+        .optional(),
+      category: z.string().describe('The main product category.').optional(),
+      listing_data: z
+        .record(z.any())
+        .describe('Any extra platform-specific listing data needed.')
+        .optional(),
+    }),
+    onFinish: () => {
+      toast.success('✨ Product generated successfully!');
+      router.push('/dashboard');
+    },
+    onError: (error) => {
+      console.error(error);
+      toast.error('Failed to generate product: ' + error.message);
+    },
+  });
 
   if (!isSignedIn || !user) {
     return (
@@ -82,31 +112,10 @@ export default function ConvertPage() {
       toast.error('Please upload an image and select a platform');
       return;
     }
-
-    setIsGenerating(true);
-    try {
-      const res = await fetch('/api/products/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          imageUrl: uploadedImageUrl,
-          platform: selectedPlatform,
-        }),
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to generate product');
-
-      toast.success('✨ Product generated successfully!');
-      router.push('/dashboard');
-    } catch (err) {
-      console.error(err);
-      toast.error(
-        err instanceof Error ? err.message : 'Failed to generate product'
-      );
-    } finally {
-      setIsGenerating(false);
-    }
+    submitObject({
+      imageUrl: uploadedImageUrl,
+      platform: selectedPlatform,
+    });
   };
 
   const handleFinalUploadSuccess = (imageUrl: string) => {
@@ -115,30 +124,7 @@ export default function ConvertPage() {
     console.log('Final Upload URL received by parent:', imageUrl);
   };
 
-  /** Create mock product */
-  const handleAddMockProduct = async () => {
-    setIsCreatingMock(true);
-    try {
-      const mockProduct = generateMockProduct(user.id);
-      const res = await fetch('/api/products/add', {
-        method: 'POST',
-        body: JSON.stringify(mockProduct),
-      });
-
-      const data = await res.json();
-      if (!data.success) throw new Error(data.error);
-      toast.success('🌱 Mock product added!');
-      router.push('/dashboard');
-    } catch (error) {
-      toast.error(
-        error instanceof Error ? error.message : 'Failed to add mock product'
-      );
-    } finally {
-      setIsCreatingMock(false);
-    }
-  };
-
-  const isBusy = isGenerating || isCreatingMock;
+  const isBusy = isGenerating;
 
   // --- Reusable Components ---
   const PlatformButton = ({ id, name, description }: Platform) => (
@@ -185,26 +171,6 @@ export default function ConvertPage() {
       ) : (
         <div></div>
       )}
-
-      <Button
-        onClick={handleAddMockProduct}
-        disabled={!selectedPlatform || isBusy}
-        variant="secondary"
-        className="rounded-full w-full bg-green-500 hover:bg-green-600 text-white"
-        size="lg"
-      >
-        {isCreatingMock ? (
-          <>
-            <Sparkles className="mr-2 h-4 w-4 animate-spin" />
-            ...
-          </>
-        ) : (
-          <>
-            <Sparkles className="mr-2 h-4 w-4" />
-            {t('new.createMock')}
-          </>
-        )}
-      </Button>
     </div>
   );
 
@@ -243,14 +209,44 @@ export default function ConvertPage() {
             <ActionButtons />
 
             {isGenerating && (
-              <div className="space-y-2 p-4 bg-muted/50 rounded-lg text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  Processing your image...
+              <div className="space-y-4 p-4 bg-muted/50 rounded-lg text-sm text-muted-foreground border">
+                <div className="flex items-center gap-2 font-medium text-foreground">
+                  <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                  Generating realistic listing using AI...
                 </div>
-                <p>
-                  This may take 10–30 seconds depending on image complexity.
-                </p>
+
+                {generatedProduct && (
+                  <div className="space-y-2 mt-4">
+                    {generatedProduct.title && (
+                      <h4 className="font-semibold text-lg text-foreground transition-all">
+                        {generatedProduct.title}
+                      </h4>
+                    )}
+                    {generatedProduct.category && (
+                      <div className="inline-block px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-full">
+                        {generatedProduct.category}
+                      </div>
+                    )}
+                    {generatedProduct.description && (
+                      <p className="text-sm text-foreground/80 whitespace-pre-wrap transition-opacity">
+                        {generatedProduct.description}
+                      </p>
+                    )}
+                    {generatedProduct.tags &&
+                      generatedProduct.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-2">
+                          {generatedProduct.tags.map((t, i) => (
+                            <span
+                              key={i}
+                              className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded border"
+                            >
+                              #{t}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                  </div>
+                )}
               </div>
             )}
           </CardContent>
