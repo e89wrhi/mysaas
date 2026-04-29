@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
-import OpenAI from 'openai';
+import { streamObject } from 'ai';
+import { openai } from '@ai-sdk/openai';
+import { z } from 'zod';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+export const maxDuration = 60; // Allow Next.js edge/serverless function to run longer safely
 
 export async function POST(req: NextRequest) {
   const { imageUrl, platform } = await req.json();
@@ -15,68 +17,61 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Example: using GPT to generate product info from image URL
     const prompt = `
       Analyze the product from this image URL: ${imageUrl}.
-      Generate a JSON object with:
-        - title
-        - description
-        - tags (array)
-        - category
-        - listing_data (platform-specific)
+      Generate highly realistic and optimized details for listing this product on ${platform}.
     `;
 
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4.1-mini',
+    const result = await streamObject({
+      model: openai('gpt-4o-mini'),
+      schema: z.object({
+        title: z.string().describe('Catchy and SEO-friendly product title.'),
+        description: z
+          .string()
+          .describe(
+            'Detailed and realistic product description suitable for the target platform.'
+          ),
+        tags: z
+          .array(z.string())
+          .describe('Array of relevant SEO tags or keywords for the product.'),
+        category: z.string().describe('The main product category.'),
+        listing_data: z
+          .record(z.any())
+          .describe('Any extra platform-specific listing data needed.'),
+      }),
       messages: [
         {
           role: 'user',
           content: [
-            {
-              type: 'text',
-              text: prompt,
-            },
-            {
-              type: 'image_url',
-              image_url: imageUrl,
-            },
+            { type: 'text', text: prompt },
+            { type: 'image', image: imageUrl },
           ],
         },
       ],
-      response_format: { type: 'json_object' },
-      temperature: 0.7,
+      onFinish: async ({ object }) => {
+        if (object) {
+          const { error } = await supabaseAdmin.from('products').insert({
+            userId: 'user-id', // TODO: replace with actual user ID from clerk
+            platform,
+            imageUrl,
+            title: object.title,
+            description: object.description,
+            tags: object.tags || [],
+            category: object.category || '',
+            listingData: object.listing_data || {},
+            status: 'ready',
+            createdAt: Date.now(),
+            updatedAt: Date.now(),
+          });
+
+          if (error) {
+            console.error('Failed to insert product into Supabase:', error);
+          }
+        }
+      },
     });
 
-    const content = response.choices[0].message?.content || '{}';
-    const productData = JSON.parse(content);
-
-    const { data, error } = await supabaseAdmin.from('products').insert({
-      userId: 'user-id', // replace with actual user ID
-      platform,
-      imageUrl,
-      title: productData.title,
-      description: productData.description,
-      tags: productData.tags || [],
-      category: productData.category || '',
-      listingData: productData.listing_data || {},
-      status: 'ready',
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
-    });
-
-    // Check for error first
-    if (error) throw error;
-
-    // Safely get the inserted product
-    const product = data?.[0];
-    if (!product) {
-      return NextResponse.json(
-        { error: 'Failed to insert product into Supabase' },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({ success: true, product });
+    return result.toTextStreamResponse();
   } catch (err) {
     console.error('Error generating product:', err);
     return NextResponse.json(
