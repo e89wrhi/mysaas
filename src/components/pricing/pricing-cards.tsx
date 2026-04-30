@@ -39,18 +39,18 @@ export default function PricingCards() {
             value={isYearly ? 'yearly' : 'monthly'}
             onValueChange={toggleBilling}
             aria-label="toggle-year"
-            className="h-9 overflow-hidden rounded-full border bg-background p-1 *:h-7 *:text-muted-foreground"
+            className="h-9 overflow-hidden rounded-[0px] border bg-background p-1 *:h-7 *:text-muted-foreground"
           >
             <ToggleGroupItem
               value="yearly"
-              className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
+              className="rounded-[0px] px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle yearly billing"
             >
               {t('pricing.yearly')} (-20%)
             </ToggleGroupItem>
             <ToggleGroupItem
               value="monthly"
-              className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
+              className="rounded-[0px] px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle monthly billing"
             >
               {t('pricing.monthly')}
@@ -67,7 +67,7 @@ export default function PricingCards() {
             return (
               <Card
                 key={plan.title}
-                className={`relative flex flex-col overflow-hidden ${
+                className={`relative rounded-none flex flex-col overflow-hidden ${
                   isPopular ? '-m-0.5 border-2 border-primary' : ''
                 }`}
               >
@@ -119,7 +119,7 @@ export default function PricingCards() {
 
                 <div className="p-6 pt-0">
                   <Button
-                    className="w-full rounded-full"
+                    className="w-full rounded-none"
                     variant={isPopular ? 'default' : 'outline'}
                   >
                     {plan.prices.monthly === 0

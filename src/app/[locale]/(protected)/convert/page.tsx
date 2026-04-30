@@ -131,7 +131,7 @@ export default function ConvertPage() {
     <Button
       key={id}
       variant={selectedPlatform === id ? 'default' : 'outline'}
-      className="h-auto p-4 flex flex-col items-start gap-1 transition-all"
+      className="h-auto p-4 flex flex-col items-start gap-1 rounded-none transition-all"
       onClick={() => setSelectedPlatform(id)}
       disabled={isBusy}
     >
@@ -176,7 +176,7 @@ export default function ConvertPage() {
 
   return (
     <MaxWidthWrapper>
-      <div className="container mx-auto p-6 max-w-4xl space-y-8">
+      <div className="container mx-auto p-6 pt-22 max-w-4xl space-y-8">
         {/* Header */}
         <header className="mb-4">
           <h1 className="text-3xl font-bold tracking-tight">
@@ -187,7 +187,7 @@ export default function ConvertPage() {
         <ProductImageUploader onUploadSuccess={handleFinalUploadSuccess} />
 
         {/* Platform & Generation Section */}
-        <Card>
+        <Card className="rounded-none">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Wand2 className="h-5 w-5" />
@@ -196,7 +196,7 @@ export default function ConvertPage() {
             <CardDescription>{t('new.typeSub')}.</CardDescription>
           </CardHeader>
 
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 rounded-none">
             <div className="space-y-3">
               <label className="text-sm font-medium">{t('new.select')}</label>
               <div className="grid grid-cols-2 gap-3">

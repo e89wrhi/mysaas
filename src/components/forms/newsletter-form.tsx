@@ -59,7 +59,7 @@ export function NewsletterForm() {
               <FormControl>
                 <Input
                   type="email"
-                  className="rounded-full px-4"
+                  className="rounded-[0px] px-4"
                   placeholder="hi@example.com"
                   {...field}
                 />
@@ -68,7 +68,7 @@ export function NewsletterForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" size="sm" className="px-4 rounded-full">
+        <Button type="submit" size="sm" className="px-4 rounded-[0px]">
           {t('landing.subscribeButton')}
         </Button>
       </form>

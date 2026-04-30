@@ -11,7 +11,7 @@ export function MarketingConfigs(): MarketingConfig {
       },
       {
         title: t('marketing.howTo'),
-        href: '/doc',
+        href: '/how',
       },
     ],
   };

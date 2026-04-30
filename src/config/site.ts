@@ -42,10 +42,10 @@ export function FooterLinks(): SidebarNavItem[] {
     {
       title: t('footer.docsTitle'),
       items: [
-        { title: t('footer.introduction'), href: '/doc' },
-        { title: t('footer.installation'), href: '/doc' },
-        { title: t('footer.components'), href: '/doc' },
-        { title: t('footer.codeBlocks'), href: '/doc' },
+        { title: t('footer.introduction'), href: '/how' },
+        { title: t('footer.installation'), href: '/how' },
+        { title: t('footer.components'), href: '/how' },
+        { title: t('footer.codeBlocks'), href: '/how' },
       ],
     },
   ];
