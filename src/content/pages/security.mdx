@@ -1,83 +1,73 @@
 ---
 title: Security
-description: Security practices for AI Note & To-Do App.
+description: Security practices for Port.
 ---
 
-At **AI Note & To-Do App**, protecting your data is our top priority.  
-We implement enterprise-grade security measures to ensure your notes, tasks, and personal information remain private and secure.
+At **Port**, protecting your data and your business assets is our top priority.  
+We implement enterprise-grade security measures to ensure your product images, listing data, and marketplace credentials remain private and secure.
 
 ---
 
 ## Data Encryption
 
-- **In Transit**: All data is encrypted using TLS 1.2+ during transmission between your device and our servers.  
-- **At Rest**: Notes, tasks, and files are encrypted on our servers with AES-256.  
+- **In Transit**: All data transmitted between your device and our servers is encrypted using industry-standard TLS 1.3.
+- **At Rest**: Product data, marketplace tokens, and images are encrypted on our servers using AES-256 encryption.
+
+---
+
+## E-commerce Platform Security
+
+- **Secure Marketplace Sync**: We use OAuth 2.0 and official marketplace APIs (Amazon, Shopify, Etsy, etc.) to securely store and use access tokens. We never ask for or store your marketplace passwords.
+- **Credential Protection**: API keys and secrets are stored in hardware-backed security modules (HSM) with restricted access.
 
 ---
 
 ## Authentication
 
-- **Secure Login**: Passwords are hashed and salted using industry-standard algorithms.  
-- **Multi-Factor Authentication (MFA)**: Optional MFA adds an extra layer of protection to your account.  
-- **Single Sign-On (SSO)**: Available for enterprise customers.  
+- **Secure Login**: Passwords and session tokens are managed using high-security hashing and salting algorithms.
+- **Multi-Factor Authentication (MFA)**: We support and recommend MFA for all accounts to provide an extra layer of protection.
+- **Enterprise SSO**: Support for SAML and OpenID Connect is available for organizational security management.
 
 ---
 
-## Infrastructure
+## Infrastructure & Monitoring
 
-- Hosted on trusted, secure cloud infrastructure providers (e.g., AWS, GCP, Azure).  
-- Regular security patches and updates are applied to servers and dependencies.  
-- Firewalls, intrusion detection, and monitoring systems are in place to prevent unauthorized access.  
-
----
-
-## AI Processing
-
-- AI requests are processed securely.  
-- Sensitive data is never used to train external AI models without your consent.  
-- Enterprise customers may request dedicated or private AI model instances.  
+- **Tier-1 Cloud Providers**: Port is hosted on globally recognized, secure cloud infrastructure with multi-zone redundancy.
+- **Real-Time Monitoring**: 24/7 monitoring for unauthorized access attempts, performance anomalies, and potential security threats.
+- **Regular Audits**: We perform internal security reviews and third-party penetration testing to identify and resolve vulnerabilities.
 
 ---
 
-## Access Controls
+## AI Privacy
 
-- Role-based access controls ensure only authorized team members can access production systems.  
-- All administrative actions are logged and audited.  
-- Least-privilege principles are applied across internal operations.  
+- **Proprietary Processing**: AI listing generation is performed in isolated environments.
+- **Data Usage**: Your specific product images and listing descriptions are never used to train global AI models without your explicit, opt-in consent.
+- **Enterprise Isolation**: Enterprise customers can request dedicated AI instances for complete data isolation.
 
 ---
 
 ## Compliance
 
-We are committed to meeting industry standards and regulations:  
+We are committed to meeting global data protection standards:
 
-- GDPR and CCPA compliance for data protection.  
-- SOC 2 and ISO 27001-aligned practices.  
-- Data residency options for enterprise customers (on request).  
-
----
-
-## Incident Response
-
-- 24/7 monitoring for unusual activity or breaches.  
-- A formal incident response plan is in place to investigate and mitigate issues quickly.  
-- Affected users will be notified promptly in the event of a data breach.  
+- **GDPR & CCPA**: Fully compliant with European and Californian data privacy regulations.
+- **SOC 2 Type II**: Currently undergoing certification to validate our security, availability, and confidentiality controls.
+- **PCI-DSS**: All payment processing is handled by PCI-compliant partners (Stripe).
 
 ---
 
 ## Responsible Disclosure
 
-We welcome security researchers to report vulnerabilities responsibly.  
-If you discover a security issue, please contact us at:  
+We value the work of security researchers. If you identify a potential vulnerability in Port, please report it to us responsibly at:
 
- **security@ainoteapp.com**  
-
----
-
-## Commitment to You
-
-Your trust is essential to us. We continually improve our systems, audit our practices, and work with external experts to ensure **AI Note & To-Do App** remains safe and secure.
+ **security@port.ai**
 
 ---
 
-_Last updated: October 6, 2025_
+## Our Security Promise
+
+Reliability is the foundation of Port. We are committed to evolving our security posture as threats change, ensuring that your e-commerce growth is built on a safe and trusted platform.
+
+---
+
+_Last updated: April 30, 2026_

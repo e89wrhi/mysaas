@@ -20,7 +20,7 @@ export default function Testimonialss() {
         <div className="column-1 gap-5 space-y-5 md:columns-2 lg:columns-3 ">
           {Testimonials().map((item) => (
             <div className="break-inside-avoid" key={item.name}>
-              <div className="relative rounded-3xl bg-muted/45">
+              <div className="relative bg-muted/45">
                 <div className="flex flex-col px-4 py-5 sm:p-6">
                   <div className="relative mb-4 flex items-center gap-3">
                     <Image

@@ -55,7 +55,7 @@ export function ProductImageUploader({
     <div className="space-y-4">
       {/* Show preview if picked or uploaded */}
       {previewUrl || uploadedImageUrl ? (
-        <div className="relative w-full h-64 rounded-lg overflow-hidden border">
+        <div className="relative w-full h-64 overflow-hidden border">
           <Image
             src={uploadedImageUrl || previewUrl}
             alt="Uploaded product"
@@ -100,7 +100,7 @@ export function ProductImageUploader({
           }}
           appearance={{
             button:
-              'ut-ready:bg-primary ut-uploading:cursor-not-allowed rounded-4xl bg-green-400 px-4 py-2 text-sm font-medium text-white dark:text-black',
+              'ut-ready:bg-primary ut-uploading:cursor-not-allowed rounded-[0px] bg-green-400 px-4 py-2 text-sm font-medium text-white dark:text-black',
             container:
               'flex min-h-[200px] w-full flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-muted-foreground/25 p-8 text-center hover:bg-muted/50 transition-colors',
             allowedContent: 'text-xs text-muted-foreground mt-2',

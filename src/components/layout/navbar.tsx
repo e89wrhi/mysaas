@@ -8,9 +8,7 @@ import { cn } from '@/lib/utils';
 import { useScroll } from '@/hooks/use-scroll';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/shared/icons';
-import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import Image from 'next/image';
-import { LocaleChange } from './change-locale';
 import { ModeToggle } from './mode-toggle';
 import { SignInButton, useUser } from '@clerk/nextjs';
 import { UserAccountNav } from './user-account-nav';
@@ -20,44 +18,46 @@ interface NavBarProps {
   large?: boolean;
 }
 
-export function NavBar({ scroll = false }: NavBarProps) {
-  const scrolled = useScroll(50);
+export function NavBar({}: NavBarProps) {
+  const scrolled = useScroll(10);
   const { user, isSignedIn } = useUser();
   const selectedLayout = useSelectedLayoutSegment();
 
   return (
     <header
-      className={`sticky top-0 z-40 flex w-full justify-center bg-background/60 backdrop-blur-xl transition-all ${
-        scroll ? (scrolled ? 'border-b' : 'bg-transparent') : 'border-b'
-      }`}
+      className={cn(
+        'fixed top-0 inset-x-0 z-50 flex w-full items-center justify-center transition-all duration-300 ease-in-out',
+        scrolled
+          ? 'h-16 border-b bg-background/80 backdrop-blur-lg shadow-sm'
+          : 'h-20 bg-transparent'
+      )}
     >
-      <MaxWidthWrapper className="flex h-14 items-center justify-between py-4">
-        <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-1">
+      <div className="w-full max-w-7xl flex items-center justify-between px-6 sm:px-8">
+        <div className="flex items-center gap-8">
+          <Link href="/" className="flex items-center space-x-2.5">
             <Image
-              height={60}
-              width={60}
+              height={32}
+              width={32}
               src="/logo.png"
               alt="logo"
-              className="h-8 w-8"
+              className="h-7 w-7"
             />
-            <span className="font-urban text-xl font-bold text-green-400">
+            <span className="font-sans text-xl font-bold tracking-tight">
               {siteConfig.name}
             </span>
           </Link>
 
-          {MarketingConfigs() && MarketingConfigs().mainNav.length > 0 ? (
-            <nav className="hidden gap-6 md:flex">
+          {MarketingConfigs()?.mainNav?.length ? (
+            <nav className="hidden md:flex gap-8">
               {MarketingConfigs().mainNav.map((item, index) => (
                 <Link
                   key={index}
                   href={item.disabled ? '#' : item.href}
-                  prefetch={true}
                   className={cn(
-                    'flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm',
+                    'text-sm font-medium transition-colors hover:text-foreground',
                     item.href.startsWith(`/${selectedLayout}`)
                       ? 'text-foreground'
-                      : 'text-foreground/60',
+                      : 'text-muted-foreground',
                     item.disabled && 'cursor-not-allowed opacity-80'
                   )}
                 >
@@ -68,31 +68,31 @@ export function NavBar({ scroll = false }: NavBarProps) {
           ) : null}
         </div>
 
-        <div className="flex items-center space-x-3">
-          <LocaleChange pathname="" />
+        <div className="flex items-center space-x-4">
           <ModeToggle />
 
           {isSignedIn && user != null ? (
-            <div className="flex flex-row items-center justify-center space-x-4">
-              <Link href={'/convert'}>
-                <Icons.add className="text-green-400 size-6" />
+            <div className="flex items-center space-x-4">
+              <Link
+                href={'/convert'}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Icons.add className="size-5" />
               </Link>
               <UserAccountNav />
             </div>
           ) : (
             <SignInButton>
               <Button
-                className="hidden gap-2 px-5 rounded-full md:flex bg-green-400"
-                variant="default"
-                size="sm"
+                className="hidden border-[2px] rounded-[0px] md:flex px-6 text-sm"
+                variant="outline"
               >
-                <span>Sign In</span>
-                <Icons.arrowRight className="size-4" />
+                Sign In
               </Button>
             </SignInButton>
           )}
         </div>
-      </MaxWidthWrapper>
+      </div>
     </header>
   );
 }

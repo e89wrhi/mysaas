@@ -102,7 +102,7 @@ export default function SettingsPage() {
     <MaxWidthWrapper>
       <div className="container mx-auto p-6 space-y-8">
         {/* Profile Section */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center pt-20 space-x-4">
           <UserAvatar
             name={name || user.emailAddresses[0]?.emailAddress || 'User'}
             image={imageUrl || ''}
@@ -122,7 +122,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Delete Account Card */}
-        <Card>
+        <Card className="rounded-none">
           <CardHeader>
             <CardTitle>{t('settings.account')}</CardTitle>
           </CardHeader>
@@ -173,7 +173,7 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="rounded-none">
           <CardHeader>
             <CardTitle>{t('settings.update')}</CardTitle>
           </CardHeader>
@@ -188,13 +188,13 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="rounded-none">
           <CardHeader>
             <CardTitle>{t('settings.signout')}</CardTitle>
           </CardHeader>
           <CardContent>
             <SignOutButton>
-              <Button variant="outline">
+              <Button variant="outline" className="rounded-none">
                 <Icons.arrowRight className="h-4 w-4 mr-2" />
                 {t('settings.signout')}
               </Button>

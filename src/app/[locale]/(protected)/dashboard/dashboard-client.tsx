@@ -92,7 +92,7 @@ export default function DashboardClient({
   return (
     <div className="container mx-auto p-6 space-y-8">
       {/* Profile Section */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center pt-20 justify-between">
         <div className="flex items-center space-x-4">
           <UserAvatar name={name || 'User'} image={imageUrl || ''} />
           <div>
@@ -109,14 +109,14 @@ export default function DashboardClient({
 
       {/* Action Buttons */}
       <div className="flex items-center space-x-2">
-        <Button onClick={handleConvertNew} className="bg-primary rounded-full">
+        <Button onClick={handleConvertNew} className="bg-primary rounded-none">
           {t('dashboard.convertNew')}
         </Button>
         <Button
           onClick={handleAddMockProduct}
           disabled={isCreatingMock}
           variant="secondary"
-          className="rounded-full"
+          className="rounded-none"
           title="Create a random mock product for testing purposes"
         >
           {isCreatingMock ? (
@@ -172,7 +172,7 @@ export default function DashboardClient({
             </div>
             <Button
               onClick={handleConvertNew}
-              className="mt-4 rounded-full mb-10"
+              className="mt-4 rounded-none mb-10"
             >
               {t('dashboard.emptyButton')}
             </Button>
